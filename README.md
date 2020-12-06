@@ -31,6 +31,8 @@ in the home directory. Find a file called `.bashrc` and open it.
 # Warnings!
 *THIS FILE IS ONLY FOR LINUX USERS* (prefered distro: Ubuntu 17.10 or higher)
 
+*THIS NOTE SYSTEM WILL ONLY WORK ON BASH SHELL* (default shell for ubuntu, you may find bugs in other shells like zsh, ksh)
+
 *DON'T CHANGE THE SCRIPT* (Only in case you don't have the default editors who are gedit and nano. In that case, you can either change them, or install the default ones.)
 
 *DON'T USE newnote() TO READ NOTES* (Same goes for readnote() for writing new ones.)
