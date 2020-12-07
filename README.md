@@ -45,7 +45,6 @@ in the home directory. Find a file called `.bashrc` and open it.
 -Go to the last line of the file you opened at step 4, and write: `source ~/.shellnotes.sh` in order to be able to use shellnotes every time you launch your terminal.
 
 # Warnings!
-*THIS FILE IS ONLY FOR LINUX USERS* (prefered distro: Ubuntu 17.10 or higher)
 
 *THIS SYSTEM IS MADE FOR BASH SHELL* (Change your shell if necessary.)
 
