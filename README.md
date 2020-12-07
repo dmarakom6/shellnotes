@@ -1,6 +1,22 @@
 # shellnotes
 A simple and easy way to keep notes via your linux terminal.
 
+# Commands:
+ ## newnote:
+  Write a new note using gedit.
+## quicknote: 
+  Write a note directly from terminal.
+## readnote: 
+  Read a note from your text-editor.
+## quickread: 
+  Read a note directly from terminal.
+## listnotes: 
+  View a full list of notes from your notes folder.
+## delnote: 
+  Delete a note from your notes folder.
+## shellnotes(-v,-r,-h or --help): 
+  Information about shellnotes.
+
 # How to download
 
 -You can either download or clone this repository.
@@ -8,11 +24,11 @@ A simple and easy way to keep notes via your linux terminal.
 # How to install
 ## step 1:
 
--Place the file "shellnotes.sh" into your home folder.
+-Place the file "shellnotes.sh" and "help" into your home folder.
 
 ## step 2:
 
--Rename the file and add a dot before its name. It should look like this: ".shellnotes.sh" in the home folder.
+-Rename the file and add a dot before its name. It should look like this: ".shellnotes.sh" and ".help" in the home folder.
 
 ## step 3:
 
@@ -31,11 +47,6 @@ in the home directory. Find a file called `.bashrc` and open it.
 # Warnings!
 *THIS FILE IS ONLY FOR LINUX USERS* (prefered distro: Ubuntu 17.10 or higher)
 
-*THIS NOTE SYSTEM WILL ONLY WORK ON BASH SHELL* (default shell for ubuntu, you may find bugs in other shells unless you change the first line of the file.)
+*THIS SYSTEM IS MADE FOR BASH SHELL* (Change your shell if necessary.)
 
 *DON'T CHANGE THE SCRIPT* (Only in case you don't have the default editors who are gedit and nano. In that case, you can either change them, or install the default ones.)
-
-*DON'T USE newnote() TO READ NOTES* (Same goes for readnote() for writing new ones.)
-
-*DON'T JUDGE ME* (This is my first shell script.)
-*HAVE FUN WITH SHELLNOTES!!!*
