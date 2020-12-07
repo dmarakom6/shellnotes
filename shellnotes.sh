@@ -15,7 +15,7 @@ fi
 
 
 
-#opening a note (newnote will work as well, but this is a simpler one, and will create a new note if $notename doesn't exist)
+#opening a note (It will create a new note if $notename is blank)
 function readnote() { 
 dir="$(pwd)";
 me="$(whoami)";
@@ -82,7 +82,7 @@ else
 		
 fi
 
-if [ $readquicknote == "y" ] || [ $readquicknote == "Y" ] || [ $readquicknote == "yes" ] || [ $readquicknote == "YES" ] || [ $readquicknote == "Yes" ]; then
+if [[ $readquicknote == "y" ]] || [[ $readquicknote == "Y" ]] || [[ $readquicknote == "yes" ]] || [[ $readquicknote == "YES" ]] || [[ $readquicknote == "Yes" ]]; then
 	clear;
 	cd ~/Notes
 	cat $notename;
@@ -91,10 +91,10 @@ fi
 }
 
 
-#like quicknote(), but it opens ubuntu's text-editor (gedit).
+#writes notes using ubuntu's text-editor (gedit).
 function newnote() { 
-cd ~/Notes; 
 dir="$(pwd)";
+cd ~/Notes; 
 me="$(whoami)";
 gedit; 
 clear; 
@@ -105,9 +105,9 @@ echo "-----------------------------------";
 
 #Delete notes from terminal
 function delnote() {
+	dir="$(pwd)";
 	cd ~/Notes
 	me="$(whoami)";
-	dir="$(pwd)";
 	read -p "Enter the name of the note you want to delete: " delete
 	if [ -e $delete ]; then
 		rm $delete
@@ -129,7 +129,7 @@ function listnotes() {
 
 #Help for new users
 function shellnotes() {
-	if [[ $1 == "-v" ]]; then
+ 	if [[ $1 == "-v" ]]; then
 		echo "Shellnotes version: 1.0"
 
 	elif [[ $1 == "-r" ]]; then
@@ -142,5 +142,18 @@ function shellnotes() {
 		less ~/.help;
 		cd $dir;
 	fi
+}
+#Take info about a note
+function noteinfo() {
+	dir="$(pwd)"
+	cd ~/Notes
+	read -p "Enter note name: " notename;
+	if [ -e $notename ]; then
+		wc $notename;
+		echo "(lines/words/chars/name)"
+else
+	echo "That note doesn't exist."
+fi
+cd $dir
 }
 #Shellnotes made by dmarakom6.

@@ -29,5 +29,6 @@ Tips:
 	-Deleting notes using delnote won't send the files to Trash. They will be deleted forever, so don't store other files in your Notes folder.
 	-Even if you don't have a Notes folder, shellnotes will make one for you.
 	-No matter in which directory you are, shellnotes will work from everywhere - and when your done taking notes, you will get back on your previous working directory!
+	-If you want to check if shellnotes is working proprely, try typing "shellnotes" in the terminal!
 
 
