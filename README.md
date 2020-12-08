@@ -1,7 +1,7 @@
 # shellnotes
 A simple and easy way to keep notes via your linux terminal.
 
-# Commands:
+# Basic Commands:
  ## newnote:
   Write a new note using gedit.
 ## quicknote: 
