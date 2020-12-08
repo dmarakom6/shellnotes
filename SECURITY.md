@@ -1,4 +1,4 @@
-# Security Policy
+# Version support
 
 ## Supported Versions of shellnotes
 
@@ -13,5 +13,5 @@
 
 ## About updating
 
-Every new update is uploaded in this page.
+Every new update is uploaded in the release page.
 If you want to check your version, type "shellnotes -v" and check if the version is supported.
