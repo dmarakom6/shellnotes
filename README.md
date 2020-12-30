@@ -46,6 +46,4 @@ in the home directory. Find a file called `.bashrc` and open it. (Different file
 
 # Warnings!
 
-*THIS SYSTEM IS MADE FOR BASH SHELL* (Change your shell if necessary.)
-
 *DON'T CHANGE THE SCRIPT* (Only in case you don't have the default editors who are gedit and nano. In that case, you can either change them, or install the default ones.)
