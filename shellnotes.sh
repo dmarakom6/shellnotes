@@ -135,7 +135,8 @@ function listnotes() {
 function shellnotes() {
  	if [[ $1 == "-v" ]]; then
 		echo "Shellnotes version: 1.2"
-
+	elif [[ $2 == "--version" ]]; then
+		echo "Shellnotes version: 1.2"
 	elif [[ $1 == "-r" ]]; then
 		echo "Github repository: https://github.com/dmarakom6/shellnotes/blob/master/"
 
