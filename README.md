@@ -3,7 +3,7 @@ A simple and easy way to keep notes via your linux terminal.
 
 # Basic Commands:
  ## newnote:
-  Write a new note using gedit.
+  Write a new note using your text editor.
 ## quicknote: 
   Write a note directly from terminal.
 ## readnote: 
@@ -15,7 +15,7 @@ A simple and easy way to keep notes via your linux terminal.
 ## delnote: 
   Delete a note from your notes folder.
 ## shellnotes(-v,-r,-h or --help): 
-  Information about shellnotes.
+  Information about shellnotes, updates, help, and more.
 
 # How to download
 
