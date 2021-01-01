@@ -3,7 +3,7 @@ A simple and easy way to keep notes via your linux terminal.
 
 # Basic Commands:
  ## newnote:
-  Write a new note using your text editor.
+  Write a new note using gedit.
 ## quicknote: 
   Write a note directly from terminal.
 ## readnote: 
@@ -15,7 +15,14 @@ A simple and easy way to keep notes via your linux terminal.
 ## delnote: 
   Delete a note from your notes folder.
 ## shellnotes(-v,-r,-h or --help): 
-  Information about shellnotes, updates, help, and more.
+  Information about shellnotes.
+## findnote:
+	Find a specific note in your Notes folder.
+##findmisplacednote:
+	Find a misplaced note in your system.
+## renamenote:
+	Rename a note.
+
 
 # How to download
 
@@ -38,12 +45,14 @@ A simple and easy way to keep notes via your linux terminal.
 ## step 4:
 
 -Open any text editor you want. Select "Open file" from its menu (Usually top left) and navigate to your home folder. Then, press `Ctrl + H` in order to show all the hidden files and folders
-in the home directory. Find a file called `.bashrc` and open it. (Different file for different shell)
+in the home directory. Find a file called `.bashrc` and open it.
 
 ## step 5:
 
--Go to the last line of the file you opened in step 4, and write: `source ~/.shellnotes.sh` in order to be able to use shellnotes every time you launch your terminal.
+-Go to the last line of the file you opened at step 4, and write: `source ~/.shellnotes.sh` in order to be able to use shellnotes every time you launch your terminal.
 
 # Warnings!
+
+*THIS SYSTEM IS MADE FOR BASH SHELL* (Change your shell if necessary.)
 
 *DON'T CHANGE THE SCRIPT* (Only in case you don't have the default editors who are gedit and nano. In that case, you can either change them, or install the default ones.)

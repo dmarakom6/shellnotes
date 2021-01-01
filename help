@@ -1,0 +1,47 @@
+										SHELLNOTES HELP PAGE
+										--------------------
+
+Commands:
+	-newnote: Write a new note using gedit.
+	-quicknote: Write a note directly from terminal.
+	-readnote: Read a note from your text-editor.
+	-quickread: Read a note directly from terminal.
+	-listnotes: View a full list of notes from your notes folder.
+	-delnote: Delete a note from your notes folder.
+	-shellnotes: Information about shellnotes.
+	-findnote: Find a specific note in your Notes folder.
+	-findmisplacednote: Find a misplaced note in your system.
+	-renamenote: Rename a note in your Notes folder.
+
+Usage:
+	-newnote: Take your notes in the text editor and name the file.
+	-quicknote: Write the name of the file and take your notes in the terminal, press Ctrl+X, then Y to save. Rename the file if you'd like, then hit Enter key to save.
+	-readnote: Type the name of the file and start reading your notes from your text-editor.
+	-quickread: Type the name of the file and start reading your notes from your terminal.
+	-delnote: Write the name of the note you want to delete, or add '-all' to delete all notes.
+	-findnote: Type the name of the note you want to locate.
+	-findmisplacednote: Type the name of the misplaced note and check the possible locations
+	-renamenote: Enter the name of the note, then the new note name and press enter.
+
+shellnotes Parameters:
+	-v: version
+	-r: github repository
+	-h or --help: help
+
+Tips:
+	-If a note that you want to read using readnote doesn't exist, you will be asked to create one using newnote.
+	-If a note that you want to write with quicknote already exists, you will be asked to read it using readnote.
+	-If you type a blank note name in readnote, you will automatically create a new note. You can do this if you want to take a note but you are using readnote.
+	-Deleting notes using delnote won't send the files to Trash. They will be deleted forever, so don't store other files in your Notes folder.
+	-Even if you don't have a Notes folder, shellnotes will make one for you.
+	-No matter in which directory you are, shellnotes will work from everywhere - and when your done taking notes, you will get back on your previous working directory!
+	-If you want to check if shellnotes is working proprely, try typing "shellnotes" in the terminal!
+	-If you want to delete all your notes inside your folder, type "delnote -all".
+
+Don't seem to find your note? Try these steps:
+	1. Type findnote in your terminal and try to locate the file in your Notes folder.
+	2. Try using findmisplacednote to check if your note is in the wrong location.
+	3. Try listing your notes with listnotes and check if your note is there, maybe you renamed it.
+	4. Try navigating into your Notes folder, then showing hidden files. Maybe the note is hidden.
+
+

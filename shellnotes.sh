@@ -4,7 +4,6 @@
 #remember to write this line into your terminal
 #chmod +x shellnotes.sh
 
-
 #Make a Notes folder for the user
 cd ~
 if [[ -d "Notes" ]]; then
@@ -12,8 +11,6 @@ if [[ -d "Notes" ]]; then
 else
 	mkdir Notes;
 fi
-
-
 
 #opening a note (It will create a new note if $notename is blank)
 function readnote() { 
@@ -52,12 +49,9 @@ function quickread() {
 	else
 		clear;
 		echo "No such note.";
-		cd ~
-		
+		cd ~	
 fi
-
 cd $dir
-
 }
 
 #A quick solution to users who want keeping notes instantly via terminal.
@@ -105,21 +99,31 @@ echo "-----------------------------------";
 
 #Delete notes from terminal
 function delnote() {
-	dir="$(pwd)";
-	cd ~/Notes
-	me="$(whoami)";
-	read -p "Enter the name of the note you want to delete: " delete
-	if [ -e $delete ]; then
-		rm $delete
+	if [[ $1 == "-all" ]]; then
+		dir="$(pwd)";
+		cd ~/Notes
+		me="$(whoami)";
+		rm *
 		clear;
 		cd $dir;
-		echo "Note deleted from Home/$me/Notes"; 
-		echo "-----------------------------------";
+		echo "All files deleted from Home/$me/Notes"; 
+		echo "-------------------------------------";
 	else
-		echo "No such file."
-		cd ~;
+		dir="$(pwd)";
+		cd ~/Notes
+		me="$(whoami)";
+		read -p "Enter the name of the note you want to delete: " delete
+		if [ -e $delete ]; then
+			rm $delete
+			clear;
+			cd $dir;
+			echo "Note deleted from Home/$me/Notes"; 
+			echo "-----------------------------------";
+		else
+			echo "No such file."
+			cd ~;
 	fi
-
+fi
 }
 
 #list your notes via terminal. 
@@ -134,9 +138,8 @@ function listnotes() {
 #Help for new users
 function shellnotes() {
  	if [[ $1 == "-v" ]]; then
-		echo "Shellnotes version: 1.2"
-	elif [[ $2 == "--version" ]]; then
-		echo "Shellnotes version: 1.2"
+		echo "Shellnotes version: 2.0"
+
 	elif [[ $1 == "-r" ]]; then
 		echo "Github repository: https://github.com/dmarakom6/shellnotes/blob/master/"
 
@@ -160,5 +163,53 @@ else
 	echo "That note doesn't exist."
 fi
 cd $dir
+}
+
+#Help the  user find a specific Note in his note folder. If it's not there, he must have misplaced it.
+function findnote() {
+	dir="$(pwd)"
+	me="$(whoami)"
+	read -p "Enter note name: " notename;
+	cd ~/Notes
+	if [ -e $notename ]; then
+		echo "File was found in your Notes folder."
+	else
+		echo "File was not found in your Notes folder, must be misplaced or renamed."
+		echo "Try 'findmisplacednote' to find the original file."
+
+	fi
+	cd $dir		
+
+}
+
+#Find a misplaced note, not in the Notes folder.
+function findmisplacednote() {
+	read -p "Enter note name: " notename;
+	echo "Possible locations: ";
+	find ~/ -iname $notename -print 2>/dev/null;
+}
+
+#Rename a note.
+function renamenote() {
+	dir="$(pwd)"
+	me="$(whoami)"
+	cd ~/Notes
+	read -p "Enter note name: " notename
+	if [ -e $notename ]; then
+		read -p "Enter new name: " newnotename
+		if [ -e $newnotename ]; then
+			echo "There is another note named '$newnotename' in your Notes folder."
+		else
+			mv $notename $newnotename
+			clear;
+			echo "Note renamed from $notename to $newnotename in Home/$me/Notes"
+			echo "-------------------------------------------------------------"
+		fi
+
+	else
+		echo "This note does not exist."
+	fi
+	
+	cd $dir;
 }
 
