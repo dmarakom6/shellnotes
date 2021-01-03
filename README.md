@@ -17,11 +17,11 @@ A simple and easy way to keep notes via your linux terminal.
 ## shellnotes(-v,-r,-h or --help): 
   Information about shellnotes.
 ## findnote:
-	Find a specific note in your Notes folder.
-##findmisplacednote:
-	Find a misplaced note in your system.
+Find a specific note in your Notes folder.
+## findmisplacednote:
+Find a misplaced note in your system.
 ## renamenote:
-	Rename a note.
+Rename a note.
 
 
 # How to download
