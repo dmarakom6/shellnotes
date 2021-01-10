@@ -1,8 +1,4 @@
-#!/bin/bash
-#Change the first line if you don't use bash, in order for the code to work properly.
-#Warning! If you don't have gedit(text editor) or nano installed, you may have to change the default text editor (lines 10, 25, 40).
-#remember to write this line into your terminal
-#chmod +x shellnotes.sh
+#!usr//bin/env bash
 
 #Make a Notes folder for the user
 cd ~
@@ -138,7 +134,7 @@ function listnotes() {
 #Help for new users
 function shellnotes() {
  	if [[ $1 == "-v" ]]; then
-		echo "Shellnotes version: 2.0"
+		echo "Shellnotes version: 2.3"
 
 	elif [[ $1 == "-r" ]]; then
 		echo "Github repository: https://github.com/dmarakom6/shellnotes/blob/master/"
@@ -199,17 +195,14 @@ function renamenote() {
 		read -p "Enter new name: " newnotename
 		if [ -e $newnotename ]; then
 			echo "There is another note named '$newnotename' in your Notes folder."
-		else
-			mv $notename $newnotename
-			clear;
-			echo "Note renamed from $notename to $newnotename in Home/$me/Notes"
-			echo "-------------------------------------------------------------"
 		fi
+		mv $notename $newnotename
+		clear;
+		echo "Note renamed from $notename to $newnotename in Home/$me/Notes"
+		echo "-------------------------------------------------------------"
 
 	else
 		echo "This note does not exist."
 	fi
-	
 	cd $dir;
 }
-
