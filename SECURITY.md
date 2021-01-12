@@ -6,6 +6,7 @@
 
 | Version | Supported          |
 | ------- | ------------------ |
+| 2.3.x   |        yes         |
 | 2.0.x   |        yes		   |
 | 1.2.x   |		   yes		   |
 | 1.1.x   |        yes         |
