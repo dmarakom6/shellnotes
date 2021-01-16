@@ -1,50 +1,58 @@
 #!usr//bin/env bash
+#Change the first line if you don't use bash, in order for the code to work properly.
+#Warning! If you don't have gedit(text editor) or nano installed, you may have to change the default text editor (lines 10, 25, 40).
+
+#Change this path if you use another editor.
+NOTES_EDITOR="$(which gedit)" #Change 'gedit' with your editor.
+QUICK_NOTES_EDITOR="$(which nano)" #Or this one. (Suggested editors can be found in the Help Page)
+#Change this path if you use another folder to save your notes.
+DEFAULT_PATH=~/Notes #Change ~/Notes with your folder.
+
 
 #Make a Notes folder for the user
 cd ~
 if [[ -d "Notes" ]]; then
-	exists=True;
+	exists=True
 else
-	mkdir Notes;
+	mkdir Notes
 fi
 
 #opening a note (It will create a new note if $notename is blank)
 function readnote() { 
-dir="$(pwd)";
-me="$(whoami)";
-read -p "Enter note name: " opennote; 
-cd ~/Notes;
-if [ -e $opennote ]; then
-	gedit $opennote;
+dir="$(pwd)"
+me="$(whoami)"
+echo -n "Enter note name: " && read notename
+cd $DEFAULT_PATH
+if [ -e $notename ]; then
+	$NOTES_EDITOR $notename
 	
 else
-	clear;
-	echo "No such note.";
-	cd ~
-	read -p "Do you want to create one?[Y/N]: " create;
+	clear
+	echo "No such note."
+	echo -n "Do you want to create one?[Y/N]: " && read create;
 	
 fi
 	if [ $create == "y" ] || [ $create == "Y" ] || [ $create == "yes" ] || [ $create == "YES" ] || [ $create == "Yes" ]; then
 		newnote
 	fi
 	
-clear;
+clear
 cd $dir
 
 }
 
 #Read notes instantly via terminal
 function quickread() {
-	dir="$(pwd)";
-	read -p "Enter note name: " quicknotename;
-	cd ~/Notes
+	dir="$(pwd)"
+	echo -n "Enter note name: " && read quicknotename
+	cd $DEFAULT_PATH
 	if [ -e $quicknotename ]; then
-		clear;
+		clear
 		cat $quicknotename
 	
 	else
-		clear;
-		echo "No such note.";
+		clear
+		echo "No such note."
 		cd ~	
 fi
 cd $dir
@@ -52,43 +60,47 @@ cd $dir
 
 #A quick solution to users who want keeping notes instantly via terminal.
 function quicknote() {
-dir="$(pwd)"; 
-me="$(whoami)";
-cd ~/Notes;
-read -p "Enter note name: " notename;
+dir="$(pwd)"
+me="$(whoami)"
+cd $DEFAULT_PATH
+echo -n "Enter note name: " && read notename
 if [ -e $notename ]; then
-	clear;
-	echo "This note already exists.";
+	clear
+	echo "This note already exists."
 	cd ..
-	read -p "Do you want to read it?[Y/N]: " readquicknote;
+	echo -n "Do you want to read it?[Y/N]: " && read readquicknote
 	
 else
-	touch $notename; 
-	nano $notename; 
-	cd $dir;
-	clear;
-	echo "Note created in Home/$me/Notes"; 
-	echo "-----------------------------------"; 
+	touch $notename
+	$QUICK_NOTES_EDITOR $notename
+	cd $dir
+	clear
+	echo "Note created in Home/$me/Notes"
+	echo "-----------------------------------"
 		
 fi
 
-if [[ $readquicknote == "y" ]] || [[ $readquicknote == "Y" ]] || [[ $readquicknote == "yes" ]] || [[ $readquicknote == "YES" ]] || [[ $readquicknote == "Yes" ]]; then
-	clear;
-	cd ~/Notes
-	cat $notename;
+case $readquicknote in y|Y|YES|Yes|yes )
+	clear
+	cd $DEFAULT_PATH
+	if [[ -s $notename ]]; then
+		echo "This note is blank."
+	else
+		cat $notename
+	fi
+esac
 	cd $dir
-fi
 }
 
 
 #writes notes using ubuntu's text-editor (gedit).
 function newnote() { 
-dir="$(pwd)";
-cd ~/Notes; 
-me="$(whoami)";
-gedit; 
-clear; 
-cd $dir; 
+dir="$(pwd)"; 
+me="$(whoami)"
+cd $DEFAULT_PATH
+$NOTES_EDITOR 
+clear
+cd $dir
 echo "Note created in Home/$me/Notes"; 
 echo "-----------------------------------"; 
 }
@@ -96,28 +108,28 @@ echo "-----------------------------------";
 #Delete notes from terminal
 function delnote() {
 	if [[ $1 == "-all" ]]; then
-		dir="$(pwd)";
-		cd ~/Notes
-		me="$(whoami)";
+		dir="$(pwd)"
+		cd $DEFAULT_PATH
+		me="$(whoami)"
 		rm *
-		clear;
-		cd $dir;
+		clear
+		cd $dir
 		echo "All files deleted from Home/$me/Notes"; 
 		echo "-------------------------------------";
 	else
-		dir="$(pwd)";
-		cd ~/Notes
-		me="$(whoami)";
-		read -p "Enter the name of the note you want to delete: " delete
+		dir="$(pwd)"
+		cd $DEFAULT_PATH
+		me="$(whoami)"
+		echo -n "Enter the name of the note you want to delete: " && read delete
 		if [ -e $delete ]; then
 			rm $delete
-			clear;
-			cd $dir;
+			clear
+			cd $dir
 			echo "Note deleted from Home/$me/Notes"; 
 			echo "-----------------------------------";
 		else
 			echo "No such file."
-			cd ~;
+			cd $dir
 	fi
 fi
 }
@@ -127,33 +139,43 @@ function listnotes() {
 	if [ -z "$(ls -A ~/Notes)" ]; then
 		echo "Your Notes folder is empty."
 	else
-		ls ~/Notes -t
+		ls $DEFAULT_PATH -t
 	fi
 }
 
 #Help for new users
 function shellnotes() {
+	dir="$(pwd)"
  	if [[ $1 == "-v" ]]; then
-		echo "Shellnotes version: 2.3"
+		echo "Shellnotes version: 2.5"
 
 	elif [[ $1 == "-r" ]]; then
 		echo "Github repository: https://github.com/dmarakom6/shellnotes/blob/master/"
 
 	elif [[ $1 == "-h" ]]; then
-		less ~/.help;
-		cd $dir;
+		less ~/.help
+		cd $dir
 	elif [[ $1 == "--help" ]]; then
-		less ~/.help;
-		cd $dir;
+		less ~/.help
+		cd $dir
+	else
+		cd ~
+		if [ -e .shellnotes.sh ]; then
+			echo "Shellnotes is successfully installed. For help, type shellnotes --help."
+			cd $dir
+		else
+			echo "Shellnotes is not installed properly. Please repeat installation steps or try shellnotes --help."
+			cd $dir
+		fi
 	fi
 }
 #Take info about a note
 function noteinfo() {
 	dir="$(pwd)"
-	cd ~/Notes
-	read -p "Enter note name: " notename;
+	cd $DEFAULT_PATH
+	echo -n "Enter note name: " && read notename
 	if [ -e $notename ]; then
-		wc $notename;
+		wc $notename
 		echo "(lines/words/chars/name)"
 else
 	echo "That note doesn't exist."
@@ -165,8 +187,8 @@ cd $dir
 function findnote() {
 	dir="$(pwd)"
 	me="$(whoami)"
-	read -p "Enter note name: " notename;
-	cd ~/Notes
+	echo -n "Enter note name: " && read notename
+	cd $DEFAULT_PATH
 	if [ -e $notename ]; then
 		echo "File was found in your Notes folder."
 	else
@@ -180,29 +202,32 @@ function findnote() {
 
 #Find a misplaced note, not in the Notes folder.
 function findmisplacednote() {
-	read -p "Enter note name: " notename;
-	echo "Possible locations: ";
-	find ~/ -iname $notename -print 2>/dev/null;
+	echo -n "Enter note name: " && read notename
+	echo "Possible locations: "
+	find ~/ -iname $notename -print 2>/dev/null
 }
 
 #Rename a note.
 function renamenote() {
 	dir="$(pwd)"
 	me="$(whoami)"
-	cd ~/Notes
-	read -p "Enter note name: " notename
+	cd $DEFAULT_PATH
+	echo -n "Enter note name: " && read notename
 	if [ -e $notename ]; then
-		read -p "Enter new name: " newnotename
+		echo -n "Enter new name: " && read newnotename
 		if [ -e $newnotename ]; then
 			echo "There is another note named '$newnotename' in your Notes folder."
+		else
+			mv $notename $newnotename
+			clear;
+			echo "Note renamed from $notename to $newnotename in Home/$me/Notes"
+			echo "-------------------------------------------------------------"
 		fi
-		mv $notename $newnotename
-		clear;
-		echo "Note renamed from $notename to $newnotename in Home/$me/Notes"
-		echo "-------------------------------------------------------------"
 
 	else
 		echo "This note does not exist."
 	fi
-	cd $dir;
+	
+	cd $dir
 }
+
