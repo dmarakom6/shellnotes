@@ -32,9 +32,9 @@ else
 	echo -n "Do you want to create one?[Y/N]: " && read create;
 	
 fi
-	if [ $create == "y" ] || [ $create == "Y" ] || [ $create == "yes" ] || [ $create == "YES" ] || [ $create == "Yes" ]; then
+	case $create in Y|Yes|YES|Yes|y )
 		newnote
-	fi
+	esac
 	
 clear
 cd $dir
@@ -53,7 +53,7 @@ function quickread() {
 	else
 		clear
 		echo "No such note."
-		cd ~	
+		cd 	
 fi
 cd $dir
 }
