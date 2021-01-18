@@ -47,12 +47,14 @@ Don't seem to find your note? Try these steps:
 
 Changing default editors:
 	Changing editors is a feature enabled in shellnotes <1.0. In case the user wants to change the 
-	default editors, he must change the NOTES_EDITOR and QUICK_NOTES_EDITOR from the code. These
-	Are two variables that the rest of the code uses to check the default editor for commands like newnote and quicknote. This means that if you change the name of the program the variables are going to search for, the code will use your prefered editor. In case the name is incorrect, problems may occur.
+	default editors, he must change the NOTES_EDITOR and QUICK_NOTES_EDITOR values from the code. These are two variables that the rest of the code uses to check the default editor for commands like newnote and quicknote. This means that if you change the name of the program the variables are going to search for, the code will use your prefered editor. In case the name is incorrect, problems may occur.
 
 	Default editors:
-	for newnote: gedit (ubuntu default)
-	for quicknote: nano (in-terminal experience)
+		for newnote: gedit (ubuntu default)
+		for quicknote: nano (in-terminal experience)
 	Suggested editors other than default:
-	for newnote: Sublime text, Atom
-	for quicknote: Vim
+		for newnote: Sublime text, Atom
+		for quicknote: Vim
+
+Changing default Notes Folder:
+	Changing default folder is a feature enabled in shellnotes <2.5. In case the user wants to change the default folder to store/write/list/rename/read/delete his notes, he must change the DEFAULT_PATH value from the code (found in line 9). This is a variable that the rest of the code uses to check the default folder for all the commands to make change in the right directory. This means that if you change the name of the path the variable is going to search for, the code will use your prefered folder. In case the path is incorrect, problems may occur.
