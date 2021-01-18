@@ -53,7 +53,7 @@ function quickread() {
 	else
 		clear
 		echo "No such note."
-		cd $dir	
+		cd ~	
 fi
 cd $dir
 }
@@ -72,7 +72,7 @@ if [ -e $notename ]; then
 	
 else
 	touch $notename
-	$QUICK_NOTES_EDITOR ./$notename
+	$QUICK_NOTES_EDITOR $notename
 	cd $dir
 	clear
 	echo "Note created in Home/$me/Notes"
@@ -219,7 +219,7 @@ function renamenote() {
 			echo "There is another note named '$newnotename' in your Notes folder."
 		else
 			mv $notename $newnotename
-			clear
+			clear;
 			echo "Note renamed from $notename to $newnotename in Home/$me/Notes"
 			echo "-------------------------------------------------------------"
 		fi
