@@ -53,7 +53,7 @@ function quickread() {
 	else
 		clear
 		echo "No such note."
-		cd 	
+		cd $dir
 fi
 cd $dir
 }
