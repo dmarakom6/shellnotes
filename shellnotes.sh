@@ -220,8 +220,8 @@ function renamenote() {
 		else
 			mv $notename $newnotename
 			clear;
-			echo "Note renamed from $notename to $newnotename in Home/$me/Notes"
-			echo "-------------------------------------------------------------"
+			echo "Note renamed to $newnotename in Home/$me/Notes"
+			echo "----------------------------------------------"
 		fi
 
 	else
