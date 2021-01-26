@@ -32,9 +32,9 @@ else
 	echo -n "Do you want to create one?[Y/N]: " && read create;
 	
 fi
-	case $create in Y|Yes|YES|Yes|y )
+	if [ $create == "y" ] || [ $create == "Y" ] || [ $create == "yes" ] || [ $create == "YES" ] || [ $create == "Yes" ]; then
 		newnote
-	esac
+	fi
 	
 clear
 cd $dir
@@ -53,7 +53,7 @@ function quickread() {
 	else
 		clear
 		echo "No such note."
-		cd $dir
+		cd ~	
 fi
 cd $dir
 }
@@ -220,8 +220,8 @@ function renamenote() {
 		else
 			mv $notename $newnotename
 			clear;
-			echo "Note renamed to $newnotename in Home/$me/Notes"
-			echo "----------------------------------------------"
+			echo "Note renamed from $notename to $newnotename in Home/$me/Notes"
+			echo "-------------------------------------------------------------"
 		fi
 
 	else
