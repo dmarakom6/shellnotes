@@ -15,13 +15,13 @@ A simple and easy way to keep notes via your linux terminal.
 ## delnote: 
   Delete a note from your notes folder.
 ## shellnotes(-v,-r,-h or --help): 
-  Information about shellnotes.
+  Information about shellnotes.  
 ## findnote:
-	Find a specific note in your Notes folder.
-##findmisplacednote:
-	Find a misplaced note in your system.
+   Find a specific note in your Notes folder.
+## findmisplacednote:
+   Find a misplaced note in your system.
 ## renamenote:
-	Rename a note.
+   Rename a note.
 
 
 # How to download
@@ -44,7 +44,7 @@ A simple and easy way to keep notes via your linux terminal.
 
 ## step 4:
 
--Open any text editor you want. Select "Open file" from its menu (Usually top left) and navigate to your home folder. Then, press `Ctrl + H` in order to show all the hidden files and folders
+-Open any text editor you want. Select "Open file" from its menu (Usually top left) and navigate to home. Then, press `Ctrl + H` in order to show all the hidden files and folders
 in the home directory. Find a file called `.bashrc` and open it.
 
 ## step 5:
