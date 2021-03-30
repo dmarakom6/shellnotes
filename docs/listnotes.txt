@@ -1,0 +1,10 @@
+listnotes
+=========
+
+The listnotes command was introduced in shellnotes 1.2x and uses the command ls (man ls) to locate your notes from whenever you are.
+Other than 'listnotes', you can use parameters as well. For example:
+-listnotes -d or --dynamic for a dynamic view of all your notes and their content
+-listnotes -n or --number to see how many notes you have.
+
+If listnotes doesn't show your note, try 'findmisplacednote' to track it.
+If listnotes doesn't recognize your notes folder, try running the shellnotes configuration tool (shellnotes -sd)

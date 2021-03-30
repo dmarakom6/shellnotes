@@ -1,0 +1,14 @@
+About Updating
+==============
+
+How to update:
+	For non-bash shell users, there is a file called update.sh in ~/.shellnotes/. The user can run this script by typing sh ~/.shellnotes/update.sh
+	For bash users, there is a unique update file called bash_update.sh. Run it with bash ~/.shellnotes/bash_update.sh.
+	Or just type "shellnotes --update" in your terminal and shellnotes will find your shell and
+	redirect you to the right update script.
+
+About updating:
+	-The update file searches for a new release in the official shellnotes repository. If there is a newer one, it updates shellnotes automatically.
+	-Try running "shellnotes -u" every 10-13 days, as it is the ideal time for a new version to come out, based on github's stats.
+
+If you were looking for "how to toggle auto-update feature?", take a look in /docs/auto-update.txt

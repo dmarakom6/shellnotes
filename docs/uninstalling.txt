@@ -1,0 +1,14 @@
+About Uninstalling
+==================
+
+How to uninstall (versions 2.5 and lower)
+	-Deleting shellnotes >2.5 is done manually (just like installing). Delete the hidden(.) files from your Home folder, then delete or comment-out the line where the source to the file is used from your shell configuration file.
+
+How to uninstall (version 3.0 and higher)
+	-Deleting shellnotes <3.0 is done automatically (just like installing). Run the file uninstall.sh by typing "sh ~/.shellnotes/uninstall.sh" and select the first option. Then restart your terminal.
+
+About uninstalling:
+	-Your notes will stay in your notes folder even if you choose to delete shellnotes.
+	-If you get an error every time you launch the terminal, more than one source for the script(s) have been sent to your shell configuration file. To stop the error messages, open the configuration file and delete 'source ~/.shellnotes/.shellnotes.sh', usually found in the last line of the file.
+	For other users:
+		Uninstallation must be done manually by the user.

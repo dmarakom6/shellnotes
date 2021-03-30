@@ -1,0 +1,115 @@
+										SHELLNOTES HELP PAGE
+										--------------------
+
+Basic Commands: (all commands in commands.txt)
+	-newnote: Write a new note using your text editor.
+	-quicknote: Write a note directly from terminal.
+	-readnote: Read a note from your text-editor.
+	-quickread: Read a note directly from terminal.
+	-listnotes: View a full list of notes from your notes folder.
+	-delnote: Delete a note from your notes folder.
+	-shellnotes: Information about shellnotes.
+	-findnote: Find a specific note in your Notes folder.
+	-findmisplacednote: Find a misplaced note in your system.
+	-renamenote: Rename a note in your Notes folder.
+
+	do "man command" to find more information about a command.
+
+Usage:
+	-newnote: Take your notes in the text editor.
+	-quicknote {filename}: Write the name of the file and take your notes in the terminal, press Ctrl+X, then Y to save. Rename the file if you'd like, then hit Enter key to save.
+	-readnote {filename}: Type the name of the file and start reading your notes from your text-editor.
+	-quickread {filename}: Type the name of the file and start reading your notes from your terminal.
+	-delnote {filename}: Write the name of the note you want to delete, or add '-all' to delete all notes.
+	-findnote {filename}: Type the name of the note you want to locate.
+	-findmisplacednote {filename}: Type the name of the misplaced note and check the possible locations
+	-renamenote {filename} {new_name}: Enter the name of the note, then the new note name and press enter.
+	-shellnotes {parameter}: Get info about the program.
+
+shellnotes() command Parameters:
+	-v: version
+	-r: github repository
+	-h or --help: help
+	-u or --update: update
+	-sd or --set-defaults: set defaults
+	-l or --logs: check logs
+	-au or --auto-update: toggle auto-update feature (<3.0)
+	-no parameter: Check if shellnotes is installed correctly
+
+Tips:
+	-Even if you don't use parameters, the program will ask for the file's name with an input!
+	-If a note that you want to read using readnote doesn't exist, you will be asked to create one using newnote.
+	-If a note that you want to write with quicknote already exists, you will be asked to read it using readnote.
+	-If you type a blank note name in readnote, you will automatically create a new note. You can do this if you want to take a note but you are using readnote.
+	-Deleting notes using delnote won't send the files to Trash. They will be deleted forever, so don't store other files in your Notes folder.
+	-Even if you don't have a Notes folder, shellnotes will make one for you.
+	-No matter in which directory you are, shellnotes will work from everywhere - and when your done taking notes, you will get back on your previous working directory!
+	-If you want to check if shellnotes is working proprely, try typing "shellnotes" in the terminal!
+	-If you want to delete all your notes inside your folder, type "delnote -all".
+	-If quickread shows nothing, your Note must be blank.
+
+Don't seem to find your note? Try these steps:
+	1. Type findnote in your terminal and try to locate the file in your Notes folder.
+	2. Try using findmisplacednote to check if your note is in the wrong location.
+	3. Try listing your notes with listnotes and checking if your note is there, maybe you renamed it.
+	4. Try navigating into your Notes folder, then showing hidden files. Maybe the note is hidden.
+
+Changing default editors:
+	Changing editors is a feature enabled in shellnotes <1.0. In case the user wants to change the 
+	default editors, he must change the NOTES_EDITOR and QUICK_NOTES_EDITOR values from the code. 
+	These are two variables that the rest of the code uses to check the default editor for commands 
+	like newnote and quicknote. This means that if you change the name of the program the variables 
+	are going to search for, the code will use your prefered editor. In case the name is incorrect, 
+	problems may occur.
+
+	Default editors:
+		for newnote: gedit (ubuntu default)
+		for quicknote: nano (in-terminal experience)
+	Suggested editors other than default:
+		for newnote: Sublime text, Atom
+		for quicknote: Vim
+
+Changing default Notes Folder:
+	Changing default folder is a feature enabled in shellnotes <2.5. In case the user wants to change the default folder to store/write/list/rename/read/delete his notes, he must change the DEFAULT_PATH value from the code (found in line 9). This is a variable that the rest of the code uses to check the default folder for all the commands to make change in the right directory. This means that if you change the name of the path the variable is going to search for, the code will use your prefered folder. In case the path is incorrect, problems may occur.
+
+	Default path:
+		Home/Notes/
+	Suggested path other than default:
+		Home/Documents/
+
+Changing both default note editors and Note folder with the sd system:
+	-For <3.0 users, the command "shellnotes -sd" or "shellnotes --set-defaults" will redirect the user to set_defaults.sh, where he will be able to configure the default editors and folder safer, faster and more dynamically.
+
+
+
+Installation failed? Try these steps (<3.0):
+	-Make sure all the files you downloaded from the github repository are stored in the same folder.
+	-Make sure you have a supported shell for  the installation (see lines 85-90)
+	-Check if shellnotes is disabled (see lines 132-136)
+	-Try uninstalling shellnotes in case there are still files in your system
+	-Check if shellnotes is already installed (program will inform you most of the time)
+	-Repeat installation if the above doesn't work
+
+
+
+About using shellnotes in more than one shell
+	-A useful thing to do if you use more than two shells (rare) is to install shellnotes in both shell. To do that, simply set the first shell as default and start installing the program. Then, change the default shell to the second one and repeat installation. After the second installation, shellnotes will work on both shells.
+
+
+General info about the shellnotes system
+	-All the files needed for the script to work are stored in ~/.shellnotes/. This folder contains the main script, this page (help page), as well as licenses and scripts needed for updating. This folder is created when you run the file install.sh from the folder where you downloaded it. When uninstalling, this folder is removed. When disabling, the folder is not removed. The reason the user can't spot this folder is because it is a hidden one (contains a dot).
+
+Files to run:
+	-Instead of redirecting to other scripts from commands, the user can always run a script manually. However, this is not suggested. Most utility files are inside /util/. The only files that the user can run manually though, are the ones on the main branch of the tree (.shellnotes.sh, install.sh, set_defaults.sh, uninstall.sh, update.sh, bash_update.sh). These are the basic utilities the user would want to run manually. Thus, all the other tools can be used by their commands (quicknote, shellnotes, etc.). See /docs/run.txt for more information.
+
+How to disable auto-update:
+	This can be done by running "shellnotes -au". See /docs/auto-update.txt for more help.
+
+Some warnings:
+
+WARNING: Installing/Uninstalling/Disabling/Updating is NOT possible unless ALL the source code files are IN THE SAME DIRECTORY.
+WARNING: install.sh must be run from the folder where it was downloaded WITH the other files from the repo. Otherwise, installation will fail. uninstall.sh must be run from ~/.shellnotes/ because shellnotes is already installed. If you choose to run update.sh manually, it must be done from ~/.shellnotes as well. Type 'sh ~/.shellnotes/update.sh'. Otherwise, run 'shellnotes -u' or 'shellnotes --update' to run the script instantly.
+WARNING: Automatic Installation, uninstallation and update is a feature for shellnotes <2.5. Older versions require manual installation, uninsallation and update. Disabling is also a <2.5 feature.
+WARNING: Changing the default editor or note folder is only for advanced users. It can be either manually (versions >2.5), by changing the variables NOTES_EDITOR, QUICK_NOTES_EDITOR and DEFAULT_PATH with an accurate path for your prefered note editors, as well as the default path for saving your notes, or in a more automatic way (<2.5), by adding the -s or --set parameter to the shellnotes command, and entering the new prefered options. If the paths are incorrect, shellnotes will crash until they are changed.
+WARNING: The default shell for installing/uninstalling/updated is bash. However, shellnotes will find your shell if it's different and continue installing according to it. If your shell is not supported though, the installation/uninstallation/update will FAIL.
+

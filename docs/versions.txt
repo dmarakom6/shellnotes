@@ -1,0 +1,4 @@
+versions
+========
+
+To check shellnote's current version, type "shellnotes -v" in your terminal.

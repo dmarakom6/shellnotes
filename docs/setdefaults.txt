@@ -1,0 +1,58 @@
+how to set defaults
+===================
+
+In shellnotes v.3.0 and later, there is a more dynamic and safe way of setting your default notes editors and folder.
+
+
+Changing both default note editors and Note folder with the sd system:
+	-For <3.0 users, the command "shellnotes -sd" or "shellnotes --set-defaults" will redirect the user to set_defaults.sh, where he will be able to configure the default editors and folder safer, faster and more dynamically.
+
+Step by step instructions to change defaults with sd:
+	1. After installing shellnotes, run "shellnotes --set-defaults" in your terminal.
+	2. You will be redirected to ~/.shellnotes/set_defaults.sh, a runnable script. Select an option:
+		1. Change default regular notes editor:
+		Regular notes are taken with newnote() and read with readnote().
+		Select option 1 and enter the name of the program. It should be a valid name and not a path.
+		2. Change default quick notes editor:
+		Regular notes are taken with quicknote() and read with quickread().
+		Select option 2 and enter the name of the program. It should be a valid name and not a path.
+		3. Change default notes folder:
+		All shellnotes' commands use the $DEFAULT_PATH variable to save, read, delete, rename notes.
+		This means that the Notes folder to store your notes must be a valid path.
+		The default notes folder as you may know is ~/Notes and is created at first terminal launch with shellnotes installed.
+		Select option 3 and enter the full path of the directory. It should be a valid absolute path and not a relative one.
+		4. View defaults:
+		sd gives the user the option to also view current defaults.
+		Select option 4 and take a look at your defaults.
+	3. When you're done, restart your terminal and the defaults will have been changed.
+	WARNING: If a name or a path is not valid in step 2, you will be reminded by the script and the 
+	setting will fail.
+
+
+For 3.0 and earlier users: (text from help page)
+
+
+Changing default editors manually:
+	Changing editors manually is a feature enabled in shellnotes <1.0. In case the user wants to change the 
+	default editors, he must change the NOTES_EDITOR and QUICK_NOTES_EDITOR values from the file defaults.sh in ~/.shellnotes/def/ . 
+	These are two variables that the rest of the code uses to check the default editor for commands 
+	like newnote and quicknote. This means that if you change the name of the program the variables 
+	are going to search for, the code will use your prefered editor. In case the name is incorrect, 
+	problems may occur.
+
+	Default editors:
+		for newnote: gedit (ubuntu default)
+		for quicknote: nano (in-terminal experience)
+	Suggested editors other than default:
+		for newnote: Sublime text, Atom
+		for quicknote: Vim
+
+Changing default Notes Folder manually:
+	Changing default folder manually is a feature enabled in shellnotes <2.5. In case the user wants to change the default folder to store/write/list/rename/read/delete his notes, he must change the DEFAULT_PATH value from defaults.sh in ~/.shellnotes/def/. This is a variable that the rest of the code uses to check the default folder for all the commands to make change in the right directory. This means that if you change the name of the path the variable is going to search for, the code will use your prefered folder. In case the path is incorrect, problems may occur.
+
+	Default path:
+		Home/Notes/
+	Suggested path other than default:
+		Home/Documents/
+
+Tip: Your notes will be safely transfered to the new note folder!

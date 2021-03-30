@@ -1,0 +1,113 @@
+How to run the files
+====================
+
+The only files the user must run are located in the main branch of the source code tree: .shellnotes/
+
+The tree looks like this:
+	
+	|-- bash_update.sh
+|-- def
+|   `-- defaults.sh
+|-- docs
+|   |-- LICENSE
+|   |-- README.md
+|   |-- SECURITY.md
+|   |-- help
+|   `-- shellnotes.1
+|-- install.sh
+|-- logs
+|   |-- ifailed.txt
+|   |-- sdfailed.txt
+|   `-- ufailed.txt
+|-- set_defaults.sh
+|-- uninstall.sh
+|-- update.sh
+|-- util
+|   |-- ChMkDir.sh
+|   |-- delnote.sh
+|   |-- failed
+|   |   |-- ifailed.cpp
+|   |   |-- sdfailed.cpp
+|   |   `-- ufailed.cpp
+|   |-- findmisplacednote.sh
+|   |-- findnote.sh
+|   |-- getv.sh
+|   |-- h
+|   |   `-- h.sh
+|   |-- listnotes.sh
+|   |-- newnote.sh
+|   |-- noteinfo.sh
+|   |-- quicknote.sh
+|   |-- quickread.sh
+|   |-- r
+|   |   `-- r.sh
+|   |-- readnote.sh
+|   |-- renamenote.sh
+|   |-- sd
+|   |   |-- sd-input1.txt
+|   |   |-- sd-input2.txt
+|   |   |-- sd-input3.txt
+|   |   `-- sd.sh
+|   |-- shellnotes.sh
+|   |-- u
+|   |   `-- u.sh
+|   `-- v
+|       `-- v.sh
+`-- ver
+
+Or, in a ls -al representation:
+
+	-rw-r--r-- 1 user group  783 month   day time .shellnotes.sh
+	-rw-r--r-- 1 user group 4,6K month   day time bash_update.sh
+	drwxr-xr-x 2 user group 4,0K month   day time def
+	drwxr-xr-x 2 user group 4,0K month   day time docs
+	-rw-r--r-- 1 user group 3,5K month   day time install.sh
+	drwxr-xr-x 2 user group 4,0K month   day time logs
+	-rw-r--r-- 1 user group 2,6K month   day time set_defaults.sh
+	-rw-r--r-- 1 user group 3,2K month   day time uninstall.sh
+	-rw-r--r-- 1 user group 1,7K month   day time update.sh
+	drwxr-xr-x 8 user group 4,0K month   day time util
+	drwxr-xr-x 2 user group 4,0K month   day time ver
+
+And in a dir style:
+
+	bash_update.sh  docs        logs             uninstall.sh  util
+	def             install.sh  set_defaults.sh  update.sh     ver
+
+
+Files inside .shellnotes are the ones you can run.
+The files inside the subfolders (util, def, logs, ver) must not be run.
+After the installation, the folder .shellnotes is created in the home (~) folder.
+The .shellnotes folder contains all the source code needed for the program to work properly.
+
+So, the files-to-run are:
+	-bash_update.sh
+	-update.sh
+	-install.sh
+	-uninstall.sh
+	-set_defaults.sh
+	-.shellnotes.sh
+
+And can be run by:
+	-bash ~/.shellnotes/bash_update.sh
+	-sh ~/.shellnotes/update.sh
+	-sh ~/.shellnotes/install.sh
+	-sh ~/.shellnotes/uninstall.sh
+	-sh ~/.shellnotes/set_defaults.sh
+	-sh ~/.shellnotes/.shellnotes.sh
+
+Should be run when:
+	-Updating shellnotes from bash shell
+	-Updating shellnotes from other shells
+	-(re)Installing shellnotes
+	-Uninstalling, disabling or enabling shellnotes
+	-Setting default note editors and folder for writing and storing notes
+	-Running the main script, which is always run after the installation
+
+A more dynamic way of running the above files-to-run is by running the redirect commands from the main script (.shellnotes.sh), by:
+	-$ shellnotes -u (and the default shell is bash)
+	-$ shellnotes -u
+	-no command line argument for install.sh-
+	-no command line argument for uninstall.sh-
+	-$ shellnotes -sd
+	-.shellnotes.sh is already running in the background-
