@@ -1,0 +1,6 @@
+syntax files
+============
+
+Syntax files can be found in .shellnotes/util/syntax/. These files may be imported to the main 
+script, but not make any change in the user's experience. They are just simple shell scripts that 
+contain commented-out code, that is used in most /util/ scripts. They are used only by the author,in case he wants to refer to some old code that he had re-used in the past. Don't mind him.

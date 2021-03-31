@@ -1,0 +1,21 @@
+reset shellnotes
+================
+
+"resetshellnotes" is a hidden command, that erases all the memory from the program.
+This includes:
+-Default files and folder, sets them to gedit, nano, "~/Notes", which are the defaults after installation
+-User data
+-Logfiles
+-Source files used for several functions
+-Built-in libraries used for the above functions
+
+Your Notes folder will change to ~/Notes, but your notes WILL NOT be removed.
+They will be safely transfered there.
+
+This command is made mostly for the program's testers. After testing a new release,
+They must clear their data from the program's source files, in order to push them to the 
+repository.
+
+This command should be used ONLY WHEN NECESSARY, just like all other hidden commands.
+If your notes have disappeared, or you cant find the displayed note folder, use this command to
+reset everything to its normal state.

@@ -1,0 +1,46 @@
+shellnotes logging system
+=========================
+
+The shellnotes logging system consists of .cpp (C++) files, that are compiled and run
+if an error occurs when updating, installing or setting default editors and folders for your notes.
+
+Errors that might occur:
+	update.sh / bash_update.sh:
+		-Shellnotes is not installed
+		-Shellnotes is up-to-date
+		-There is no internet connection
+	install.sh:
+		-Shellnotes is already installed
+		-A file in the downloaded source code is broken
+		-The system doesn't meet the requirements (requirements.txt)
+		-The user's shell is not supported
+	shellnotes -sd / shellnotes --set-defaults / set_defaults.sh:
+		-The path given is not valid
+		-The default editor or folder is already the default
+	uninstall.sh:
+		-Shellnotes is not installed
+		-A file in the downloaded source code is broken
+		-Shellnotes is disabled
+	uninstall.sh (disabling option 2):
+		-Shellnotes is already disabled
+		-Shellnotes is uninstalled
+	uninstall.sh (enabling option 3):
+		-Shellnotes is already enabled
+		-Shellnotes is uninstalled
+
+If any of the above errors occur in runtime, the matching .cpp file found in ~/.shellnotes/util/failed/
+write a report of the error containing the type of error and the date in the matching logfiles found in ~/.shellnotes/logs/.
+
+Opening the logfiles:
+	-Do NOT open the files manually using any text editor. Use "shellnotes --logs" to select a logfile and check it.
+	
+	Logfiles and content:
+		~/.shellnotes/logs/disfailed.txt - failed attempt to disable shellnotes.
+		~/.shellnotes/logs/enfailed.txt - failed attempt to enable shellnotes.
+		~/.shellnotes/logs/ifailed.txt - failed attempt to install shellnotes (might fail to log).
+		~/.shellnotes/logs/uninfailed.txt - failed attempt to uninstall shellnotes.
+		~/.shellnotes/logs/ufailed.txt - failed attempt to update shellnotes.
+
+
+Clearing all the logfiles:
+	-There is a hidden function called "clearlogs" in the /util directory. When run, it clears all the content from all logfiles. This can be useful for saving space on the disk. It can be run by writing "clearlogs" in the terminal.

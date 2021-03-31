@@ -1,0 +1,20 @@
+requirements for shellnotes
+===========================
+
+Software requirements:
+	-OS: Any linux distro (64 bit)
+	-Shell: Bash(recommended), Zsh, Ksh, Csh or Fish
+	-Kernel: Linux v5.3  or later
+	-Qt version 11 and later
+	-wget
+	-curl
+	-git
+	-Python 3.5 or later
+	-GNU g++ compiler for c++ v.9.3.0 or later
+	-Solid Internet Connection required for updating (at least 5mbps)
+
+Hardware requirements (Minimum):
+	-Processor : Intel® Core™ i3-L13G4
+	-RAM : 700 MB
+	-HDD/SSD : 500 MB free space
+	

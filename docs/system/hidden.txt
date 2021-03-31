@@ -1,0 +1,10 @@
+hidden commands
+===============
+
+Most shellnotes' commands are known, and shown in commands.txt, but some scripts contain hidden 
+commands as well. These scripts are hidden files and can be found in .shellnotes/util/.hidden/.
+
+They are hidden mainly because shellnotes does not want the user to use them on a daily basis. This 
+is because they stop or start extra processes, clear logfiles, or change valuable information and 
+data in the source path. The user can always refer to these commands, but only when necessary. 
+Otherwise, it is not recommended to use them.

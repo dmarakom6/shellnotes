@@ -1,0 +1,17 @@
+file organization
+=================
+
+Files the user can run manually are located in ~/.shellnotes/ after the installation. These files are:
+	-update.sh and bash_update.sh -> Updating shellnotes
+	-install.sh -> Reinstalling shellnotes
+	-uninstall.sh -> Uninstalling or disabling shellnotes
+	-set_defaults.sh -> Set default note editors & folder
+	-.shellnotes.sh -> Running shellnotes (main file)
+
+Other folders and their content:
+	-util: all the commands used in ~/.shellnotes/.shellnotes.sh, as well as all its subfolders.
+	-def: default note editors and folders used in configuration tool.
+	-logs: Logfiles for failed updates, installations etc.
+	-ver: Current shellnotes version
+	-docs: Documentation
+	-image: .jpg and .png files used for README

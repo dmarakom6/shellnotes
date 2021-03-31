@@ -1,0 +1,43 @@
+shellnotes imports rule
+=======================
+
+The main script for running shellnotes is .shellnotes.sh found in ~/.shellnotes/.shellnotes.sh after 
+the installation. This file contains the user's default shell, found during the installation 
+proccess, as well as all the imports needed for the program to work. The imports consist of:
+
+	1. Commands (most of the files found in /util)
+	2. Scripts run every time the terminal is launched (i.e. Version getter (getv))
+	3. The shellnotes command with all of its parameters (file found in /util/shellnotes.sh, params 
+	in subfolders of util/)
+	4. Syntax scripts (Comments including used syntax in scripts)
+	5. "Hidden" commands (files containing a (.) in /util, actions for cleaning space etc.)
+
+In the .shellnotes.sh file, the imports are ordered like this:
+
+	#user's shell
+
+	#Warnings
+	#Warnings
+
+
+	scripts run every time the terminal is launched
+
+	utility scripts (commands) found in ~/.shellnotes/util/
+
+
+	. ~/.shellnotes/util/shellnotes.sh -> The shellnotes command, which imports all its parameters
+
+
+	Hidden commands (i.e. clearlogs, run only when necessary)
+
+
+	syntax scripts (hidden in /util)
+
+
+
+And the scripts called usually import other scripts, like /util/shellnotes.sh with its parameters:
+/util/h/h.sh 	//help
+/util/u/u.sh 	//update
+/util/v/v.sh 	//version
+/util/r/r.sh 	//repo
+/util/sd/sd.sh 	//set or view defaults

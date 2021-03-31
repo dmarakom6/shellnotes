@@ -1,0 +1,8 @@
+shellnotes manpages
+===================
+
+Just like most shell scripts, shellnotes contains its own manpages, which can be viewed by running
+"man <command>" in the terminal. Upon installation, shellnotes moves its manpages from docs/manpages/ to the default man page path, in other words, the path where "man" searches for manpages.
+
+All commands are manual entries and you can view them with man (i.e. man newnote).
+You can also do "man shellnotes".
