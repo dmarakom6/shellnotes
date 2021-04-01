@@ -1,0 +1,19 @@
+.\" Manpage for delnote
+.\" Contact dmarakom@gmail.com to correct errors or typos.
+.TH man 8 "30/12/2020" "" "delnote man page"
+.SH NAME
+shellnotes-delnote \- Delete a note in your notes folder.
+.SH SYNOPSIS
+delnote [FILENAME] [OPTION]
+.SH DESCRIPTION
+delnote() finds and removes the desired note or all the notes from your notes folder.
+.SH OPTIONS
+[FILENAME] \- The name of the note to delete.
+\fR \or\fR
+[-all] \- Delete all notes.
+\fR \or\fR
+leave a blank parameter ("delnote") and shellnotes will ask you for the filename with an input.
+.SH BUGS
+If the default path for delnote() is not valid, the program is likely to return an error.
+.SH AUTHOR
+Dimitris Marakomihelakis (dmarakom@gmail.com)
