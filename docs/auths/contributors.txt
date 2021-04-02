@@ -1,0 +1,5 @@
+shellnotes contributors
+=======================
+
+Dimitris Marakomihelakis (owner) (https://github.com/dmarakom6)
+Stelios Karabasakis (https://github.com/skarabasakis)
