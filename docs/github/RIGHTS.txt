@@ -1,0 +1,7 @@
+Permissions for users
+=====================
+
+This program is under the "All rights reserved" category.
+You can only download the source code, but not change it or sell it.
+There is a copyright notice in every file.
+For more information, please contact the author at dmarakom@gmail.com
