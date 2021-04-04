@@ -30,6 +30,8 @@ else
    mv bash_update.sh ~/.shellnotes/
    mv uninstall.sh ~/.shellnotes/
    mv update.sh ~/.shellnotes/
+   rm -rf ./README.md
+   rm -rf ./SECURITY.md
    sudo mkdir /usr/local/man/man1 2>/dev/null
    sudo cp ~/.shellnotes/docs/manpages/* /usr/local/man/man1/
    sudo gzip -f /usr/local/man/man1/*.1
@@ -40,7 +42,9 @@ else
    pip install pathlib
    sudo apt update
    chmod +x ~/.shellnotes.sh
+
    echo "$VER_TO_INSTALL" > ~/.shellnotes/ver/.shellnotes_version
+
    if [ -n "`$SHELL -c 'echo $ZSH_VERSION'`" ]; then
       echo "source ~/.shellnotes/.shellnotes.sh" >> ~/.zshrc
       sed -i '1 i\#!/bin/zsh' ~/.shellnotes/.shellnotes.sh
