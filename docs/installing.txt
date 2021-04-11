@@ -26,7 +26,7 @@ About Installing:
 		MacOS usually uses bash as its default shell, this means that the program will work properly, but the user will have to change the default path as well as the editors.
 
 	For Windows Users:
-		The only possible way for the user to use shellnotes in a Windows PC, is to install Windows Terminal. Windows Terminal is Windows Terminal is a multi-tabbed command-line front-end that Microsoft has developed for Windows 10, as a replacement for Windows Console. It can run any command-line app, including all Windows terminal emulators, in a separate tab. It is preconfigured to run Command Prompt, PowerShell, WSL, SSH, and Azure Cloud Shell Connector. If the user changes the default path and text editors, the program might work.
+		The only possible way for the user to use shellnotes in a Windows PC, is to install Windows Terminal. Windows Terminal is a multi-tabbed command-line front-end that Microsoft has developed for Windows 10, as a replacement for Windows Console. It can run any command-line app, including all Windows terminal emulators, in a separate tab. It is preconfigured to run Command Prompt, PowerShell, WSL, SSH, and Azure Cloud Shell Connector. If the user changes the default path and text editors, the program might work.
 
 	For other distro Users:
 		Installation and use is the same. (Debian excluded. The dash shell is not supported)
