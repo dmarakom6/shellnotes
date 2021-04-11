@@ -13,7 +13,7 @@ With shellnotes, you can make, find, list, edit or delete your notes from wherev
 * It can suit both dynamic and regular users, as it brings a classic TUI experience as well as some more modern abilities.  
 * It runs __exclusively__ in your terminal, its source files are stored in your home folder.  
 * It's lightweight  
-* It's [more than just a program for taking notes.](#learn-everything-shellnotes-can-do). It has a ton of other interesting abilities.
+* It's [more than just a program for taking notes](#learn-everything-shellnotes-can-do). It has a ton of other interesting abilities.
 * It's portable and compatible with most shells.
 * It matches all the users' experience, by creating the appropriate environment for both beginners and advanced users linux users.
 * Even if you delete shellnotes, your notes will stay where they are.
