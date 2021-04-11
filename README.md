@@ -3,8 +3,8 @@
 A easy, simple and fast way to keep notes via your linux terminal.
 
 # What is shellnotes?
-Shellnotes  is  a note system for advanced linux and terminal users. It is made out of a lot of other commands and scripts, and has tons of abilities, like a logging system, an auto-update feature, and much more!
-Shellnotes uses your favourite text editor to save notes on the go. If you are the type of guy that has his terminal open 24/7, you can also save notes __directly__ via terminal!
+Shellnotes  is  a note system for advanced linux and terminal users. It is made out of commands and scripts, and has tons of abilities.
+Shellnotes uses your favourite text editor to save notes on-the-go. If you are the type of guy that has his terminal open 24/7, you can also save notes __directly__ via terminal!
 With shellnotes, you can make, find, list, edit or delete your notes from wherever you are, whenever you want. 
 
 # Why use shellnotes?
