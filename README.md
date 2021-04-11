@@ -15,11 +15,11 @@ With shellnotes, you can make, find, list, edit or delete your notes from wherev
 * It's lightweight  
 * It's [more than just a program for taking notes](#learn-everything-shellnotes-can-do). It has a ton of other interesting abilities.
 * It's portable and compatible with most shells.
-* It matches all the users' experience, by creating the appropriate environment for both beginners and advanced users linux users.
+* It matches all users, by creating the appropriate environment for both beginners and advanced linux users.
 * Even if you delete shellnotes, your notes will stay where they are.
 * It has a simple file organization system and [TUI](https://en.wikipedia.org/wiki/Text-based_user_interface).
 * It's easy to install, delete, update or use.
-* It's mostly written in [shell](https://en.wikipedia.org/wiki/Shell_script), which is the language for Unix/Linux [CLI](https://en.wikipedia.org/wiki/Command-line_interface) applications.
+* It's mostly written in [shell](https://en.wikipedia.org/wiki/Shell_script), which is the language for Unix/Linux [CLI](https://en.wikipedia.org/wiki/Command-line_interface)  in-terminal applications.
 
 # How to install
 After downloading the source code, navigate to the folder where it's stored, and execute the install script (`install.sh`), using the `sh` command.
