@@ -10,11 +10,12 @@ case $1 in -l|--logs )
 	echo "Please select a logfile to open"
 	echo "-------------------------------"
 	echo
-	echo "1. ~/.shellnotes/logs/disfailed.txt"
-	echo "2. ~/.shellnotes/logs/enfailed.txt"
-	echo "3. ~/.shellnotes/logs/ifailed.txt"
-	echo "4. ~/.shellnotes/logs/ufailed.txt"
-	echo "5. ~/.shellnotes/logs/uninfailed.txt"
+	echo "1. disablement errors"
+	echo "2. enablement errors"
+	echo "3. installation errors"
+	echo "4. update errors"
+	echo "5. uninstallation errors"
+	echo "6. set-defaults errors"
 	echo "For more info about which one to choose, read /docs/system/loggingsystem.txt"
 	echo
 	echo -n "[1,2,3,4,5]: " && read input
@@ -28,6 +29,8 @@ case $1 in -l|--logs )
 		less ~/.shellnotes/logs/ufailed.txt
 	elif [ $input = 5 ]; then
 		less ~/.shellnotes/logs/uninfailed.txt
+	elif [ $input = 6 ]; then
+		less ~/.shellnotes/logs/sdfailed.txt
 	else
 		echo "Invalid input."
 	fi
