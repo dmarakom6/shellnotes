@@ -39,7 +39,7 @@ else
    sudo apt install python3-pip
    pip install pathlib
    sudo apt update
-   sudo chmod a+rwx ~/.shellnotes/util/exec/*
+   sudo chmod a+x ~/.shellnotes/util/exec/*
    sudo chmod +x ~/.shellnotes/.shellnotes.sh
 
    echo "$VER_TO_INSTALL" > ~/.shellnotes/ver/.shellnotes_version

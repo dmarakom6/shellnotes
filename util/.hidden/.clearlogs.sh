@@ -9,10 +9,8 @@ function clearlogs() {
 	dir="$(pwd)"
 	echo -n "Are you sure? " && read input
 	case $input in Y|Yes|yes|y|YES )
-		cd ~/.shellnotes/logs
-		g++ .clearlogs.cpp -o clearlogs
-		~/.shellnotes/logs/clearlogs
-		rm -f clearlogs
+		cd ~/.shellnotes/util/exec
+		./clearlogs
 		echo "[shellnotes] Logfiles cleared."
 	esac
 	cd $dir
