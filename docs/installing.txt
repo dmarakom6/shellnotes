@@ -37,5 +37,5 @@ About Installing:
 	Installation failed? Here's why:
 		-Your shell is not supported by shellnotes
 		-You didn't run the installation file in the right directory
-		-Your version is outdated or its installation is not supported (see version support)
+		-Your version is outdated or its installation is not supported (see SECURITY.md)
 		-You already have shellnotes installed
