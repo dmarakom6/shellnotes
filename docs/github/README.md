@@ -3,8 +3,8 @@
 A easy, simple and fast way to keep notes via your linux terminal.
 
 # What is shellnotes?
-Shellnotes  is  a note system for advanced linux and terminal users. It is made out of commands and scripts, and has tons of abilities.
-Shellnotes uses your favourite text editor to save notes on-the-go. If you are the type of guy that has his terminal open 24/7, you can also save notes __directly__ via terminal!
+Shellnotes  is  a note system for advanced linux and terminal users. It is made out of a lot of other commands and scripts, and has tons of abilities, like a logging system, an auto-update feature, and much more!
+Shellnotes uses your favourite text editor to save notes on the go. If you are the type of guy that has his terminal open 24/7, you can also save notes __directly__ via terminal!
 With shellnotes, you can make, find, list, edit or delete your notes from wherever you are, whenever you want. 
 
 # Why use shellnotes?
@@ -13,13 +13,13 @@ With shellnotes, you can make, find, list, edit or delete your notes from wherev
 * It can suit both dynamic and regular users, as it brings a classic TUI experience as well as some more modern abilities.  
 * It runs __exclusively__ in your terminal, its source files are stored in your home folder.  
 * It's lightweight  
-* It's [more than just a program for taking notes](#learn-everything-shellnotes-can-do). It has a ton of other interesting abilities.
+* It's [more than just a program for taking notes.](#learn-everything-shellnotes-can-do). It has a ton of other interesting abilities.
 * It's portable and compatible with most shells.
-* It matches all users, by creating the appropriate environment for both beginners and advanced linux users.
+* It matches all the users' experience, by creating the appropriate environment for both beginners and advanced users linux users.
 * Even if you delete shellnotes, your notes will stay where they are.
 * It has a simple file organization system and [TUI](https://en.wikipedia.org/wiki/Text-based_user_interface).
 * It's easy to install, delete, update or use.
-* It's mostly written in [shell](https://en.wikipedia.org/wiki/Shell_script), which is the language for Unix/Linux [CLI](https://en.wikipedia.org/wiki/Command-line_interface)  in-terminal applications.
+* It's mostly written in [shell](https://en.wikipedia.org/wiki/Shell_script), which is the language for Unix/Linux [CLI](https://en.wikipedia.org/wiki/Command-line_interface) applications.
 
 # How to install
 After downloading the source code, navigate to the folder where it's stored, and execute the install script (`install.sh`), using the `sh` command.

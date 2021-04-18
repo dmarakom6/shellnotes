@@ -37,10 +37,12 @@ Opening the logfiles:
 	Logfiles and content:
 		~/.shellnotes/logs/disfailed.txt - failed attempt to disable shellnotes.
 		~/.shellnotes/logs/enfailed.txt - failed attempt to enable shellnotes.
-		~/.shellnotes/logs/ifailed.txt - failed attempt to install shellnotes (might fail to log).
+		~/.shellnotes/logs/ifailed.txt - failed attempt to install shellnotes.
 		~/.shellnotes/logs/uninfailed.txt - failed attempt to uninstall shellnotes.
 		~/.shellnotes/logs/ufailed.txt - failed attempt to update shellnotes.
 
+To close a file after you chose to open it, press "Q". Shellnotes uses the less command to view 
+its logfiles.
 
 Clearing all the logfiles:
 	-There is a hidden function called "clearlogs" in the /util directory. When run, it clears all the content from all logfiles. This can be useful for saving space on the disk. It can be run by writing "clearlogs" in the terminal.
