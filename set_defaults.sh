@@ -37,10 +37,8 @@ if [[ "$input" == "1" ]]; then
 	
 	else
 		echo "This program name is invalid or not a text editor."
-		cd ~/.shellnotes/util/failed
-		g++ sdfailed.cpp -o sdfailed
-		~/.shellnotes/util/failed/sdfailed
-		rm -f sdfailed
+		cd ~/.shellnotes/util/exec
+   		./sdfailed
 	fi
 
 
@@ -56,10 +54,8 @@ elif [[ "$input" == "2" ]]; then
 			echo "Please restart your terminal."
 		fi
 		echo "This program name is invalid or not a text editor."
-		cd ~/.shellnotes/util/failed
-		g++ sdfailed.cpp -o sdfailed
-		~/.shellnotes/util/failed/sdfailed
-		rm -f sdfailed
+		cd ~/.shellnotes/util/exec
+   		./sdfailed
 	fi
 
 
@@ -71,6 +67,8 @@ elif [[ "$input" == "3" ]]; then
 	if [ -d $name ]; then
 		if [[ "$name" == "$input3" ]]; then
 			echo "This is already the default notes folder."
+			cd ~/.shellnotes/util/exec
+   			./sdfailed
 		else
 			mv $DEFAULT_PATH/* $name
 			echo "$name" > ~/.shellnotes/util/sd/sd-input3.txt
@@ -80,10 +78,8 @@ elif [[ "$input" == "3" ]]; then
 	
 	else
 		echo "This directory does not exist."
-		cd ~/.shellnotes/util/failed
-		g++ sdfailed.cpp -o sdfailed
-		~/.shellnotes/util/failed/sdfailed
-		rm -f sdfailed
+		cd ~/.shellnotes/util/exec
+   		./sdfailed
 	fi
 
 

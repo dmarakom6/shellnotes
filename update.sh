@@ -13,10 +13,8 @@ if [ -e ~/.shellnotes/ver/.shellnotes_version ]; then
 	NEW_VER=$(curl -s https://raw.githubusercontent.com/dmarakom6/shellnotes/master/ver/.shellnotes_version)
 else
 	echo "Shellnotes is not installed. Try running 'sh install.sh'."
-	cd ~/.shellnotes/util/failed
-	g++ ufailed.cpp -o ufailed
-	~/.shellnotes/util/failed/ufailed
-	rm -f ufailed
+	cd ~/.shellnotes/util/exec
+   	./ufailed
 	return 0
 fi
 clear
@@ -25,10 +23,8 @@ dir="$(pwd)"
 if [ "$VER" = "$NEW_VER" ]; then
 	echo "No new update found."
 	echo "Shellnotes is up to date (version $VER)."
-	cd ~/.shellnotes/util/failed
-	g++ ufailed.cpp -o ufailed
-	~/.shellnotes/util/failed/ufailed
-	rm -f ufailed
+	cd ~/.shellnotes/util/exec
+   	./ufailed
 	cd $dir
 else
 	echo "Good news!"
@@ -46,10 +42,8 @@ else
 		else
 			sleep 0.5
 			echo "Update Failed."
-			cd ~/.shellnotes/util/failed
-			g++ ufailed.cpp -o ufailed
-			~/.shellnotes/util/failed/ufailed
-			rm -f ufailed
+			cd ~/.shellnotes/util/exec
+   			./ufailed
 			cd $dir
 			return 0
 		fi

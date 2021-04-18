@@ -15,10 +15,8 @@ if [ -e ~/.shellnotes/ver/.shellnotes_version ]; then
 	NEW_VER=$(curl -s https://raw.githubusercontent.com/dmarakom6/shellnotes/master/ver/.shellnotes_version)
 else
 	echo "Shellnotes is not installed. Try running 'sh install.sh'."
-	cd ~/.shellnotes/util/failed
-	g++ ufailed.cpp -o ufailed
-	~/.shellnotes/util/failed/ufailed
-	rm -f ufailed
+	cd ~/.shellnotes/util/exec
+   	./ufailed
 	cd $dir
 	return 0
 fi
@@ -122,10 +120,8 @@ else
 		echo -ne ">>>>>>>>>>>>>>>>>>>>$LGREEN[done]$NC                                    "
 	else
 		echo -ne ">>>>>>>>>>>>>>>>>>>>$RED[failed]$NC                                    "
-		cd ~/.shellnotes/util/failed
-		g++ ufailed.cpp -o ufailed
-		~/.shellnotes/util/failed/ufailed
-		rm -f ufailed
+		cd ~/.shellnotes/util/exec
+   		./ufailed
 		return 0
 	fi
 	echo -ne '\n'

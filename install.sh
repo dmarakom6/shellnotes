@@ -11,11 +11,9 @@ VER_TO_INSTALL=3.0 #This is used when updating, it will be changed in every new 
 if [ -e ~/.shellnotes/.shellnotes.sh ]; then
    echo "Shellnotes is already installed."
    echo "If you want to update, please run 'update.sh'."
-   cd ~/.shellnotes/util/failed
-   g++ ifailed.cpp -o ifailed
-   ~/.shellnotes/util/failed/ifailed
-   rm -f ifailed
-   cd $dir
+   cd ~/.shellnotes/util/exec
+   ./ifailed
+
 else
    mkdir ~/.shellnotes
    mv docs ~/.shellnotes/
@@ -41,7 +39,8 @@ else
    sudo apt install python3-pip
    pip install pathlib
    sudo apt update
-   chmod +x ~/.shellnotes.sh
+   sudo chmod a+rwx ~/.shellnotes/util/exec/*
+   sudo chmod +x ~/.shellnotes/.shellnotes.sh
 
    echo "$VER_TO_INSTALL" > ~/.shellnotes/ver/.shellnotes_version
 
@@ -89,10 +88,8 @@ else
    	clear
    	echo "Your shell is not supported by shellnotes."
    	echo "Installation Failed."
-      cd ~/.shellnotes/util/failed
-      g++ ifailed.cpp -o ifailed
-      ~/.shellnotes/util/failed/ifailed
-      rm -f ifailed
+      cd ~/.shellnotes/util/exec
+      ./ifailed
       cd $dir
    fi
 fi

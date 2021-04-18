@@ -70,31 +70,25 @@ if [ $option = "1" ]; then
 				fi
 			else
 				echo "Your shell is not supported."
-				cd ~/.shellnotes/util/failed
-			   	g++ uninfailed.cpp -o uninfailed
-			   	~/.shellnotes/util/failed/uninfailed
-			   	rm -f uninfailed
+			   	cd ~/.shellnotes/util/exec
+   				./uninfailed
 			   	cd $dir
 			fi
 		esac
 	else
 		echo "An error occured." 
 		echo "Shellnotes is not installed."
-		   cd ~/.shellnotes/util/failed
-		   g++ uninfailed.cpp -o uninfailed
-		   ~/.shellnotes/util/failed/uninfailed
-		   rm -f uninfailed
-		   cd $dir
+		cd ~/.shellnotes/util/exec
+   		./uninfailed
+	    cd $dir
 	fi
 
 
 elif [ $option = "2" ]; then
 	if grep 'return' <~/.shellnotes/.shellnotes.sh >/dev/null; then
 		echo "Shellnotes is already disabled."
-		cd ~/.shellnotes/util/failed
-	   	g++ disfailed.cpp -o disfailed
-	   	~/.shellnotes/util/failed/disfailed
-	   	rm -f disfailed
+		cd ~/.shellnotes/util/exec
+   		./disfailed
 	   	cd $dir
 	else
 		sed -i '2 i\return 0 #Shellnotes is disabled by the user. Do not change this line.' ~/.shellnotes/.shellnotes.sh
@@ -106,10 +100,8 @@ elif [ $option = "3" ]; then
 		echo "Shellnotes is now enabled. Please restart your terminal."
 	else
 		echo "Shellnotes is already enabled."
-		cd ~/.shellnotes/util/failed
-	   	g++ enfailed.cpp -o enfailed
-	   	~/.shellnotes/util/failed/enfailed
-	   	rm -f enfailed
+		cd ~/.shellnotes/util/exec
+   		./enfailed
 	   	cd $dir
 	fi
 else
