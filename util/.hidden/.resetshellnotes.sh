@@ -17,5 +17,6 @@ function resetshellnotes() {
 		echo "/bin/nano"> ~/.shellnotes/util/sd/sd-input2.txt
 		echo "~/Notes" > ~/.shellnotes/util/sd/sd-input3.txt
 	esac
+	cd $DIR
 	return 0
 }
