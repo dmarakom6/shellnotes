@@ -55,4 +55,4 @@ Changing default Notes Folder manually:
 	Suggested path other than default:
 		Home/Documents/
 
-Tip: Your notes will be safely transfered to the new note folder!
+Tip: Your notes will be safely transfered to the new note folder.

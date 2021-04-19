@@ -9,7 +9,7 @@ proccess, as well as all the imports needed for the program to work. The imports
 	2. Scripts run every time the terminal is launched (i.e. Version getter (getv))
 	3. The shellnotes command with all of its parameters (file found in /util/shellnotes.sh, params 
 	in subfolders of util/)
-	4. Syntax scripts (Comments including used syntax in scripts)
+	4. Syntax (Comments including used snippets in scripts)
 	5. "Hidden" commands (files containing a (.) in /util, actions for cleaning space etc.)
 
 In the .shellnotes.sh file, the imports are ordered like this:
@@ -31,13 +31,5 @@ In the .shellnotes.sh file, the imports are ordered like this:
 	Hidden commands (i.e. clearlogs, run only when necessary)
 
 
-	syntax scripts (hidden in /util)
+	syntax (hidden in /util)
 
-
-
-And the scripts called usually import other scripts, like /util/shellnotes.sh with its parameters:
-/util/h/h.sh 	//help
-/util/u/u.sh 	//update
-/util/v/v.sh 	//version
-/util/r/r.sh 	//repo
-/util/sd/sd.sh 	//set or view defaults

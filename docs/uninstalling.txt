@@ -9,6 +9,9 @@ How to uninstall (version 3.0 and higher)
 
 About uninstalling:
 	-Your notes will stay in your notes folder even if you choose to delete shellnotes.
-	-If you get an error every time you launch the terminal, more than one source for the script(s) have been sent to your shell configuration file. To stop the error messages, open the configuration file and delete 'source ~/.shellnotes/.shellnotes.sh', usually found in the last line of the file.
+	-If you get an error every time you launch the terminal, more than one source for the scripts) 
+	have been sent to your shell configuration file. To stop the error messages, open the 
+	configuration file and delete 'source ~/.shellnotes/.shellnotes.sh', usually found in the last 
+	line of the file.
 	For other users:
 		Uninstallation must be done manually by the user.

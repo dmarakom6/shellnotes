@@ -19,17 +19,17 @@ About Installing:
 		- Fish
 
 		During the installation process, the installation program (install.sh) will find the user's shell and install shellnotes according to the shell's configuration. If your shell is not supported, shellnotes will not be installed.
-		Bash is the default shell for shellnotes. Although it supports four others, there might be bugs/problems while running it in a non-bash shell. We highly recommend switching to bash if you want a full experience with shellnotes.
+		Bash is the default shell for shellnotes. Although it supports others, there might be bugs/problems while running it in a non-bash shell. We highly recommend switching to bash if you want a full experience with shellnotes.
 		If your shell is not one of the above, we recommend installing one on the list.
 
 	For Mac Users:
 		MacOS usually uses bash as its default shell, this means that the program will work properly, but the user will have to change the default path as well as the editors.
 
 	For Windows Users:
-		The only possible way for the user to use shellnotes in a Windows PC, is to install Windows Terminal. Windows Terminal is Windows Terminal is a multi-tabbed command-line front-end that Microsoft has developed for Windows 10, as a replacement for Windows Console. It can run any command-line app, including all Windows terminal emulators, in a separate tab. It is preconfigured to run Command Prompt, PowerShell, WSL, SSH, and Azure Cloud Shell Connector. If the user changes the default path and text editors, the program might work.
+		The only possible way for the user to use shellnotes in a Windows PC, is to install Windows Terminal. Windows Terminal is a multi-tabbed command-line front-end that Microsoft has developed for Windows 10, as a replacement for Windows Console. It can run any command-line app, including all Windows terminal emulators, in a separate tab. It is preconfigured to run Command Prompt, PowerShell, WSL, SSH, and Azure Cloud Shell Connector. If the user changes the default path and text editors, the program might work.
 
 	For other distro Users:
-		Installation and use is the same. (Debian excluded. The dash shell is not supported)
+		Installation and use is the same.
 
 	In case the user switches to a different shell after installation:
 		Repeat installation (Run sh ~/.shellnotes/install.sh).

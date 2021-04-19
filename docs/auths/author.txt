@@ -1,2 +1,2 @@
-shellnotes author: Dimitris Marakomihelakis
+Author: Dimitris Marakomihelakis
 Contact -> dmarakom@gmail.com

@@ -9,31 +9,104 @@ The tree looks like this:
 |-- def
 |   `-- defaults.sh
 |-- docs
-|   |-- LICENSE
-|   |-- README.md
-|   |-- SECURITY.md
+|   |-- auths
+|   |   |-- author.txt
+|   |   `-- contributors.txt
+|   |-- auto-update.txt
+|   |-- commands.txt
+|   |-- disabling.txt
+|   |-- github
+|   |   |-- README.md
+|   |   |-- RIGHTS.txt
+|   |   `-- SECURITY.md
 |   |-- help
-|   `-- shellnotes.1
+|   |-- installing.txt
+|   |-- listnotes.txt
+|   |-- manpages
+|   |   |-- delnote.1
+|   |   |-- findmisplacednote.1
+|   |   |-- findnote.1
+|   |   |-- listnotes.1
+|   |   |-- newnote.1
+|   |   |-- noteinfo.1
+|   |   |-- quicknote.1
+|   |   |-- quickread.1
+|   |   |-- readnote.1
+|   |   |-- renamenote.1
+|   |   `-- shellnotes.1
+|   |-- run.txt
+|   |-- setdefaults.txt
+|   |-- system
+|   |   |-- errors.txt
+|   |   |-- fileorganization.txt
+|   |   |-- hidden.txt
+|   |   |-- imports.txt
+|   |   |-- loggingsystem.txt
+|   |   |-- manpages.txt
+|   |   |-- requirements.txt
+|   |   |-- reset.txt
+|   |   `-- syntax.txt
+|   |-- uninstalling.txt
+|   |-- updating.txt
+|   |-- versions.txt
+|   `-- warnings.txt
+|-- image
+|   `-- shellnotes.jpg
 |-- install.sh
 |-- logs
+|   |-- disfailed.txt
+|   |-- enfailed.txt
 |   |-- ifailed.txt
 |   |-- sdfailed.txt
-|   `-- ufailed.txt
+|   |-- ufailed.txt
+|   `-- uninfailed.txt
 |-- set_defaults.sh
 |-- uninstall.sh
 |-- update.sh
 |-- util
 |   |-- ChMkDir.sh
+|   |-- ChUpd.sh
+|   |-- au
+|   |   `-- au.sh
 |   |-- delnote.sh
+|   |-- exec
+|   |   |-- clearlogs
+|   |   |-- disfailed
+|   |   |-- enfailed
+|   |   |-- ifailed
+|   |   |-- sdfailed
+|   |   |-- ufailed
+|   |   |-- uninfailed
 |   |-- failed
+|   |   |-- disfailed.cpp
+|   |   |-- enfailed.cpp
 |   |   |-- ifailed.cpp
 |   |   |-- sdfailed.cpp
-|   |   `-- ufailed.cpp
+|   |   |-- ufailed.cpp
+|   |   `-- uninfailed.cpp
 |   |-- findmisplacednote.sh
 |   |-- findnote.sh
 |   |-- getv.sh
 |   |-- h
 |   |   `-- h.sh
+|   |-- l
+|   |   `-- l.sh
+|   |-- listnotes
+|   |   |-- d
+|   |   |   |-- d.py
+|   |   |   |-- d.sh
+|   |   |   |-- display.py
+|   |   |   `-- dmain.py
+|   |   |-- f
+|   |   |   `-- f.sh
+|   |   |-- n
+|   |   |   `-- n.sh
+|   |   `-- output
+|   |       |-- dir.txt
+|   |       |-- direrr.txt
+|   |       |-- files.txt
+|   |       |-- fileserr.txt
+|   |       `-- listnotes.txt
 |   |-- listnotes.sh
 |   |-- newnote.sh
 |   |-- noteinfo.sh
@@ -49,38 +122,44 @@ The tree looks like this:
 |   |   |-- sd-input3.txt
 |   |   `-- sd.sh
 |   |-- shellnotes.sh
+|   |-- syntax
 |   |-- u
 |   |   `-- u.sh
 |   `-- v
 |       `-- v.sh
 `-- ver
 
+
 Or, in a ls -al representation:
 
-	-rw-r--r-- 1 user group  783 month   day time .shellnotes.sh
-	-rw-r--r-- 1 user group 4,6K month   day time bash_update.sh
-	drwxr-xr-x 2 user group 4,0K month   day time def
-	drwxr-xr-x 2 user group 4,0K month   day time docs
-	-rw-r--r-- 1 user group 3,5K month   day time install.sh
-	drwxr-xr-x 2 user group 4,0K month   day time logs
-	-rw-r--r-- 1 user group 2,6K month   day time set_defaults.sh
-	-rw-r--r-- 1 user group 3,2K month   day time uninstall.sh
-	-rw-r--r-- 1 user group 1,7K month   day time update.sh
-	drwxr-xr-x 8 user group 4,0K month   day time util
-	drwxr-xr-x 2 user group 4,0K month   day time ver
+	drwxrwxr-x  8 dimitris dimitris 4096 Apr 18 13:00 .
+	drwxr-xr-x 42 dimitris dimitris 4096 Apr 18 21:51 ..
+	-rw-r--r--  1 dimitris dimitris 1056 Apr 10 12:10 .shellnotes.sh
+	-rw-r--r--  1 dimitris dimitris 4580 Apr 18 12:45 bash_update.sh
+	drwxr-xr-x  2 dimitris dimitris 4096 Apr  3 11:55 def
+	drwxr-xr-x  6 dimitris dimitris 4096 Apr  3 11:55 docs
+	drwxr-xr-x  2 dimitris dimitris 4096 Apr  3 11:55 image
+	-rw-r--r--  1 dimitris dimitris 3682 Apr 18 13:11 install.sh
+	drwxr-xr-x  2 dimitris dimitris 4096 Apr 18 13:01 logs
+	-rw-r--r--  1 dimitris dimitris 2499 Apr 18 12:47 set_defaults.sh
+	-rw-r--r--  1 dimitris dimitris 3563 Apr 18 12:46 uninstall.sh
+	-rw-r--r--  1 dimitris dimitris 1646 Apr 18 12:45 update.sh
+	drwxr-xr-x 14 dimitris dimitris 4096 Apr 18 12:06 util
+	drwxr-xr-x  2 dimitris dimitris 4096 Apr  3 11:56 ver
+
 
 And in a dir style:
 
-	bash_update.sh  docs        logs             uninstall.sh  util
-	def             install.sh  set_defaults.sh  update.sh     ver
+	bash_update.sh  docs   install.sh  set_defaults.sh  update.sh  ver
+	def             image  logs        uninstall.sh     util
 
 
-Files inside .shellnotes are the ones you can run.
+Files inside .shellnotes/ are the ones you can run.
 The files inside the subfolders (util, def, logs, ver) must not be run.
 After the installation, the folder .shellnotes is created in the home (~) folder.
 The .shellnotes folder contains all the source code needed for the program to work properly.
 
-So, the files-to-run are:
+So, the files to run are:
 	-bash_update.sh
 	-update.sh
 	-install.sh
@@ -104,7 +183,7 @@ Should be run when:
 	-Setting default note editors and folder for writing and storing notes
 	-Running the main script, which is always run after the installation
 
-A more dynamic way of running the above files-to-run is by running the redirect commands from the main script (.shellnotes.sh), by:
+A better way of running the above files is by running the commands from the main script (.shellnotes.sh):
 	-$ shellnotes -u (and the default shell is bash)
 	-$ shellnotes -u
 	-no command line argument for install.sh-

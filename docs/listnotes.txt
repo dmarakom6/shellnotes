@@ -1,8 +1,8 @@
 listnotes
 =========
 
-The listnotes command was introduced in shellnotes 1.2x and uses the command ls (man ls) to locate your notes from whenever you are.
-Other than 'listnotes', you can use parameters as well. For example:
+The listnotes command was introduced in shellnotes 1.2x and uses the command ls (man ls) to locate your notes from wherever you are.
+With listnotes, you can use parameters as well. For example:
 -listnotes -d or --dynamic for a dynamic view of all your notes and their content
 -listnotes -n or --number to see how many notes you have.
 

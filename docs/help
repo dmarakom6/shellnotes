@@ -93,7 +93,7 @@ Installation failed? Try these steps (<3.0):
 
 
 About using shellnotes in more than one shell
-	-A useful thing to do if you use more than two shells (rare) is to install shellnotes in both shell. To do that, simply set the first shell as default and start installing the program. Then, change the default shell to the second one and repeat installation. After the second installation, shellnotes will work on both shells.
+	-A useful thing to do if you use more than two shells is to install shellnotes in both shell. To do that, simply set the first shell as default and start installing the program. Then, change the default shell to the second one and repeat installation. After the second installation, shellnotes will work on both shells.
 
 
 General info about the shellnotes system
@@ -108,8 +108,15 @@ How to disable auto-update:
 Some warnings:
 
 WARNING: Installing/Uninstalling/Disabling/Updating is NOT possible unless ALL the source code files are IN THE SAME DIRECTORY.
-WARNING: install.sh must be run from the folder where it was downloaded WITH the other files from the repo. Otherwise, installation will fail. uninstall.sh must be run from ~/.shellnotes/ because shellnotes is already installed. If you choose to run update.sh manually, it must be done from ~/.shellnotes as well. Type 'sh ~/.shellnotes/update.sh'. Otherwise, run 'shellnotes -u' or 'shellnotes --update' to run the script instantly.
-WARNING: Automatic Installation, uninstallation and update is a feature for shellnotes <2.5. Older versions require manual installation, uninsallation and update. Disabling is also a <2.5 feature.
-WARNING: Changing the default editor or note folder is only for advanced users. It can be either manually (versions >2.5), by changing the variables NOTES_EDITOR, QUICK_NOTES_EDITOR and DEFAULT_PATH with an accurate path for your prefered note editors, as well as the default path for saving your notes, or in a more automatic way (<2.5), by adding the -s or --set parameter to the shellnotes command, and entering the new prefered options. If the paths are incorrect, shellnotes will crash until they are changed.
-WARNING: The default shell for installing/uninstalling/updated is bash. However, shellnotes will find your shell if it's different and continue installing according to it. If your shell is not supported though, the installation/uninstallation/update will FAIL.
+WARNING: install.sh must be run from the folder where it was downloaded WITH the other files from 
+the repo. Otherwise, installation will fail. uninstall.sh must be run from ~/.shellnotes/ because 
+shellnotes is already installed. If you choose to run update.sh manually, it must be done from 
+~/.shellnotes as well. Type 'sh ~/.shellnotes/update.sh'. Otherwise, run 'shellnotes -u' or 
+'shellnotes --update' to run the script instantly.
+WARNING: Automatic Installation, uninstallation and update is a feature for shellnotes <2.5. 
+Older versions require manual installation, uninstallation and update. Disabling is also a <2.5 
+feature.
+WARNING: The default shell for installing/uninstalling/updated is bash. However, shellnotes will 
+find your shell if it's different and continue installing according to it. If your shell is not 
+supported though, the installation/uninstallation/update will FAIL.
 
