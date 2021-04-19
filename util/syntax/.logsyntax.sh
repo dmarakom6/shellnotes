@@ -10,4 +10,4 @@ info
 #g++ file.cpp -o compiledfile -> make a compiled version of the logger
 #~/.shellnotes/util/failed/enfailed -> run the compiled file
 #rm -f enfailed -> delete the compiled file
-#cd $dir -> dir="$(pwd)" in main scripts
+#cd $DIR -> dir="$(pwd)" in main scripts

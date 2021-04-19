@@ -6,7 +6,6 @@ Released under the "All rights reserved" category. See the RIGHTS.txt file
 in /docs/github/ for its full text.
 info
 
-dir="$(pwd)"
 #Update script only for bash users. See supported shells for installation: help.txt > lines 88-95.
 if [ -e ~/.shellnotes/ver/.shellnotes_version ]; then
 	#Get the current version.
@@ -17,7 +16,7 @@ else
 	echo "Shellnotes is not installed. Try running 'sh install.sh'."
 	cd ~/.shellnotes/util/exec
    	./ufailed
-	cd $dir
+	cd $DIR
 	return 0
 fi
 clear
@@ -135,6 +134,6 @@ else
     echo -e "Shellnotes has been updated to the latest version $GREEN$NEW_VER$NC"
 	echo "Please restart your terminal to complete the update."
 	echo "Have fun taking notes!"
-	cd $dir                                                      
+	cd $DIR                                                      
 	esac
 fi

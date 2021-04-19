@@ -6,7 +6,6 @@ in /docs/github/ for its full text.
 info
 
 function quickread() {
-	dir="$(pwd)"
 	if [ $# -eq 0 ]; then
 		echo -n "Enter note name: " && read notename
 	else
@@ -22,5 +21,5 @@ function quickread() {
 		echo "No such note."
 		cd ~	
 fi
-cd $dir
+cd $DIR
 }

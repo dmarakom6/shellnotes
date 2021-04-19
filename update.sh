@@ -18,14 +18,13 @@ else
 	return 0
 fi
 clear
-dir="$(pwd)"
 #Compare versions
 if [ "$VER" = "$NEW_VER" ]; then
 	echo "No new update found."
 	echo "Shellnotes is up to date (version $VER)."
 	cd ~/.shellnotes/util/exec
    	./ufailed
-	cd $dir
+	cd $DIR
 else
 	echo "Good news!"
 	echo "A new shellnotes update is available."
@@ -44,7 +43,7 @@ else
 			echo "Update Failed."
 			cd ~/.shellnotes/util/exec
    			./ufailed
-			cd $dir
+			cd $DIR
 			return 0
 		fi
 		echo "Shellnotes has been updated to version $NEW_VER"

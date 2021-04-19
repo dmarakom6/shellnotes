@@ -6,7 +6,6 @@ Released under the "All rights reserved" category. See the RIGHTS.txt file
 in /docs/github/ for its full text.
 info
 
-dir="$(pwd)"
 VER_TO_INSTALL=3.0 #This is used when updating, it will be changed in every new update
 if [ -e ~/.shellnotes/.shellnotes.sh ]; then
    echo "Shellnotes is already installed."
@@ -90,7 +89,7 @@ else
    	echo "Installation Failed."
       cd ~/.shellnotes/util/exec
       ./ifailed
-      cd $dir
+      cd $DIR
    fi
 fi
-cd $dir
+cd $DIR

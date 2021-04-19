@@ -6,7 +6,6 @@ in /docs/github/ for its full text.
 info
 
 function shellnotes() {
-	dir="$(pwd)"
 	. ~/.shellnotes/util/h/h.sh	
 	. ~/.shellnotes/util/v/v.sh
 	. ~/.shellnotes/util/r/r.sh
@@ -20,10 +19,10 @@ function shellnotes() {
 		cd ~
 		if [ -e .shellnotes/.shellnotes.sh ]; then
 			echo "Shellnotes is successfully installed. For help, type shellnotes --help."
-			cd $dir
+			cd $DIR
 		else
 			echo "Shellnotes is not installed properly. Please repeat installation steps or try shellnotes --help."
-			cd $dir
+			cd $DIR
 		fi
 	fi
 }

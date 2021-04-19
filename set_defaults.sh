@@ -7,7 +7,6 @@ info
 
 . ./~/.shellnotes/def/defaults.sh
 
-dir="$(pwd)"
 
 clear
 echo "Shellnotes configuration tool"
@@ -93,4 +92,4 @@ else
 	echo "Invalid input."
 fi
 
-cd $dir
+cd $DIR

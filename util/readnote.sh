@@ -6,8 +6,6 @@ in /docs/github/ for its full text.
 info
 
 function readnote() { 
-	dir="$(pwd)"
-	me="$(whoami)"
 	if [ $# -eq 0 ]; then
 		echo -n "Enter note name: " && read notename
 	else
@@ -31,6 +29,6 @@ function readnote() {
 	esac
 		
 	clear
-	cd $dir
+	cd $DIR
 
 }

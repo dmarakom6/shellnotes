@@ -6,8 +6,6 @@ in /docs/github/ for its full text.
 info
 
 function findnote() {
-	dir="$(pwd)"
-	me="$(whoami)"
 	if [ $# -eq 0 ]; then
 		echo -n "Enter note name: " && read notename
 	else
@@ -21,6 +19,6 @@ function findnote() {
 		echo "Try 'findmisplacednote' to find the original file."
 
 	fi
-	cd $dir		
+	cd $DIR		
 
 }

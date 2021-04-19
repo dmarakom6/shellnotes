@@ -11,7 +11,6 @@ function noteinfo() {
 	else
 		notename=$1
 	fi
-	dir="$(pwd)"
 	cd $DEFAULT_PATH
 	if [ -e $notename ]; then
 		wc $notename
@@ -19,5 +18,5 @@ function noteinfo() {
 else
 	echo "That note doesn't exist."
 fi
-cd $dir
+cd $DIR
 }

@@ -6,8 +6,6 @@ in /docs/github/ for its full text.
 info
 
 function renamenote() {
-	dir="$(pwd)"
-	me="$(whoami)"
 	cd $DEFAULT_PATH
 	if [ $# -eq 0 ]; then
 		echo -n "Enter note name: " && read notename
@@ -32,5 +30,5 @@ function renamenote() {
 		echo "This note does not exist."
 	fi
 	
-	cd $dir
+	cd $DIR
 }

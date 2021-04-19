@@ -5,6 +5,8 @@
 #Warning! If you don't have gedit(text editor) or nano installed, you may have to change the default text editor (lines 10, 25, 40).
 
 #The lines below must NOT be changed.
+DIR="$(pwd)"
+
 . ~/.shellnotes/util/getv.sh
 . ~/.shellnotes/def/defaults.sh
 . ~/.shellnotes/util/ChMkDir.sh

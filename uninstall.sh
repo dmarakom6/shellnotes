@@ -72,7 +72,7 @@ if [ $option = "1" ]; then
 				echo "Your shell is not supported."
 			   	cd ~/.shellnotes/util/exec
    				./uninfailed
-			   	cd $dir
+			   	cd $DIR
 			fi
 		esac
 	else
@@ -80,7 +80,7 @@ if [ $option = "1" ]; then
 		echo "Shellnotes is not installed."
 		cd ~/.shellnotes/util/exec
    		./uninfailed
-	    cd $dir
+	    cd $DIR
 	fi
 
 
@@ -89,7 +89,7 @@ elif [ $option = "2" ]; then
 		echo "Shellnotes is already disabled."
 		cd ~/.shellnotes/util/exec
    		./disfailed
-	   	cd $dir
+	   	cd $DIR
 	else
 		sed -i '2 i\return 0 #Shellnotes is disabled by the user. Do not change this line.' ~/.shellnotes/.shellnotes.sh
 		echo "Shellnotes is now disabled. To enable, run this script again and choose option (3)."
@@ -102,7 +102,7 @@ elif [ $option = "3" ]; then
 		echo "Shellnotes is already enabled."
 		cd ~/.shellnotes/util/exec
    		./enfailed
-	   	cd $dir
+	   	cd $DIR
 	fi
 else
 	echo "This is not an option."

@@ -12,29 +12,25 @@ function delnote() {
 		delete=$1
 	fi
 		if [[ $1 == "-all" ]]; then
-			dir="$(pwd)"
 			cd $DEFAULT_PATH
-			me="$(whoami)"
 			rm -f *
 			clear
-			cd $dir
-			str="All files deleted from Home/$me/Notes" 
+			cd $DIR
+			str="All files deleted from $DEFAULT_PATH" 
 			underlines=$(echo "$str" | tr -c '\010' '-')
 			echo "$str\n$underlines"
 		else
-			dir="$(pwd)"
 			cd $DEFAULT_PATH
-			me="$(whoami)"
 			if [ -e $delete ]; then
 				rm $delete
 				clear
-				cd $dir
-				str="Note deleted from Home/$me/Notes" 
+				cd $DIR
+				str="Note deleted from $DEFAULT_PATH" 
 				underlines=$(echo "$str" | tr -c '\010' '-')
 				echo "$str\n$underlines"
 			else
 				echo "No such file."
-				cd $dir
+				cd $DIR
 		fi
 	fi
 }

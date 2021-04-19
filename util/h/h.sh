@@ -7,5 +7,5 @@ info
 
 case $1 in -h|--help )
 	less ~/.shellnotes/docs/help
-	cd $dir
+	cd $DIR
 esac
