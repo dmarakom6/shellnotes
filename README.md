@@ -17,7 +17,6 @@ With shellnotes, you can make, find, list, edit or delete your notes from wherev
 * It's portable and compatible with most shells.
 * It matches all users, by creating the appropriate environment for both beginners and advanced linux users.
 * Even if you delete shellnotes, your notes will stay where they are.
-* It has a simple file organization system and [TUI](https://en.wikipedia.org/wiki/Text-based_user_interface).
 * It's easy to install, delete, update or use.
 * It's mostly written in [shell](https://en.wikipedia.org/wiki/Shell_script), which is the language for Unix/Linux [CLI](https://en.wikipedia.org/wiki/Command-line_interface)  in-terminal applications.
 
@@ -43,13 +42,13 @@ for more information, make sure to check out the [installation documentation](ht
 # How to set the defaults
 Shellnotes lets you use your favourite text-editor to take your notes, and your prefered directory to save your notes, from where shellnotes will delete them, read them, or list them.
 ## How shellnotes works with text-editors
-There are to ways to write a note with shellnotes:
+There are two ways to write a note with shellnotes:
 1. Using a [GUI](https://en.wikipedia.org/wiki/Graphical_user_interface) editor or [IDE](https://en.wikipedia.org/wiki/Integrated_development_environment), such as [Sublime Text](https://www.sublimetext.com/), or [Visual Studio Code](https://code.visualstudio.com/).  
-2. Using an in-terminal editor. 
+2. Using a terminal-based editor. 
 ## The Default Note Editors
 Shellnotes comes with two default editors, which you can download or [change](#change-default-editors). These are:
 1. [gedit](https://wiki.gnome.org/Apps/Gedit), the default [GNOME](https://www.gnome.org/) text editor.
-2. [nano](https://www.nano-editor.org/), for in-terminal notes.
+2. [nano](https://www.nano-editor.org/).
  
 
 ## Change default editors  
@@ -71,12 +70,12 @@ If you choose option 3, type a valid __relative__ path to the new directory with
 > Note: You can check the current Notes folder either via "shellnotes -sd, option 4", or "listnotes --folder".  
 
 # Taking your first note
-You can either use `newnote` for regular notes, or `quicknote` for an in-terminal experience.
+You can either use `newnote` for regular notes, or `quicknote` to take a note directly from your terminal.
 ## Using `newnote`
-Open a terminal window after installing shellnotes. Type `newnote` and the name of the new note's name. If you don't set a name after the command as a parameter, shellnotes will ask you for it with a dynamic input.
+Open a terminal window after installing shellnotes. Type `newnote` and the name of the new note's name. If you don't set a name after the command as a parameter, shellnotes will ask you for it with an input.
 It should look like this:
 ```
-user@device:folder$ newnote helloWorld => no extension needed!
+user@device:folder$ newnote helloWorld
 ```
 or:
 ```
@@ -85,10 +84,10 @@ Enter note name: helloWorld
 ```
 Then, the [default regular notes editor](#the-default-note-editors) window will pop-up. Take your notes, save the file, done!
 ## Using `quicknote`
-Open the terminal. Type `quicknote` and the name of the new note's name. If you don't set a name after the command as a parameter, shellnotes will ask you for it again.
+Open the terminal. Type `quicknote` and the name of the new note's name. If you don't set a name after the command as an argument, shellnotes will ask you for it again.
 It's similar to `newnote`:
 ```
-user@device:folder$ quicknote helloWorld => no extension needed!
+user@device:folder$ quicknote helloWorld
 ```
 or:
 ```
@@ -97,7 +96,7 @@ Enter note name: helloWorld
 ```
 `quicknote` will then open the [default quick notes editor](#the-default-note-editors). Now you can start saving your notes via terminal.
 ### Reading notes
-You can also read your notes in a similar way, using `readnote` and `quickread`. See more in the [commands file](https://github.com/dmarakom6/shellnotes/blob/master/docs/commands.txt).
+You can also read your notes in a similar way, using `readnote` and `quickread`. See all commands in the [commands file](https://github.com/dmarakom6/shellnotes/blob/master/docs/commands.txt).
 
 # Learn everything shellnotes can do
 shellnotes is more than just that. Here's some documentation you might be interested in:  
@@ -118,6 +117,6 @@ Want even more information? Feel free to see the whole [shellnotes documentation
 
 # Warnings!
 
-*WARNING*: The default shell for shellnotes is bash. However, shellnotes will find your shell if it's different and continue installing according to it. If your shell is not supported though, the installation will fail.
+*WARNING*: The default shell for shellnotes is bash. However, shellnotes will find your shell if it's different and continue installing according to it. If your shell is not supported, the installation will fail.
 
 *WARNING*: install.sh must be run from the folder where it was downloaded WITH the other files from the repo. Otherwise, installation will fail. (see [installation documentation](https://github.com/dmarakom6/shellnotes/blob/master/docs/installing.txt) for more).
