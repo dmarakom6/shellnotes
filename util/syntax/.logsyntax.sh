@@ -8,6 +8,6 @@ info
 #syntax:
 
 #g++ file.cpp -o compiledfile -> make a compiled version of the logger
-#~/.shellnotes/util/failed/enfailed -> run the compiled file
+#~/.shellnotes/util/logfiles/enfailed -> run the compiled file
 #rm -f enfailed -> delete the compiled file
 #cd $DIR -> dir="$(pwd)" in main scripts

@@ -77,7 +77,7 @@ The tree looks like this:
 |   |   |-- sdfailed
 |   |   |-- ufailed
 |   |   |-- uninfailed
-|   |-- failed
+|   |-- logfiles
 |   |   |-- disfailed.cpp
 |   |   |-- enfailed.cpp
 |   |   |-- ifailed.cpp
