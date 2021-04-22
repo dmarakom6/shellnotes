@@ -48,7 +48,8 @@ folder = folder.strip()
 home = str(Path.home())
 folder = folder.replace('~', home)
 
-print(f"\nFound {files} notes in {folder}:\n")
+#print(f"\nFound {files} notes in {folder}:\n")
+print("All notes in", folder + ":")
 
 onlyfiles = [f for f in listdir(folder) if isfile(join(folder, f))]
 for file in onlyfiles:
