@@ -27,6 +27,7 @@ else
    mv bash_update.sh ~/.shellnotes/
    mv uninstall.sh ~/.shellnotes/
    mv update.sh ~/.shellnotes/
+   rm -rf .gitignore
    rm -rf ./README.md
    rm -rf ./SECURITY.md
    sudo mkdir /usr/local/man/man1 2>/dev/null

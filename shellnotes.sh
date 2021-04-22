@@ -1,4 +1,4 @@
-#!/bin/zsh
+
 
 
 #The first line is the user's default shell found during installation process.
