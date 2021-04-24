@@ -11,4 +11,5 @@ findmisplacednote
 renamenote
 shellnotes (-u/-v/-r/-l/-sd/-h/-au)
 clearlogs
+resetshellnotes (-f)
 noteinfo

@@ -14,6 +14,8 @@ This command is made mostly for shellnotes' developers. After testing a new rele
 They must clear their data from the program's source files, in order to push them to the 
 repository.
 
+You can use the "-f/--force" parameter to avoid prompt when running resetshellnotes.
+
 This command should be used ONLY WHEN NECESSARY, just like all other hidden commands.
 If your notes have disappeared, or you cant find the displayed note folder, use this command to
 reset everything to its normal state.
