@@ -11,12 +11,20 @@ function noteinfo() {
 	else
 		notename=$1
 	fi
-	cd $DEFAULT_PATH
-	if [ -e $notename ]; then
-		wc $notename
-		echo "(lines/words/chars/name)"
-else
-	echo "That note doesn't exist."
-fi
+
+	if [ -z $notename ]; then
+		echo "Invalid input."
+		return 0
+	else
+		cd $DEFAULT_PATH
+		if [ -e $notename ]; then
+			wc $notename
+			echo "(lines/words/chars/name)"
+		else
+			echo "That note doesn't exist."
+		fi
+	fi
+
 cd $DIR
+
 }

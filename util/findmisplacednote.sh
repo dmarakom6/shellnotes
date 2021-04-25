@@ -11,6 +11,12 @@ function findmisplacednote() {
 	else
 		notename=$1
 	fi
-	echo "Possible locations: "
-	find ~/ -iname $notename -print 2>/dev/null
+
+	if [ -z $notename ]; then
+		echo "Invalid input."
+		return 0
+	else
+		echo "Possible locations: "
+		find ~/ -iname $notename -print 2>/dev/null
+	fi
 }

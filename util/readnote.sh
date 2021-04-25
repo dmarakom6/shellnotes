@@ -12,23 +12,29 @@ function readnote() {
 		notename=$1
 	fi
 
-	cd $DEFAULT_PATH
-	if [ -e $notename ]; then
-		chmod 0444 $notename
-		$NOTES_EDITOR $notename
-		chmod +rw $notename
-		
-	else
-		clear
-		echo "No such note."
-		echo -n "Do you want to create one?[Y/N]: " && read create;
-	fi
-		
-	case $create in y|Y|YES|Yes|yes )
-		$NOTES_EDITOR
-	esac
-		
-	clear
-	cd $DIR
+	if [ -z $notename ]; then
+		echo "Invalid input."
+		return 0
 
+	else
+
+		cd $DEFAULT_PATH
+		if [ -e $notename ]; then
+			chmod 0444 $notename
+			$NOTES_EDITOR $notename
+			chmod +rw $notename
+			
+		else
+			clear
+			echo "No such note."
+			echo -n "Do you want to create one?[Y/N]: " && read create;
+		fi
+			
+		case $create in y|Y|YES|Yes|yes )
+			$NOTES_EDITOR
+		esac
+			
+		clear
+		cd $DIR
+	fi
 }

@@ -15,20 +15,35 @@ function renamenote() {
 		newnotename=$2
 	fi
 
-	if [ -e $notename ]; then
-		if [ -e $newnotename ]; then
-			echo "There is another note named '$newnotename' in your Notes folder."
-		else
-			mv $notename $newnotename
-			clear
-			str="Note renamed from $notename to $newnotename in $DEFAULT_PATH"
-			underlines=$(echo "$str" | tr -c '\010' '-')
-			echo "$str\n$underlines"
-		fi
+
+	if [ -z $notename ]; then
+		echo "Invalid input."
+		cd $DIR
+		return 0
+
+	elif [ -z $newnotename ]; then
+		echo "Invalid input."
+		cd $DIR
+		return 0
 
 	else
-		echo "This note does not exist."
-	fi
-	
+
+		if [ -e $notename ]; then
+			if [ -e $newnotename ]; then
+				echo "There is another note named '$newnotename' in your Notes folder."
+			else
+				mv $notename $newnotename
+				clear
+				str="Note renamed from $notename to $newnotename in $DEFAULT_PATH"
+				underlines=$(echo "$str" | tr -c '\010' '-')
+				echo "$str\n$underlines"
+			fi
+
+		else
+			echo "This note does not exist."
+		fi
+		
 	cd $DIR
+
+	fi
 }

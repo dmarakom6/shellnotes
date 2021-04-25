@@ -13,7 +13,8 @@ echo "2.Disable shellnotes and all its commands, but keep the files in your syst
 echo "3.Enable shellnotes."
 echo ""
 echo -n "[1,2,3]: " && read option
-if [ $option = "1" ]; then
+
+case $option in 1 )
 	if [ -e ~/.shellnotes/.shellnotes.sh ]; then
 		echo -n "Are you sure you want to delete Shellnotes?[Y/N]: " && read delete
 		case $delete in y|Y|YES|Yes|yes )
@@ -82,9 +83,9 @@ if [ $option = "1" ]; then
    		./uninfailed
 	    cd $DIR
 	fi
+esac
 
-
-elif [ $option = "2" ]; then
+case $option in 2 )
 	if grep 'return' <~/.shellnotes/.shellnotes.sh >/dev/null; then
 		echo "Shellnotes is already disabled."
 		cd ~/.shellnotes/util/exec
@@ -94,7 +95,9 @@ elif [ $option = "2" ]; then
 		sed -i '2 i\return 0 #Shellnotes is disabled by the user. Do not change this line.' ~/.shellnotes/.shellnotes.sh
 		echo "Shellnotes is now disabled. To enable, run this script again and choose option (3)."
 	fi
-elif [ $option = "3" ]; then
+esac
+
+case $option in 3 )
 	if grep 'return' <~/.shellnotes/.shellnotes.sh >/dev/null; then
 		sed -i '2d' ~/.shellnotes/.shellnotes.sh
 		echo "Shellnotes is now enabled. Please restart your terminal."
@@ -104,9 +107,10 @@ elif [ $option = "3" ]; then
    		./enfailed
 	   	cd $DIR
 	fi
-else
-	echo "This is not an option."
-fi
+esac
 
 
-	
+case $option in
+	(*[a-zA-Z]* | "" )
+		echo "Invalid input."
+esac
