@@ -6,4 +6,3 @@
 #in /docs/github/ for its full text.
 
 from d import d
-
