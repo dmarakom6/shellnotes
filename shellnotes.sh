@@ -1,4 +1,4 @@
-
+#!/bin/zsh
 
 
 #The first line is the user's default shell found during installation process.
@@ -21,6 +21,8 @@ DIR="$(pwd)"
 . ~/.shellnotes/util/findmisplacednote.sh
 . ~/.shellnotes/util/renamenote.sh
 . ~/.shellnotes/util/noteinfo.sh
+. ~/.shellnotes/util/notegrep.sh
+
 
 
 . ~/.shellnotes/util/shellnotes.sh
