@@ -6,16 +6,20 @@ in /docs/github/ for its full text.
 info
 
 
-export GREP_OPTIONS='--color=auto' 
-
+alias grep='grep --color=always'
 
 :<<'comment'
 
 Here, the color parameter is specified in a grep-specific environment variable.
 Then, you don't have to enter it in the command line again.
-The "auto" option is selected in order to colorize the output of the "grep"
-command every time it is called, unless the output is piped to a command, or 
+The "always" option is selected in order to colorize the output of the "grep"
+command every time it is called, even if the output is piped to a command, or 
 redirected to a file.
+
+Also works with: 
+export GREP_OPTIONS='--color=auto' 
+
+DO NOT pipe notegrep with less.
 
 comment
 
@@ -66,31 +70,62 @@ In this example, the matching regex is going to be displayed as bold yellow (in 
 comment
 
 
+export LESSCHARSET=utf-8
+
+
+:<<'comment'
+
+Do the above for utf-8 support. 
+
+It should also work with:
+
+LANG=
+LC_COLLATE="en_US.UTF-8"
+LC_CTYPE="en_US.UTF-8"
+LC_MESSAGES="en_US.UTF-8"
+LC_MONETARY="en_US.UTF-8"
+LC_NUMERIC="en_US.UTF-8"
+LC_TIME="en_US.UTF-8"
+LC_ALL="en_US.UTF-8"
+
+comment
+
 
 function notegrep() {
     if [ $# -eq 0 ]; then
 		echo -n "Enter note name: " && read notename
-		echo -n "Enter regex: " && read find
+		echo -n "Enter regex: " && read regex
 	else
-		notename=$1
-        find=$2
+		notename=$2
+        regex=$1
 	fi
 
 	if [ -z $notename ]; then
 		echo "Invalid input."
 		return 0
 
-    elif [ -z $find ]; then
-        echo "No key word or character given."
+    elif [ -z $regex ]; then
+        echo "No pattern given."
         return 0
     fi
 
     if [ -e ${DEFAULT_PATH}/${notename} ]; then
         cd $DEFAULT_PATH
-        grep $find $notename
+        out="$(grep $regex $notename | wc -l)"
+        
+        if [ $out -gt 20 ]; then
+            grep -i $regex $notename | less
+        elif [ $out -lt 20 ]; then
+            grep -i $regex $notename
+        else
+            return 0
+        fi
+
     else
         echo "This note doesn't exist in $DEFAULT_PATH."
     fi
 
+ unset GREP_OPTIONS
  cd $DIR
+ return 0
 }
