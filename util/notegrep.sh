@@ -33,12 +33,12 @@ Now, change the highlight color of grep by using an environment variable, GREP_C
 An empty string or 0 resets all text styling and resets both colors to the defaults but
 does not reset the font to the default. Some options/examples are:
 
-┏━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━
+┏━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 ┃ ### ┃ GNOME Terminal          ┃ xterm                   ┃ non-GUI TTY           ┃
-┡━━━━━╇━━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━
+┡━━━━━╇━━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 │     │ «reset style+colors»    │ «reset style+colors»    │ «reset style+colors»  │
 │   0 │ «reset style+colors»    │ «reset style+colors»    │ «reset style+colors»  │
-├─────┼─────────────────────────┼─────────────────────────┼─────│
+├─────┼─────────────────────────┼─────────────────────────┼─────━━━━━━━━━━━━━━━━━━━
 │   1 │ +bold, +brighter color  │ +bold, +brighter color  │ +brighter color,      │
 │     │                         │                         │   -forced grey        │
 │   2 │ +fainter color          │ +fainter color          │ +forced grey          │
@@ -51,7 +51,7 @@ does not reset the font to the default. Some options/examples are:
 │   8 │ +invisible              │ +invisible              │ «no effect»           │
 │     │                         │   ● underline appears   │                       │
 │   9 │ +strikethrough          │ +strikethrough          │ «no effect»           │
-├────┼───────────────────────────────────────────────────────────┤                                             Source: https://askubuntu.com/questions/1042234/modifying-the-color-of-grep
+├────┼───────────────────────────────────────────────────────────━━━━━━━━━━━━━━━━━                            Source: https://askubuntu.com/questions/1042234/modifying-the-color-of-grep
 │  21 │ -bold, -brighter color, │ +double underline       │ -brighter color,      │
 │     │   -fainter color        ├     -forced grey        │                       │
 │  22 │ -bold, -brighter color, │ -bold, -brighter color, │ -brighter color,      │
@@ -63,7 +63,7 @@ does not reset the font to the default. Some options/examples are:
 │  27 │ -invert colors          │ -invert colors          │ -invert colors        │
 │  28 │ -invisible              │ -invisible              │ «no effect»           │
 │  29 │ -strikethrough          │ -strikethrough          │ «no effect»           │
-└─────┴─────────────────────────┴─────────────────────────┴──────
+└─────┴─────────────────────────┴─────────────────────────┴──────━━━━━━━━━━━━━━━━━━
 
 In this example, the matching regex is going to be displayed as bold yellow (in most terminals).
 
@@ -93,8 +93,8 @@ comment
 
 function notegrep() {
     if [ $# -eq 0 ]; then
+        echo -n "Enter regex: " && read regex
 		echo -n "Enter note name: " && read notename
-		echo -n "Enter regex: " && read regex
 	else
 		notename=$2
         regex=$1
@@ -115,7 +115,7 @@ function notegrep() {
         
         if [ $out -gt 20 ]; then
             grep -i $regex $notename | less
-        elif [ $out -lt 20 ]; then
+        elif [ $out -le 20 ]; then
             grep -i $regex $notename
         else
             return 0
