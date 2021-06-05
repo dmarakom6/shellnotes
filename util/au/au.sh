@@ -11,7 +11,7 @@ case $1 in -au|--auto-update )
 		echo -n "Disable it? [Y/N]: " && read input
 		case $input in Yes|y|Y|yes|YES )
 			sed -i '/ChUpd.sh/d' ~/.shellnotes/.shellnotes.sh
-			echo "auto-update feature is now disabled."
+			echo "auto-update is now disabled."
 			echo "To enable, run 'shellnotes -au' again."
 		esac
 	else
@@ -20,10 +20,10 @@ case $1 in -au|--auto-update )
 		case $input in Yes|y|Y|yes|YES )
 			long=$(grep -n "#The lines below must NOT be changed." ~/.shellnotes/.shellnotes.sh)
 			short=$(echo "${long}" | head -c1)
-			short=$((short+1))
+			short=$`$short+1` 2>/dev/null
 			file=$(eval echo "~/.shellnotes/util/ChUpd.sh")
 	      	sed -i "$short i\. $file" ~/.shellnotes/.shellnotes.sh
-	      	echo "auto-update feature is now enabled."
+	      	echo "auto-update is now enabled."
 			echo "To disable, run 'shellnotes -au' again."
 		esac	
 	fi
