@@ -1,11 +1,11 @@
 :<<'info'
-shellnotes - noteinfo.sh
+shellnotes - notewc.sh
 (C) Dimitris Marakomihelakis
 Released under the "All rights reserved" category. See the RIGHTS.txt file
 in /docs/github/ for its full text.
 info
 
-function noteinfo() {
+function notewc() {
 	if [ $# -eq 0 ]; then
 		echo -n "Enter note name: " && read notename
 	else
@@ -18,7 +18,7 @@ function noteinfo() {
 	else
 		cd $DEFAULT_PATH
 		if [ -e $notename ]; then
-			wc $notename
+			echo -n "wc output: " && wc $notename
 			echo "(lines/words/chars/name)"
 		else
 			echo "That note doesn't exist."
