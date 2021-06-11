@@ -1,36 +1,29 @@
-#Warning! If you don't have gedit(text editor) or nano installed, you may have to change the default text editor (lines 10, 25, 40).
+:<<'info'
+shellnotes - shellnotes.sh
+(C) Dimitris Marakomihelakis
+Released under the "All rights reserved" category. See the RIGHTS.txt file
+in /docs/github/ for its full text.
+info
 
-#The lines below must NOT be changed.
-DIR="$(pwd)"
-
-. ~/.shellnotes/util/getv.sh
-. ~/.shellnotes/def/defaults.sh
-. ~/.shellnotes/util/ChMkDir.sh
-
-. ~/.shellnotes/util/readnote.sh
-. ~/.shellnotes/util/quickread.sh
-. ~/.shellnotes/util/quicknote.sh
-. ~/.shellnotes/util/newnote.sh
-. ~/.shellnotes/util/delnote.sh
-. ~/.shellnotes/util/listnotes.sh
-. ~/.shellnotes/util/findnote.sh
-. ~/.shellnotes/util/findmisplacednote.sh
-. ~/.shellnotes/util/renamenote.sh
-. ~/.shellnotes/util/notewc.sh
-. ~/.shellnotes/util/notegrep.sh
-
-
-
-. ~/.shellnotes/util/shellnotes.sh
-
-
-. ~/.shellnotes/util/.hidden/.clearlogs.sh
-. ~/.shellnotes/util/.hidden/.resetshellnotes.sh
-
-
-. ~/.shellnotes/util/syntax/.logsyntax.sh
-. ~/.shellnotes/util/syntax/.copr.sh
-. ~/.shellnotes/util/syntax/.dir.sh
-. ~/.shellnotes/util/syntax/.me.sh
-. ~/.shellnotes/util/syntax/.dir.sh
-. ~/.shellnotes/util/syntax/.param.sh
+function shellnotes() {
+	. ~/.shellnotes/util/h/h.sh	
+	. ~/.shellnotes/util/v/v.sh
+	. ~/.shellnotes/util/r/r.sh
+	. ~/.shellnotes/util/u/u.sh
+	. ~/.shellnotes/util/l/l.sh
+	. ~/.shellnotes/util/au/au.sh
+	. ~/.shellnotes/util/sd/sd.sh
+	. ~/.shellnotes/util/i/i.sh
+	if [[ $# > 1 ]]; then
+		echo "Too many arguments."
+	elif [[ $# = 0 ]];then
+		cd ~
+		if [ -e .shellnotes/.shellnotes.sh ]; then
+			echo "Shellnotes is successfully installed. For help, type shellnotes --help."
+			cd $DIR
+		else
+			echo "Shellnotes is not installed properly. Please repeat installation steps or try shellnotes --help."
+			cd $DIR
+		fi
+	fi
+}
