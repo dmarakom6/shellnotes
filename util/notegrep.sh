@@ -94,18 +94,28 @@ comment
 function notegrep() {
     if [ $# -eq 0 ]; then
         echo -n "Enter regex: " && read regex
-		echo -n "Enter note name: " && read notename
-	else
-		notename=$2
-        regex=$1
-	fi
+        echo -n "Enter note name: " && read notename
+    else
+        if [ $# -eq 3 ]; then
+            option=$1
+            regex=$2
+            notename=$3
+            #check
+            return 0
+        else
+            regex=$1
+            notename=$2
+        fi
+    fi
 
 	if [ -z $notename ]; then
 		echo "Invalid input."
+        cd $DIR
 		return 0
 
     elif [ -z $regex ]; then
         echo "No pattern given."
+        cd $DIR
         return 0
     fi
 
@@ -113,12 +123,16 @@ function notegrep() {
         cd $DEFAULT_PATH
         out="$(grep $regex $notename | wc -l)"
         
-        if [ $out -gt 20 ]; then
-            grep -i $regex $notename | less
-        elif [ $out -le 20 ]; then
-            grep -i $regex $notename
+        if [ "$(grep -c $regex $notename)" -eq 0 ]; then
+                echo "No matches found."
         else
-            return 0
+
+            if [ $out -gt 20 ]; then
+                grep -i $regex $notename | less
+            elif [ $out -le 20 ]; then
+                grep -i $regex $notename
+            fi
+
         fi
 
     else
