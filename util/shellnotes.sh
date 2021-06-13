@@ -13,6 +13,7 @@ function shellnotes() {
 	. ~/.shellnotes/util/l/l.sh
 	. ~/.shellnotes/util/au/au.sh
 	. ~/.shellnotes/util/sd/sd.sh
+	. ~/.shellnotes/util/i/i.sh
 	if [[ $# > 1 ]]; then
 		echo "Too many arguments."
 	elif [[ $# = 0 ]];then
