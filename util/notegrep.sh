@@ -92,6 +92,46 @@ comment
 
 
 function notegrep() {
+
+    DIR="$(pwd)"
+
+    do_grep() {
+
+        if [ -e ${DEFAULT_PATH}/${notename} ]; then
+            cd $DEFAULT_PATH
+            out="$(grep $regex $notename | wc -l)"
+            
+            if [ "$(grep -c $regex $notename)" -eq 0 ]; then
+                    echo "No matches found."
+            else
+
+                if [ $out -gt 20 ]; then
+                    grep -i $regex $notename | less
+                elif [ $out -le 20 ]; then
+                    grep -i $regex $notename
+                fi
+
+            fi
+
+        else
+            echo "This note doesn't exist in $DEFAULT_PATH."
+        fi
+
+    }
+
+    check_params() {
+        case $option in
+            parameter)
+                #parameter script import...
+        ;;
+            *)
+                echo "Invalid parameter. Proceeding in normal grep mode."
+                do_grep
+        ;;
+                
+        esac
+    }
+
     if [ $# -eq 0 ]; then
         echo -n "Enter regex: " && read regex
         echo -n "Enter note name: " && read notename
@@ -100,7 +140,7 @@ function notegrep() {
             option=$1
             regex=$2
             notename=$3
-            #check
+            check_params
             return 0
         else
             regex=$1
@@ -119,25 +159,8 @@ function notegrep() {
         return 0
     fi
 
-    if [ -e ${DEFAULT_PATH}/${notename} ]; then
-        cd $DEFAULT_PATH
-        out="$(grep $regex $notename | wc -l)"
-        
-        if [ "$(grep -c $regex $notename)" -eq 0 ]; then
-                echo "No matches found."
-        else
-
-            if [ $out -gt 20 ]; then
-                grep -i $regex $notename | less
-            elif [ $out -le 20 ]; then
-                grep -i $regex $notename
-            fi
-
-        fi
-
-    else
-        echo "This note doesn't exist in $DEFAULT_PATH."
-    fi
+   
+ do_grep
 
  unset GREP_OPTIONS
  cd $DIR
