@@ -163,6 +163,8 @@ function notegrep() {
  do_grep
 
  unset GREP_OPTIONS
+ unset -f check_params
+ unset -f do_grep
  cd $DIR
  return 0
 }
