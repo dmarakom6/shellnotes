@@ -116,10 +116,11 @@ function notegrep() {
         else
             echo "This note doesn't exist in $DEFAULT_PATH."
         fi
-
+        cd $DIR
     }
 
     check_params() {
+
         case $option in
             parameter)
                 #parameter script import...
@@ -130,6 +131,7 @@ function notegrep() {
         ;;
                 
         esac
+
     }
 
     if [ $# -eq 0 ]; then
