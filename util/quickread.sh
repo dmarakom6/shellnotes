@@ -18,8 +18,8 @@ function quickread() {
 	
 	else
 		clear
-		echo "No such note."
-		cd ~	
+		echo "No such note."	
 fi
+
 cd $DIR
 }
