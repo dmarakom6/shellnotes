@@ -1,7 +1,7 @@
 
 
 #The first line is the user's default shell found during installation process.
-#Warning! If you don't have gedit(text editor) or nano installed, you may have to change the default text editor (lines 10, 25, 40).
+#Warning! If you don't have gedit(text editor) or nano installed, you may have to change the default text editor.
 
 #The lines below must NOT be changed.
 DIR="$(pwd)"
