@@ -6,4 +6,11 @@ in /docs/github/ for its full text.
 info
 
 out="$(grep $regex $DEFAULT_PATH/$notename | wc -l)"
-echo "Compressed $out lines of grep output."
+
+if [ $out -eq 1 ]; then
+	echo "Compressed $out line of grep output."
+elif [ $out -gt 1 ]; then
+	echo "Compressed $out lines of grep output."
+else
+	echo "No matching files found."
+fi

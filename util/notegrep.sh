@@ -121,6 +121,8 @@ function notegrep() {
 
     check_params() {
 
+        #Function for checking notegrep parameters with three or more options.
+
         case $option in
             -sc | --split-char)
                 . ~/.shellnotes/util/notegrep/sc.sh
@@ -128,6 +130,8 @@ function notegrep() {
             -cl | --count-lines )
                 . ~/.shellnotes/util/notegrep/cl.sh
         ;;
+            
+        
             *)
                 echo "Invalid parameter. Proceeding in normal grep mode."
                 do_grep
@@ -152,6 +156,17 @@ function notegrep() {
             regex=$1
             notename=$2
         fi
+
+        #Parameters without three or more options
+        case $regex in
+            -cf | --count-files )
+                export regex=$2
+                export option=$1
+                . ~/.shellnotes/util/notegrep/cf.sh
+                ;;
+        esac
+        return 0
+
     fi
 
 	if [ -z $notename ]; then
@@ -164,6 +179,8 @@ function notegrep() {
         cd $DIR
         return 0
     fi
+
+
 
    
  do_grep
