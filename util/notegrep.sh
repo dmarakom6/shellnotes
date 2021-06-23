@@ -125,6 +125,9 @@ function notegrep() {
             -sc | --split-char)
                 . ~/.shellnotes/util/notegrep/sc.sh
         ;;
+            -cl | --count-lines )
+                . ~/.shellnotes/util/notegrep/cl.sh
+        ;;
             *)
                 echo "Invalid parameter. Proceeding in normal grep mode."
                 do_grep
