@@ -122,8 +122,8 @@ function notegrep() {
     check_params() {
 
         case $option in
-            parameter)
-                #parameter script import...
+            -sc)
+                . ~/.shellnotes/util/notegrep/sc.sh
         ;;
             *)
                 echo "Invalid parameter. Proceeding in normal grep mode."
@@ -132,6 +132,7 @@ function notegrep() {
                 
         esac
 
+     return 0
     }
 
     if [ $# -eq 0 ]; then
@@ -139,9 +140,9 @@ function notegrep() {
         echo -n "Enter note name: " && read notename
     else
         if [ $# -eq 3 ]; then
-            option=$1
-            regex=$2
-            notename=$3
+            export option=$1
+            export regex=$2
+            export notename=$3
             check_params
             return 0
         else
