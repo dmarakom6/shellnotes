@@ -122,7 +122,7 @@ function notegrep() {
     check_params() {
 
         case $option in
-            -sc)
+            -sc | --split-char)
                 . ~/.shellnotes/util/notegrep/sc.sh
         ;;
             *)
