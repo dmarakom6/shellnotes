@@ -164,6 +164,11 @@ function notegrep() {
                 export option=$1
                 . ~/.shellnotes/util/notegrep/cf.sh
                 ;;
+            -sf | --show-files )
+                export regex=$2
+                export option=$1
+                . ~/.shellnotes/util/notegrep/sf.sh
+                ;;
         esac
         return 0
 
