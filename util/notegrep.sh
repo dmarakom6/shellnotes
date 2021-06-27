@@ -170,25 +170,23 @@ function notegrep() {
                 . ~/.shellnotes/util/notegrep/sf.sh
                 ;;
         esac
-        return 0
+        
+
+    	if [ -z $notename ]; then
+    		echo "Invalid input."
+            cd $DIR
+    		return 0
+
+        elif [ -z $regex ]; then
+            echo "No pattern given."
+            cd $DIR
+            return 0
+        fi
+
+
+        do_grep
 
     fi
-
-	if [ -z $notename ]; then
-		echo "Invalid input."
-        cd $DIR
-		return 0
-
-    elif [ -z $regex ]; then
-        echo "No pattern given."
-        cd $DIR
-        return 0
-    fi
-
-
-
-   
- do_grep
 
  unset GREP_OPTIONS
  unset -f check_params
