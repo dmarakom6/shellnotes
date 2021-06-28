@@ -130,8 +130,9 @@ function notegrep() {
             -cl | --count-lines )
                 . ~/.shellnotes/util/notegrep/cl.sh
         ;;
-            
-        
+            -sl | --show-lines )
+                . ~/.shellnotes/util/notegrep/sl.sh
+        ;;
             *)
                 echo "Invalid parameter. Proceeding in normal grep mode."
                 do_grep
@@ -145,6 +146,7 @@ function notegrep() {
     if [ $# -eq 0 ]; then
         echo -n "Enter regex: " && read regex
         echo -n "Enter note name: " && read notename
+        do_grep
     else
         if [ $# -eq 3 ]; then
             export option=$1
@@ -169,23 +171,25 @@ function notegrep() {
                 export option=$1
                 . ~/.shellnotes/util/notegrep/sf.sh
                 ;;
+            *)
+                if [ -z $notename ]; then
+                    echo "Invalid input."
+                    cd $DIR
+                    return 0
+
+                elif [ -z $regex ]; then
+                    echo "No pattern given."
+                    cd $DIR
+                    return 0
+                fi
+
+                do_grep
+
+                ;;
         esac
         
 
-    	if [ -z $notename ]; then
-    		echo "Invalid input."
-            cd $DIR
-    		return 0
-
-        elif [ -z $regex ]; then
-            echo "No pattern given."
-            cd $DIR
-            return 0
-        fi
-
-
-        do_grep
-
+    	
     fi
 
  unset GREP_OPTIONS
