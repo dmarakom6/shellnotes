@@ -7,7 +7,7 @@ info
 
 if [ -f $DEFAULT_PATH/$notename ]; then
 
-	out="$(grep $regex $DEFAULT_PATH/$notename | wc -l)"
+	out="$(grep -c $regex $DEFAULT_PATH/$notename)"
 
 	if [ $out -eq 1 ]; then
 		echo "Compressed $out line of grep output."
