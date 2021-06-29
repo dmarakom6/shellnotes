@@ -1,0 +1,63 @@
+.\" Manpage for shellnotes-notegrep.
+
+.TH notegrep 1
+.SH NAME
+
+shellnotes-notegrep \- manipulate notes with grep tools
+
+.SH SYNOPSIS
+.PP
+.B notegrep
+[\fIPATTERN\fR]
+.IR file...
+.PP
+.B notegrep
+[\fIOPTION\fR]
+[\fPATTERN\fR]
+.IR file ...
+.PP
+.B notegrep
+[\fIOPTION\fR]
+.IR file...
+.SH DESCRIPTION
+
+.B notegrep
+uses grep to change the ways your notes are displayed.
+
+.SH OPTIONS
+
+.TP
+.BR \-sc ", " \--split-char =\fISTRING\fR
+Split the note on a string or character and then display it.
+
+.TP
+.BR \-cl ", " \--count-lines =\fISTRING\fR
+Count the matching lines of a file.
+Asks user to show these lines by default.
+
+.TP
+.BR \-sl ", " \--show-lines =\fISTRING\fR
+Show the matching lines of a file.
+
+.TP
+.BR \-cf ", " \--count-files =\fISTRING\fR
+Count how many files contain a pattern.
+Asks user to show these files by default.
+
+.TP
+.BR \-sf ", " \--show-files =\fISTRING\fR
+Show the files with a matching pattern.
+
+.TP
+.BR \-ws ", " \--without-string =\fISTRING\fR
+Display lines WITHOUT matches.
+
+.SH BUGS
+
+.TP
+.BR \Withoutstringbug ", " \-wsBug ", " \72
+If there are no matches in the input, "notegrep -ws" will display the file as is.
+
+.SH AUTHOR
+
+Dimitris Marakomihelakis (dmarakom@gmail.com)
