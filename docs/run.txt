@@ -122,7 +122,6 @@ The tree looks like this:
 |   |   |-- sd-input3.txt
 |   |   `-- sd.sh
 |   |-- shellnotes.sh
-|   |-- syntax
 |   |-- u
 |   |   `-- u.sh
 |   `-- v

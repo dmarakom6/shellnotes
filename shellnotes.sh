@@ -25,9 +25,3 @@ DIR="$(pwd)"
 . ~/.shellnotes/util/shellnotes.sh
 . ~/.shellnotes/util/.hidden/.clearlogs.sh
 . ~/.shellnotes/util/.hidden/.resetshellnotes.sh
-. ~/.shellnotes/util/syntax/.logsyntax.sh
-. ~/.shellnotes/util/syntax/.copr.sh
-. ~/.shellnotes/util/syntax/.dir.sh
-. ~/.shellnotes/util/syntax/.me.sh
-. ~/.shellnotes/util/syntax/.dir.sh
-. ~/.shellnotes/util/syntax/.param.sh

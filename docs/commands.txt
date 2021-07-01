@@ -12,5 +12,4 @@ renamenote
 shellnotes (-u/-v/-r/-l/-sd/-h/-au)
 clearlogs
 resetshellnotes (-f)
-notewc
-notegrep (-sc/-cl/-sl/-cf/-sf/-ws)
+noteinfo
