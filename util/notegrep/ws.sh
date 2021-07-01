@@ -5,13 +5,24 @@ Released under the "All rights reserved" category. See the RIGHTS.txt file
 in /docs/github/ for its full text.
 info
 
-grepv() {grep -v $regex $DEFAULT_PATH/$notename} #the command run when input is valid
+grepv() { #the command run when input is valid
+	if [ $(grep -v $regex $DEFAULT_PATH/$notename | wc -l) -ge 20 ]; then
+		grep -v $regex $DEFAULT_PATH/$notename | less
+	else
+		grep -v $regex $DEFAULT_PATH/$notename
+	fi
+} 
 
 nomatch() {
 	echo -n "There are no matches.\nView note anyway?(Y/N): " && read view 
 	case $view in
 		y | Y | yes | YES | Yes )
-			cat $DEFAULT_PATH/$notename
+			if [ $(cat $DEFAULT_PATH/$notename | wc -l) -ge 20 ]; then
+				less $DEFAULT_PATH/$notename
+			else
+				cat $DEFAULT_PATH/$notename
+			fi
+			
 			return 0
 			;;
 		*)
