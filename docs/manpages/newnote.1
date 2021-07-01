@@ -1,16 +1,29 @@
-.\" Manpage for newnote
+.\" Manpage for shellnotes-newnote.
 .\" Contact dmarakom@gmail.com to correct errors or typos.
-.TH man 8 "30/12/2020" "" "newnote man page"
+
+.TH newnote 1
 .SH NAME
-shellnotes-newnote \- Write a new note using your text editor.
+
+shellnotes-newnote \- write a new note using your text editor.
+
 .SH SYNOPSIS
-newnote [FILENAME]
+.PP
+.B newnote
+.IR [FILE...]
+
 .SH DESCRIPTION
-newnote() uses your default text-editor to write a new note and saves it into your notes folder when finished.
-.SH OPTIONS
-[FILENAME] \- The name of the new note.
-leave a blank parameter ("newnote") and shellnotes will ask you for the filename with an input.
+
+.B newnote
+uses your default text-editor to write a new note and saves it into your notes folder when finished.
+
+.\" .SH OPTIONS
+
 .SH BUGS
-If the default editor for newnote() is not valid, the program is likely to crash.
+
+.TP
+.BR \-noSaveBug ", " \-nsBug ", " \110
+If the text editor is closed without saving the new file, newnote diplays "Note saved...", but the file is not really saved.
+
 .SH AUTHOR
+
 Dimitris Marakomihelakis (dmarakom@gmail.com)

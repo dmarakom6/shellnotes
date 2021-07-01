@@ -1,16 +1,30 @@
-.\" Manpage for findmisplacednote
+.\" Manpage for shellnotes-findmisplacednote.
 .\" Contact dmarakom@gmail.com to correct errors or typos.
-.TH man 8 "30/12/2020" "" "findmisplacednote man page"
+
+.TH findmisplacednote 1
 .SH NAME
+
 shellnotes-findmisplacednote \- Find a note missing from your notes folder.
+
 .SH SYNOPSIS
-findmisplacednote [FILENAME]
+.PP
+.B findmisplacednote
+.IR [FILE...]
+
 .SH DESCRIPTION
-findmisplacednote() uses find (do "man find") to check if a note exists in the user's system. This command must be run only when findnote (do "man findnote") doesn't result in an existing note.
-.SH OPTIONS
-[FILENAME] \- The name of the note.
-leave a blank parameter ("findmisplacednote") and shellnotes will ask you for the filename with an input.
-.SH BUGS
-No known bugs.
+
+.B findmisplacednote
+uses find (do "man find") to check if a note exists in the user's system. 
+This command must be run only when findnote (do "man findnote") doesn't result in an existing note.
+
+.\".SH OPTIONS
+
+.\".SH BUGS
+
+.\".TP
+.\".BR \Withoutstringbug ", " \-wsBug ", " \72
+.\"If there are no matches in the input, "notegrep -ws" will display the file as is.
+
 .SH AUTHOR
+
 Dimitris Marakomihelakis (dmarakom@gmail.com)

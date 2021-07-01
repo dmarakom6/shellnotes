@@ -1,22 +1,61 @@
 .\" Manpage for shellnotes.
 .\" Contact dmarakom@gmail.com to correct errors or typos.
-.TH man 8 "30/12/2020" "" "shellnotes man page"
+
+.TH shellnotes 1
 .SH NAME
-shellnotes \- An easy, simple and fast way to keep notes directly via terminal. 
+
+shellnotes \- an easy, simple and fast way to keep notes directly via terminal. 
+
 .SH SYNOPSIS
-shellnotes [OPTION]
+.PP
+.B shellnotes
+[\fROPTION\fR]
+
 .SH DESCRIPTION
-Shellnotes is a note system for advanced linux and terminal users. It is made out of a lot of other commands and scripts, so if you want to get information and help for every single one of them, you should visit the Help Page (~/.shellnotes/docs/help manually, or type shellnotes --help in the terminal).
+
+.B shellnotes
+is a note system for advanced linux and terminal users. With this tool, you can wither write, read, rename or delete your notes safely and rapidly.
+Shellnotes also has numerous other features and subtools, that can help every user on a daily basis.
+
+
 .SH OPTIONS
--u or --update \- Update shellnotes.
--v or --version \- Display the current version.
--h or --help \- Display help from the Help Page.
--r \- View the github repository of the program.
--sd or --set-defaults \- Set default editors and folder for writing and storing your notes.
--au or --auto-update \- Toggle the auto-update feature.
--l or --logs \- Open a logfile.
-leave a blank parameter ("shellnotes") for checking if shellnotes is installed correctly.
-.SH BUGS
-No known bugs.
+
+.TP
+.BR \-i ", " \--info
+Get info about shellnotes, as well as a copyright notice.
+
+.TP
+.BR \-v ", " \--version
+Displays your current version of shellnotes.
+
+.TP
+.BR \-r ", " \--repository
+Get info about the project's github repository.
+
+.TP
+.BR \-h ", " \--help
+Enter the Shellnotes Help Page (SHP).
+
+.TP
+.BR \-u ", " \--update
+Searches for an update and applies it on shellnotes if necessary.
+
+.TP
+.BR \-au ", " \--auto-update
+Toggle the auto-update feature.
+Shellnotes auto-update searches for a new a new update in the project's github repository every time you open your terminal and asks you whether to apply it or not.
+
+.TP
+.BR \-sd ", " \--set-defaults
+Redirects the user to the shellnotes configuration tool (set_defaults.sh)
+
+.TP
+.BR \-l ", " \--logs
+View a logfile.
+
+.\".SH BUGS
+
 .SH AUTHOR
+
 Dimitris Marakomihelakis (dmarakom@gmail.com)
+

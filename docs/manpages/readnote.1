@@ -1,16 +1,31 @@
-.\" Manpage for readnote.
+.\" Manpage for shellnotes-readnote.
 .\" Contact dmarakom@gmail.com to correct errors or typos.
-.TH man 8 "30/12/2020" "" "readnote man page"
+
+.TH readnote 1
 .SH NAME
-shellnotes-readnote \- Read a note using your text editor.
+
+shellnotes-readnote \- read a note using your favourite text editor.
+
 .SH SYNOPSIS
-readnote [FILENAME]
+.PP
+.B readnote
+.IR [FILE...]
+
 .SH DESCRIPTION
-readnote() uses your default text-editor to read a note.
-.SH OPTIONS
-[FILENAME] \- The name of the note.
-leave a blank parameter ("readnote") and shellnotes will ask you for the filename with an input.
+
+.B readnote
+uses your default text-editor to read a note.
+
+.\".SH OPTIONS
+
 .SH BUGS
-If the default editor for readnote() is not valid, the program is likely to crash.
+
+.TP
+.BR \-nonReadOnlyMode", " \-nrmBug ", " \114
+.PP
+readnote does not launch the text editor in read-only mode, giving the user permission to make changes.
+
 .SH AUTHOR
+
 Dimitris Marakomihelakis (dmarakom@gmail.com)
+

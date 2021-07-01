@@ -1,16 +1,34 @@
 .\" Manpage for quickread.
 .\" Contact dmarakom@gmail.com to correct errors or typos.
-.TH man 8 "30/12/2020" "" "quickread man page"
+
+.TH quickread 1
 .SH NAME
+
 shellnotes-quickread \- Read new note directly in your terminal.
+
 .SH SYNOPSIS
-quickread [FILENAME]
+.PP
+.B notegrep
+[\fIOPTION\fR]
+.IR [FILE...]
+
 .SH DESCRIPTION
-quickread() uses cat (do "man cat") to view a note.
-.SH OPTIONS
-[FILENAME] \- The name of the note.
-leave a blank parameter ("quickread") and shellnotes will ask you for the filename with an input.
-.SH BUGS
-No known bugs.
+
+.B quickread
+uses cat (do "man cat") to view a note. It only runs inside your notes folder.
+
+.\".SH OPTIONS
+
+.TP
+.BR \-sc ", " \--split-char =\fISTRING\fR
+Split the note on a string or character and then display it.
+
+.\".SH BUGS
+
+.\".TP
+.\".BR \Withoutstringbug ", " \-wsBug ", " \72
+.\"If there are no matches in the input, "notegrep -ws" will display the file as is.
+
 .SH AUTHOR
+
 Dimitris Marakomihelakis (dmarakom@gmail.com)
