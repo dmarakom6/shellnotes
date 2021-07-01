@@ -133,6 +133,9 @@ function notegrep() {
             -sl | --show-lines )
                 . ~/.shellnotes/util/notegrep/sl.sh
         ;;
+            -ws | --without-string )
+                . ~/.shellnotes/util/notegrep/ws.sh
+        ;;
             *)
                 echo "Invalid parameter. Proceeding in normal grep mode."
                 do_grep
@@ -170,6 +173,9 @@ function notegrep() {
                 export regex=$2
                 export option=$1
                 . ~/.shellnotes/util/notegrep/sf.sh
+                ;;
+            -sc | --split-char | -cl | --count-lines | -sf | --show-lines | -ws | --without-string)
+                echo "Invalid use of parameter '$regex'.\nUsage:\nnotegrep [PATTERN] file...\nnotegrep [OPTION] [PATTERN] file...\nnotegrep [OPTION] file...\nnotegrep [OPTION] [PATTERN]"
                 ;;
             *)
                 if [ -z $notename ]; then
