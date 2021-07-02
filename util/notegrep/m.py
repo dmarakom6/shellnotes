@@ -1,4 +1,7 @@
 import sys
+import os.path
+from os import path
+import subprocess
 
 class Multi():
 
@@ -7,21 +10,27 @@ class Multi():
         self.files = files
 
     def print_matches(self):
-        error = "Invalid input.\nExample: shellnotes -m pattern1,pattern2,pattern3 file1,file2,file3"
-        for pattern in self.patterns:
-            if pattern == "": return error
-            print(pattern, end=", ")
-        print()
-        for file in self.files:
-            if file == "": return error
-            print(file, end=", ")
-
-try:    
-    newMulti = Multi(sys.argv[1].split(','), sys.argv[2].split(','))
-    newMulti.print_matches()
-except IndexError:
-    patterns = input("Enter patterns, separated by a comma: ")
-    files = input("Enter files, separated by a comma: ")
-    newMulti = Multi(patterns.split(','), files.split(','))
-    newMulti.print_matches()
         
+        for file in self.files:
+            if file == "": return 0
+            print(file if path.exists('Notes/'+file) else f"{file} (not found):\n-")
+            print("=" * len(file) if path.exists('Notes/'+file) else "")
+        
+        for pattern in self.patterns:
+            if pattern == "": return 0
+            #run grep...
+        
+        
+def main():
+    try:    
+        newMulti = Multi(sys.argv[1].split(','), sys.argv[2].split(','))
+        newMulti.print_matches()
+    except IndexError:
+        patterns = input("Enter patterns, separated by a comma: ")
+        files = input("Enter files, separated by a comma: ")
+        newMulti = Multi(patterns.split(','), files.split(','))
+        newMulti.print_matches()
+        
+
+if __name__ == "__main__":
+    main()
