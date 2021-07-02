@@ -21,12 +21,15 @@ class Multi():
     def remove_duplicates(self):
         self.patterns, self.files = list(dict.fromkeys(self.patterns)), list(dict.fromkeys(self.files))
 
+    def remove_spaces(self):
+        self.patterns, self.files = [elem.strip(' ') for elem in self.patterns], [elem.strip(' ') for elem in self.files]
+
     def print_matches(self):
         
         for file in self.files:
             try:
                 if file == "": return 0
-                print("\n"+file if path.exists('Notes/'+file) else f"{file} (not found):\n-")
+                print("\n"+file if path.exists('Notes/'+file) else f"\n{file} (not found):\n-")
                 print("=" * len(file) if path.exists('Notes/'+file) else "")
         
                 for pattern in self.patterns:
@@ -43,12 +46,14 @@ def main():
     try:    
         newMulti = Multi(sys.argv[1].split(','), sys.argv[2].split(','))
         newMulti.remove_duplicates()
+        newMulti.remove_spaces()
         newMulti.print_matches()
     except IndexError:
         patterns = input("Enter patterns, separated by a comma: ")
         files = input("Enter files, separated by a comma: ")
         newMulti = Multi(patterns.split(','), files.split(','))
         newMulti.remove_duplicates()
+        newMulti.remove_spaces()
         newMulti.print_matches()
         
 
