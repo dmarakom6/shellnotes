@@ -9,6 +9,8 @@ import sys
 import os.path
 from os import path
 import subprocess
+from subprocess import check_output
+import re
 
 class Multi():
 
@@ -19,13 +21,19 @@ class Multi():
     def print_matches(self):
         
         for file in self.files:
-            if file == "": return 0
-            print(file if path.exists('Notes/'+file) else f"{file} (not found):\n-")
-            print("=" * len(file) if path.exists('Notes/'+file) else "")
+            try:
+                if file == "": return 0
+                print("\n"+file if path.exists('Notes/'+file) else f"{file} (not found):\n-")
+                print("=" * len(file) if path.exists('Notes/'+file) else "")
         
-        for pattern in self.patterns:
-            if pattern == "": return 0
-            #run grep...
+                for pattern in self.patterns:
+                    if pattern == "": return 0
+                    with open('Notes/'+file, 'r') as f:
+                        for line in f:
+                            if re.search(pattern, line):
+                                out = os.system(f"""echo -n "'{pattern}'": && grep -n --color=always {pattern} Notes/{file}""")
+                                #bug: pattern is generated multiple times
+            except FileNotFoundError: pass
         
         
 def main():
