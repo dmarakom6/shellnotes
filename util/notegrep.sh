@@ -136,6 +136,9 @@ function notegrep() {
             -ws | --without-string )
                 . ~/.shellnotes/util/notegrep/ws.sh
         ;;
+            -m | --multiple )
+                python3 ~/.shellnotes/util/notegrep/m.py $regex $notename
+        ;;
             *)
                 echo "Invalid parameter. Proceeding in normal grep mode."
                 do_grep
