@@ -137,7 +137,9 @@ function notegrep() {
                 . ~/.shellnotes/util/notegrep/ws.sh
         ;;
             -m | --multiple )
+                cd ~
                 python3 ~/.shellnotes/util/notegrep/m.py $regex $notename
+                cd $DIR
         ;;
             *)
                 echo "Invalid parameter. Proceeding in normal grep mode."
@@ -177,7 +179,7 @@ function notegrep() {
                 export option=$1
                 . ~/.shellnotes/util/notegrep/sf.sh
                 ;;
-            -sc | --split-char | -cl | --count-lines | -sf | --show-lines | -ws | --without-string)
+            -sc | --split-char | -cl | --count-lines | -sf | --show-lines | -ws | --without-string | -m | --multiple)
                 echo "Invalid use of parameter '$regex'.\nUsage:\nnotegrep [PATTERN] file...\nnotegrep [OPTION] [PATTERN] file...\nnotegrep [OPTION] file...\nnotegrep [OPTION] [PATTERN]"
                 ;;
             *)
