@@ -1,3 +1,10 @@
+#!/usr/bin/env python3
+
+#shellnotes - m.py
+#(C) Dimitris Marakomihelakis
+#Released under the "All rights reserved" category. See the RIGHTS.txt file
+#in /docs/github/ for its full text.
+
 import sys
 import os.path
 from os import path
