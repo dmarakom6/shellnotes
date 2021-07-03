@@ -37,7 +37,7 @@ class Multi():
                     with open('Notes/'+file, 'r') as f:
                         for line in f:
                             if re.search(pattern, line):
-                                out = os.system(f"""echo -n "'{pattern}'": && grep -n --color=always {pattern} Notes/{file}""")
+                                out = os.system(f"""echo -n "'\033[1;35;40m{pattern}\033[0;37;0m'": && grep -n --color=always {pattern} Notes/{file}""")
                                 #bug: pattern is generated multiple times
 
             except FileNotFoundError: pass
@@ -58,5 +58,5 @@ def main():
         newMulti.print_matches()
         
 
-if __name__ == "__main__":
+if __name__ == "__main__":    
     main()
