@@ -8,4 +8,4 @@ info
 export LESSCHARSET=utf-8
 
 chmod +x ~/.shellnotes/util/listnotes/d/d.py
-python3 ~/.shellnotes/util/listnotes/d/d.py #> ~/.shellnotes/util/listnotes/output/dout.txt
+python3 ~/.shellnotes/util/listnotes/d/d.py | less #> ~/.shellnotes/util/listnotes/output/dout.txt
