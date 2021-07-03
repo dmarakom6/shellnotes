@@ -46,15 +46,15 @@ class Multi():
 def main():
     try:    
         newMulti = Multi(sys.argv[1].split(','), sys.argv[2].split(','))
-        newMulti.remove_duplicates()
         newMulti.remove_spaces()
+        newMulti.remove_duplicates()
         newMulti.print_matches()
     except IndexError:
         patterns = input("Enter patterns, separated by a comma: ")
         files = input("Enter files, separated by a comma: ")
         newMulti = Multi(patterns.split(','), files.split(','))
-        newMulti.remove_duplicates()
         newMulti.remove_spaces()
+        newMulti.remove_duplicates()
         newMulti.print_matches()
         
 
