@@ -29,8 +29,8 @@ class Multi():
         for file in self.files:
             try:
                 if file == "": return 0
-                print("\n"+file if path.exists('Notes/'+file) else f"\n{file} (not found):\n-")
-                print("=" * len(file) if path.exists('Notes/'+file) else "")
+                print("\n"+file if path.exists('Notes/'+file) else f"\n{file} (not found):\n-", flush=True)
+                print("=" * len(file) if path.exists('Notes/'+file) else "", flush=True)
         
                 for pattern in self.patterns:
                     if pattern == "": return 0
@@ -39,6 +39,7 @@ class Multi():
                             if re.search(pattern, line):
                                 out = os.system(f"""echo -n "'{pattern}'": && grep -n --color=always {pattern} Notes/{file}""")
                                 #bug: pattern is generated multiple times
+
             except FileNotFoundError: pass
         
         

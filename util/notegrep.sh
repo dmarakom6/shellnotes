@@ -138,7 +138,12 @@ function notegrep() {
         ;;
             -m | --multiple )
                 cd ~
-                python3 ~/.shellnotes/util/notegrep/m.py $regex $notename
+                if [ "$(python3 ~/.shellnotes/util/notegrep/m.py $regex $notename | wc -l)" -ge 20 ]; then
+                    python3 ~/.shellnotes/util/notegrep/m.py $regex $notename | less -R
+                else
+                    python3 ~/.shellnotes/util/notegrep/m.py $regex $notename
+                fi
+
                 cd $DIR
         ;;
             *)
