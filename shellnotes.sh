@@ -1,4 +1,6 @@
-DIR="$(pwd)"
+
+#The first line is the current shell, found by install.sh .
+export DIR="$(pwd)"
 . ~/.shellnotes/util/getv.sh
 . ~/.shellnotes/def/defaults.sh
 . ~/.shellnotes/util/ChMkDir.sh
