@@ -6,6 +6,7 @@ in /docs/github/ for its full text.
 info
 
 function quicknote() {
+	DIR="$(pwd)"
 	if [ $# -eq 0 ]; then
 		echo -n "Enter note name: " && read notename
 	else

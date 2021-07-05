@@ -6,6 +6,7 @@ in /docs/github/ for its full text.
 info
 
 function delnote() {
+	DIR="$(pwd)"
 	if [ $# -eq 0 ]; then
 		echo -n "Enter the name of the note you want to delete: " && read delete
 	else
@@ -42,4 +43,5 @@ function delnote() {
 		fi
 	fi
 fi
+cd $DIR
 }

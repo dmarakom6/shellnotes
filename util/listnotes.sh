@@ -6,7 +6,7 @@ in /docs/github/ for its full text.
 info
 
 function listnotes() {
-
+	DIR="$(pwd)"
 	listnotesFunc () {
 
 		NOTES="`ls $DEFAULT_PATH --color=always `"
@@ -42,4 +42,5 @@ function listnotes() {
 			fi
 	esac
 	return 0
+	cd $DIR
 }
