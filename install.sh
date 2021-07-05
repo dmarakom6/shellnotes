@@ -34,10 +34,11 @@ else
    sudo cp ~/.shellnotes/docs/manpages/* /usr/local/man/man1/
    sudo gzip -f /usr/local/man/man1/*.1
    sudo mandb >/dev/null
-   sudo apt install g++ >/dev/null
+
    sudo apt install python3
    sudo apt install python3-pip
    pip install pathlib
+   
    sudo apt update
    sudo chmod a+x ~/.shellnotes/util/exec/*
    sudo chmod +x ~/.shellnotes/.shellnotes.sh
