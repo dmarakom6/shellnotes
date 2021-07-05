@@ -10,9 +10,9 @@ function resetshellnotes() {
 	proceed() {
 		echo "y\n" | clearlogs >/dev/null
 		echo "" > ~/.shellnotes/util/listnotes/output/*
-		echo "/usr/bin/gedit" > ~/.shellnotes/util/sd/sd-input1.txt
-		echo "/bin/nano"> ~/.shellnotes/util/sd/sd-input2.txt
-		echo "~/Notes" > ~/.shellnotes/util/sd/sd-input3.txt
+		echo "/usr/bin/gedit" > ~/.shellnotes/util/shellnotes/sd/sd-input1.txt
+		echo "/bin/nano"> ~/.shellnotes/util/shellnotes/sd/sd-input2.txt
+		echo "~/Notes" > ~/.shellnotes/util/shellnotes/sd/sd-input3.txt
       	sed -i '1d' ~/.shellnotes/.shellnotes.sh
 	}
 

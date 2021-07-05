@@ -6,14 +6,14 @@ in /docs/github/ for its full text.
 info
 
 function shellnotes() {
-	. ~/.shellnotes/util/h/h.sh	
-	. ~/.shellnotes/util/v/v.sh
-	. ~/.shellnotes/util/r/r.sh
-	. ~/.shellnotes/util/u/u.sh
-	. ~/.shellnotes/util/l/l.sh
-	. ~/.shellnotes/util/au/au.sh
-	. ~/.shellnotes/util/sd/sd.sh
-	. ~/.shellnotes/util/i/i.sh
+	. ~/.shellnotes/util/shellnotes/h/h.sh	
+	. ~/.shellnotes/util/shellnotes/v/v.sh
+	. ~/.shellnotes/util/shellnotes/r/r.sh
+	. ~/.shellnotes/util/shellnotes/u/u.sh
+	. ~/.shellnotes/util/shellnotes/l/l.sh
+	. ~/.shellnotes/util/shellnotes/au/au.sh
+	. ~/.shellnotes/util/shellnotes/sd/sd.sh
+	. ~/.shellnotes/util/shellnotes/i/i.sh
 	if [[ $# > 1 ]]; then
 		echo "Too many arguments."
 	elif [[ $# = 0 ]];then

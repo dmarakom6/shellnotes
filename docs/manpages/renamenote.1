@@ -1,27 +1,17 @@
-.\" Manpage for shellnotes-renamenote.
+.\" Manpage for renamenote
 .\" Contact dmarakom@gmail.com to correct errors or typos.
-
-.TH renamenote 1
+.TH man 8 "30/12/2020" "" "renamenote man page"
 .SH NAME
-
-shellnotes-renamenote \- rename a note in your notes folder.
-
+shellnotes-renamenote \- Rename a note in your notes folder.
 .SH SYNOPSIS
-.PP
-.B renamenote
-.IR [FILE...]
-.IR new_[FILE...]
-
+renamenote [FILENAME] [NEW_FILENAME]
 .SH DESCRIPTION
-
-.B renamenote
-uses mv (do "man mv") to rename a note in your default notes folder.
-
-.\".SH OPTIONS
-
-.\".SH BUGS
-
+renamenote() uses mv (do "man mv") to rename a note in your default notes folder
+.SH OPTIONS
+[FILENAME] \- The name of the note.
+[NEW_FILENAME] \- The new name of the note
+leave a blank parameter ("renamenote") and shellnotes will ask you for the filename and the new filename with an input.
+.SH BUGS
+No known bugs.
 .SH AUTHOR
-
 Dimitris Marakomihelakis (dmarakom@gmail.com)
-

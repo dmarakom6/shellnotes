@@ -29,8 +29,8 @@ class cd:
         os.chdir(self.savedPath)
 
 
-folder = "cat ~/.shellnotes/util/sd/sd-input3.txt"
-files = "eval echo $(cat ~/.shellnotes/util/sd/sd-input3.txt) | xargs ls | wc -l"
+folder = "cat ~/.shellnotes/util/shellnotes/sd/sd-input3.txt"
+files = "eval echo $(cat ~/.shellnotes/util/shellnotes/sd/sd-input3.txt) | xargs ls | wc -l"
 
 
 os.system(folder + "> ~/.shellnotes/util/listnotes/output/dir.txt 2> ~/.shellnotes/util/listnotes/output/direrr.txt")

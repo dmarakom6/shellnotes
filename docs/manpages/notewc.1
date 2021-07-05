@@ -1,27 +1,16 @@
-.\" Manpage for shellnotes-notewc.
+.\" Manpage for notewc
 .\" Contact dmarakom@gmail.com to correct errors or typos.
-
-.TH notewc 1
+.TH man 8 "30/12/2020" "" "notewc man page"
 .SH NAME
-
-shellnotes-notewc \- get info about a note.
-
+shellnotes-notewc \- Get info about a note in your notes folder.
 .SH SYNOPSIS
-.PP
-.B notewc
-.IR [FILE...]
-
+notewc [FILENAME]
 .SH DESCRIPTION
-
-.B notewc
-uses wc (do "man wc") to show lines, words, chars and name of a note.
-
-
-.\".SH OPTIONS
-
-.\".SH BUGS
-
+notewc() uses wc (do "man wc") to show (lines/words/chars/name) of a note.
+.SH OPTIONS
+[FILENAME] \- The name of the note.
+leave a blank parameter ("notewc") and shellnotes will ask you for the filename with an input.
+.SH BUGS
+If wc is not pre-installed the command won't work.
 .SH AUTHOR
-
 Dimitris Marakomihelakis (dmarakom@gmail.com)
-

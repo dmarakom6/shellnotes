@@ -1,42 +1,18 @@
-.\" Manpage for shellnotes-listnotes.
+.\" Manpage for listnotes.
 .\" Contact dmarakom@gmail.com to correct errors or typos.
-
-.TH listnotes 1
+.TH man 8 "30/12/2020" "" "listnotes man page"
 .SH NAME
-
-shellnotes-listnotes \- list your notes from wherever you are.
-
+shellnotes-listnotes \- List your notes in your note folder from wherever you are.
 .SH SYNOPSIS
-.PP
-.B listnotes
-[\fIOPTION\fR]
-
+listnotes
 .SH DESCRIPTION
-
-.B listnotes
-uses ls (do "man ls") to list all your notes in different ways.
-
-
+listnotes() uses ls (do "man ls") to list all your notes.
 .SH OPTIONS
-
-.TP
-.BR \-d ", " \--dynamic
-Dynamic view of all your notes and their content.  
-
-.TP
-.BR \-n ", " \--number
-Count the number of notes in your notes folder.
-
-.TP
-.BR \-f ", " \--folder
-Show the current default notes folder.
-
+-d or --dynamic \- Dynamic view of all your notes and their content.  
+-n or --number \- Number of notes in your notes folder.  
+-f or --folder \- The current Notes folder.
+leave a blank parameter ("listnotes") and shellnotes will show a regular list of your notes.
 .SH BUGS
-
-.\".TP
-.\".BR \-
-.\".PP
-
+If the default path for listnotes() is not valid, the program is likely to crash.
 .SH AUTHOR
-
 Dimitris Marakomihelakis (dmarakom@gmail.com)

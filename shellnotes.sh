@@ -1,9 +1,3 @@
-
-
-#The first line is the user's default shell found during installation process.
-#Warning! If you don't have gedit(text editor) or nano installed, you may have to change the default text editor.
-
-#The lines below must NOT be changed.
 DIR="$(pwd)"
 . ~/.shellnotes/util/getv.sh
 . ~/.shellnotes/def/defaults.sh
@@ -25,3 +19,4 @@ DIR="$(pwd)"
 . ~/.shellnotes/util/shellnotes.sh
 . ~/.shellnotes/util/.hidden/.clearlogs.sh
 . ~/.shellnotes/util/.hidden/.resetshellnotes.sh
+

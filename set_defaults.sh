@@ -17,9 +17,9 @@ echo "3. Select default path for saving your notes (Notes folder)"
 echo "4. View defaults (editors, folder, source)"
 echo
 echo -n "[1,2,3,4]: " && read input
-input1="$(cat ~/.shellnotes/util/sd/sd-input1.txt)"
-input2="$(cat ~/.shellnotes/util/sd/sd-input2.txt)"
-input3="$(cat ~/.shellnotes/util/sd/sd-input3.txt)"
+input1="$(cat ~/.shellnotes/util/shellnotes/sd/sd-input1.txt)"
+input2="$(cat ~/.shellnotes/util/shellnotes/sd/sd-input2.txt)"
+input3="$(cat ~/.shellnotes/util/shellnotes/sd/sd-input3.txt)"
 
 
 
@@ -29,7 +29,7 @@ if [[ "$input" == "1" ]]; then
 		if [[ "$(which $name)" == "$input1" ]]; then
 			echo "This is already the default notes editor."
 		else
-			echo "$(which $name)" > ~/.shellnotes/util/sd/sd-input1.txt
+			echo "$(which $name)" > ~/.shellnotes/util/shellnotes/shellnotes/sd/sd-input1.txt
 			echo "Default notes editor updated."
 			echo "Please restart your terminal."
 		fi
@@ -48,7 +48,7 @@ elif [[ "$input" == "2" ]]; then
 		if [[ "$(which $name)" == "$input2" ]]; then
 			echo "This is already the default quick notes editor."
 		else
-			echo "$(which $name)" > ~/.shellnotes/util/sd/sd-input2.txt
+			echo "$(which $name)" > ~/.shellnotes/util/shellnotes/sd/sd-input2.txt
 			echo "Default quick notes editor updated."
 			echo "Please restart your terminal."
 		fi
@@ -70,7 +70,7 @@ elif [[ "$input" == "3" ]]; then
    			./sdfailed
 		else
 			mv $DEFAULT_PATH/* $name
-			echo "$name" > ~/.shellnotes/util/sd/sd-input3.txt
+			echo "$name" > ~/.shellnotes/util/shellnotes/sd/sd-input3.txt
 			echo "Default notes folder updated."
 			echo "Please restart your terminal."
 		fi

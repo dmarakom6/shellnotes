@@ -1,27 +1,16 @@
-.\" Manpage for shellnotes-quicknote.
+.\" Manpage for quicknote.
 .\" Contact dmarakom@gmail.com to correct errors or typos.
-
-.TH quicknote 1
+.TH man 8 "30/12/2020" "" "quicknote man page"
 .SH NAME
-
-shellnotes-quicknote \- write a new note directly via terminal.
-
+shellnotes-quicknote \- Write a new note directly via terminal.
 .SH SYNOPSIS
-.PP
-.B quicknote
-.IR [FILE...]
-
+quicknote [FILENAME]
 .SH DESCRIPTION
-
-.B quicknote
-uses your in-terminal text-editor to write a new note and saves it into your notes folder when finished.
-It works well with the nano editor.
-
-.\".SH OPTIONS
-
-.\".SH BUGS
-
+quicknote() uses your in-terminal text-editor to write a new note and saves it into your notes folder when finished.
+.SH OPTIONS
+[FILENAME] \- The name of the new note.
+leave a blank parameter ("quicknote") and shellnotes will ask you for the filename with an input.
+.SH BUGS
+If the default editor for quicknote() is not valid, the program is likely to crash.
 .SH AUTHOR
-
 Dimitris Marakomihelakis (dmarakom@gmail.com)
-
