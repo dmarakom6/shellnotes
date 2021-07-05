@@ -18,34 +18,41 @@ class Multi():
         self.patterns = patterns
         self.files = files
 
+    def check_empty(self):
+        if "" in self.patterns: raise IndexError #asks for direct input
+
     def remove_duplicates(self):
         self.patterns, self.files = list(dict.fromkeys(self.patterns)), list(dict.fromkeys(self.files))
 
     def remove_spaces(self):
         self.patterns, self.files = [elem.strip(' ') for elem in self.patterns], [elem.strip(' ') for elem in self.files]
 
+    def split_extras(self): #not using this for now
+        if len(sys.argv) == 4:
+            if "-i" in sys.argv[-1] or "--ignore" in sys.argv[-1]:
+                re.sub(r'\s(--\ignore+|-\i)', '', sys.sys.argv[-1]) #remove everything from sys.argv[-1], except "-i" or "--ignore", if it exists.
+
     def print_matches(self):
         
         for file in self.files:
             try:
                 if file == "": return 0
-                print("\n"+file if path.exists('Notes/'+file) else f"\n{file} (not found):\n-", flush=True)
-                print("=" * len(file) if path.exists('Notes/'+file) else "", flush=True)
+                print("\n"+file if path.exists('Notes/'+file) else f"\n{file} (not found):", flush=True)
+                print("=" * len(file) if path.exists('Notes/'+file) else "-", flush=True)
         
-                for pattern in self.patterns:
-                    if pattern == "": return 0
-                    with open('Notes/'+file, 'r') as f:
-                        for line in f:
-                            if re.search(pattern, line):
-                                out = os.system(f"""echo -n "'\033[1;35;40m{pattern}\033[0;37;0m'": && grep -n --color=always {pattern} Notes/{file}""")
-                                #bug: pattern is generated multiple times
+                with open('Notes/'+file, 'r') as f:
+                    text = f.read()
+                    for pattern in self.patterns:
+                        if re.search(pattern, text):
+                            out = os.system(f"""echo -n "'\033[1;35;40m{pattern}\033[0;37;0m'": && grep -n --color=always {pattern} Notes/{file}""")
 
             except FileNotFoundError: pass
         
         
 def main():
-    try:    
+    try:
         newMulti = Multi(sys.argv[1].split(','), sys.argv[2].split(','))
+        newMulti.check_empty()
         newMulti.remove_spaces()
         newMulti.remove_duplicates()
         newMulti.print_matches()
@@ -58,5 +65,5 @@ def main():
         newMulti.print_matches()
         
 
-if __name__ == "__main__":    
+if __name__ == "__main__":   
     main()
