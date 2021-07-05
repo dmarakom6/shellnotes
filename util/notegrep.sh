@@ -138,12 +138,11 @@ function notegrep() {
         ;;
             -m | --multiple )
                 cd ~
-                if [ "$(python3 ~/.shellnotes/util/notegrep/m.py $regex $notename | wc -l)" -ge 20 ]; then
+                if [ "$(python3 ~/.shellnotes/util/notegrep/m.py $regex $notename | wc -l)" -ge 25 ]; then
                     python3 ~/.shellnotes/util/notegrep/m.py $regex $notename | less -R
                 else
                     python3 ~/.shellnotes/util/notegrep/m.py $regex $notename
                 fi
-
                 cd $DIR
         ;;
             *)
@@ -161,7 +160,7 @@ function notegrep() {
         echo -n "Enter note name: " && read notename
         do_grep
     else
-        if [ $# -eq 3 ]; then
+        if [ $# -ge 3 ]; then
             export option=$1
             export regex=$2
             export notename=$3
