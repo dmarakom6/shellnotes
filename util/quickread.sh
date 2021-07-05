@@ -14,7 +14,12 @@ function quickread() {
 	cd $DEFAULT_PATH
 	if [ -e $notename ]; then
 		clear
-		cat $notename
+
+		if [ "$(cat $notename | wc -l)" -ge 25 ];then
+			cat $notename | less
+		else
+			cat $notename
+		fi
 	
 	else
 		clear
