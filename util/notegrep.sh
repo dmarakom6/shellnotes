@@ -136,6 +136,15 @@ function notegrep() {
             -ws | --without-string )
                 . ~/.shellnotes/util/notegrep/ws.sh
         ;;
+            -m | --multiple )
+                cd ~
+                if [ "$(python3 ~/.shellnotes/util/notegrep/m.py $regex $notename | wc -l)" -ge 25 ]; then
+                    python3 ~/.shellnotes/util/notegrep/m.py $regex $notename | less -R
+                else
+                    python3 ~/.shellnotes/util/notegrep/m.py $regex $notename
+                fi
+                cd $DIR
+        ;;
             *)
                 echo "Invalid parameter. Proceeding in normal grep mode."
                 do_grep
@@ -151,7 +160,7 @@ function notegrep() {
         echo -n "Enter note name: " && read notename
         do_grep
     else
-        if [ $# -eq 3 ]; then
+        if [ $# -ge 3 ]; then
             export option=$1
             export regex=$2
             export notename=$3
@@ -174,7 +183,7 @@ function notegrep() {
                 export option=$1
                 . ~/.shellnotes/util/notegrep/sf.sh
                 ;;
-            -sc | --split-char | -cl | --count-lines | -sf | --show-lines | -ws | --without-string)
+            -sc | --split-char | -cl | --count-lines | -sf | --show-lines | -ws | --without-string | -m | --multiple)
                 echo "Invalid use of parameter '$regex'.\nUsage:\nnotegrep [PATTERN] file...\nnotegrep [OPTION] [PATTERN] file...\nnotegrep [OPTION] file...\nnotegrep [OPTION] [PATTERN]"
                 ;;
             *)
