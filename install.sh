@@ -27,6 +27,10 @@ else
    mv bash_update.sh ~/.shellnotes/
    mv uninstall.sh ~/.shellnotes/
    mv update.sh ~/.shellnotes/
+   if [ -f ./whatsnew.sh ]; then
+      mv whatsnew.sh ~/.shellnotes/whatsnew.sh
+      mv whatsnew.txt ~/.shellnotes/whatsnew.txt
+   fi
    rm -rf .gitignore
    rm -rf ./README.md
    rm -rf ./SECURITY.md
