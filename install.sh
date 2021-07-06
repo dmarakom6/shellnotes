@@ -6,7 +6,7 @@ Released under the "All rights reserved" category. See the RIGHTS.txt file
 in /docs/github/ for its full text.
 info
 
-VER_TO_INSTALL=3.0 #This is used when updating, it will be changed in every new update
+VER_TO_INSTALL=3.5 #This is used when updating, it will be changed in every new update
 if [ -e ~/.shellnotes/.shellnotes.sh ]; then
    echo "Shellnotes is already installed."
    echo "If you want to update, please run 'update.sh'."
