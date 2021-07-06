@@ -17,17 +17,25 @@ shellnotes-quickread \- Read new note directly in your terminal.
 .B quickread
 uses cat (do "man cat") to view a note. It only runs inside your notes folder.
 
-.\".SH OPTIONS
+.SH OPTIONS
 
 .TP
-.BR \-sc ", " \--split-char =\fISTRING\fR
-Split the note on a string or character and then display it.
+.BR \-l ", " \--line =\fIINT\fR
+Display a specific line of a note.
 
-.\".SH BUGS
+.TP
+.BR \-r ", " \--reverse =\fISTRING\fR
+Reverse output of cat, using tac.
 
-.\".TP
-.\".BR \Withoutstringbug ", " \-wsBug ", " \72
-.\"If there are no matches in the input, "notegrep -ws" will display the file as is.
+.TP
+.BR \-s ", " \--sort =\fISTRING\fR
+Print output piped to the sort command.
+
+.SH BUGS
+
+.TP
+.BR \-FloatBug ", " \-fBug ", " \102
+If $line is a float, sed returns en error message.
 
 .SH AUTHOR
 
