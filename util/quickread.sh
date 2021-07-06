@@ -18,6 +18,9 @@ function quickread() {
 			-s | --sort )			
 			. ~/.shellnotes/util/quickread/s/s.sh				
 		;;
+			*)
+			echo "Invalid parameter." #"\nUSAGE:\nquickread -r/-s -> FILE\nquickread -l -> LINE, FILE"
+		;;
 		esac
 		return 0
 	}
@@ -29,7 +32,8 @@ function quickread() {
 			export line=$2
 			export notename=$3
 		else
-			export notename=$3
+			export option=$1
+			export notename=$2
 		fi
 		check_params
 		return 0
