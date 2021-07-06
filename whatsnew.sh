@@ -5,6 +5,7 @@ echo -n "shellnotes has been updated.\nWant to see what's new?(Y/N): " && read s
 case $show in
 	y | yes | Y | Yes | YES )
 		less ~/.shellnotes/whatsnew.txt	
+		clear
 		sed -i /whatsnew/d ~/.shellnotes/.shellnotes.sh
 		rm -f ~/.shellnotes/whatsnew.txt
 		rm -f ~/.shellnotes/whatsnew.sh
