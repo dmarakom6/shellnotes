@@ -25,12 +25,6 @@ shellnotes-notegrep \- manipulate notes with grep tools
 [\fIOPTION\fR]
 [\fIPATTERN\fR]
 
-.\".PP
-.\".B notegrep
-.\"[\fI-m\fR]
-.\"[\fI*PATTERN(S)\fR]
-.\".IR [*FILE(S)...]
-
 .SH DESCRIPTION
 
 .B notegrep
@@ -63,10 +57,6 @@ Show the files with a matching pattern.
 .TP
 .BR \-ws ", " \--without-string =\fISTRING\fR
 Display lines WITHOUT matches.
-
-.TP
-.BR \-m ", " \--multiple =\fISTRING\fR
-Search for more than one patterns in multiple files simultaneously. Each pattern or file must have a comma before the next one. Example: "notegrep -m file1,file2,file3 pattern1,pattern2,pattern3".
 
 .\".SH BUGS
 
