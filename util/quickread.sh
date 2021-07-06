@@ -8,24 +8,38 @@ info
 function quickread() {
 	DIR="$(pwd)"
 	check_params() {
-		case $1 in
-			-parameter | --parameter )
-
-				;;
+		case $option in
+			-l | --line )
+			. ~/.shellnotes/util/quickread/l/l.sh
+		;;
+			-r | --reverse )
+			. ~/.shellnotes/util/quickread/r/r.sh
+		;;
+			-s | --sort )			
+			. ~/.shellnotes/util/quickread/s/s.sh				
+		;;
 		esac
 		return 0
 	}
 	if [ $# -eq 0 ]; then
 		echo -n "Enter note name: " && read notename
 	elif [ $# -gt 1 ]; then
+		if [ $# -gt 2 ]; then
+			export option=$1
+			export line=$2
+			export notename=$3
+		else
+			export notename=$3
+		fi
 		check_params
+		return 0
 	else
 		notename=$1
 	fi
 
 	cd $DEFAULT_PATH
 	if [ -e $notename ]; then
-		clear
+		# clear
 		if [ "$(cat $notename | wc -l)" -ge 25 ]; then
 			cat $notename | less
 		else
