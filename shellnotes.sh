@@ -1,6 +1,13 @@
 
-#The first line is the current shell, found by install.sh .
+
+#The first line is the user's default shell found during installation process.
+#Warning! If you don't have gedit(text editor) or nano installed, you may have to change the default text editor (lines 10, 25, 40).
+
+#The lines below must NOT be changed.
 export DIR="$(pwd)"
+
+. ~/.shellnotes/whatsnew.sh
+
 . ~/.shellnotes/util/getv.sh
 . ~/.shellnotes/def/defaults.sh
 . ~/.shellnotes/util/ChMkDir.sh
@@ -22,3 +29,4 @@ export DIR="$(pwd)"
 . ~/.shellnotes/util/.hidden/.clearlogs.sh
 . ~/.shellnotes/util/.hidden/.resetshellnotes.sh
 
+      	

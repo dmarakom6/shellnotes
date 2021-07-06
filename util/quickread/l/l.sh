@@ -18,7 +18,7 @@ if [ -f $DEFAULT_PATH/$notename ]; then
 		echo "There's no such line in this file."
 		echo "The minimum line number you can use for a file is 1."
 	else
-		sed "${line}q;d" $DEFAULT_PATH/$notename	
+		sed "${line}q;d" $DEFAULT_PATH/$notename
 	fi	
 	
 else

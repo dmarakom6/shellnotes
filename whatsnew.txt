@@ -1,0 +1,55 @@
+Shellnotes 3.5 Updates
+6/7/2021
+
+Additions:
+
+- `notegrep`: new command for manipulating notes with grep's tools
+- Added parameters and improved `quickread`
+- Added the set-defaults.sh log as an option in the logfile viewer (`shellnotes -l`).
+- `shellnotes -i` or `--info`: Information about your shellnotes copy
+- Added manpages for hidden commands (`clearlogs`, `resetshellnotes`)
+- `resetshellnotes -f` or `--force`: Avoid prompt when resetting shellnotes.
+
+Fixes:
+
+- Fixed clearlogs.sh generating empty logfiles inside `/exec`
+- Fixed bug #116 `-DynamicOutputBug`: "listnotes -d output generates autoscroll, instead of starting from where the command was executed."
+- Fixed "\n" input resulting in an error
+- Fixed auto-update illegal math bug
+- Fixed not returning to previous directory bug
+- Fixed bug #72 `-WithoutStringBug`: "If there are no matches in the input, "notegrep -ws" will display the file as is."
+
+Updates & Changes:
+
+- Reorganized scripts under `util/`
+- Optimized the install script (`install.sh`)
+- Enhanced all manpages
+- New logging method: Logging directly from executables, in order for the process to take less time (clears logfiles with same method)
+- Updated Documentation
+- Reorganized the logfile system
+- Removed syntax files (stored in `util/.syntax/`)
+- Changed `listnotes` output: It's more traditional now
+- Renamed `noteinfo` to `notewc` as it uses the `wc` command & changed its output
+- `resetshellnotes` now resets the user's shell
+
+Notes:
+
+	   _____ __  __________    __    _   ______  _________________
+	 / ___/ / / / / ____/ /   / /   / | / / __ \/_  __/ ____/ ___/
+	 \__ \ / /_/ / __/ / /   / /   /  |/ / / / / / / / __/  \__ \
+	 ___/ / __  / /___/ /___/ /___/ /|  / /_/ / / / / /___ ___/ / 
+	/____/_/ /_/_____/_____/_____/_/ |_/\____/ /_/ /_____//____/ 
+
+(Ignore the 80's ASCII art.)
+
+Welcome to shellnotes 3.5!
+
+This version brings many bug fixes as well as additions for shellnotes! 
+Starting with the main feature of the update, `notegrep` is a tool that can be used on a daily basis. It simply uses grep to change the way you read your notes. You can experiment this new tool as well as a variety of options (split-character, without-character, multiple patterns and files and more).
+The biggest improvement of 3.5 must be `quickread`. There are some new parameters you can play with, or you can just test its new error-handling ability.
+Let's not forget the bug fixes: It's even safer to use shellnotes without worrying about errors occuring.
+And last, shellnotes is now way faster than before. Instead of compiling loggers on the go, shellnotes uses pre-existing executables to speed up the process.
+
+Still don't know what's going on? Read the manpages! By the way, the manpages got updated as well...
+
+Have fun taking notes!
