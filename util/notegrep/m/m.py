@@ -8,6 +8,7 @@
 import sys
 import os.path
 from os import path
+from os import listdir
 import subprocess
 from subprocess import check_output
 import re
@@ -24,16 +25,23 @@ class Multi():
     def remove_duplicates(self):
         self.patterns, self.files = list(dict.fromkeys(self.patterns)), list(dict.fromkeys(self.files))
 
+    def remove_dots(self):
+        if len(self.files) >= 2:
+            if '.' in self.files: self.files.remove('.')
+
     def remove_spaces(self):
         self.patterns, self.files = [elem.strip(' ') for elem in self.patterns], [elem.strip(' ') for elem in self.files]
 
-    def split_extras(self): #not using this for now
-        if len(sys.argv) == 4:
-            if "-i" in sys.argv[-1] or "--ignore" in sys.argv[-1]:
-                re.sub(r'\s(--\ignore+|-\i)', '', sys.sys.argv[-1]) #remove everything from sys.argv[-1], except "-i" or "--ignore", if it exists.
+    #def split_extras(self): #not using this for now
+     #   if len(sys.argv) == 4:
+      #      if "-i" in sys.argv[-1] or "--ignore" in sys.argv[-1]:
+       #         re.sub(r'\s(--\ignore+|-\i)', '', sys.sys.argv[-1]) #remove everything from sys.argv[-1], except "-i" or "--ignore", if it exists.
 
     def print_matches(self):
-        
+        if self.files == ["."]:
+            notes = os.path.expanduser('~') + '/Notes'
+            self.files = [file for file in listdir(notes)]
+
         for file in self.files:
             try:
                 if file == "": return 0
@@ -45,6 +53,7 @@ class Multi():
                     for pattern in self.patterns:
                         if re.search(pattern, text):
                             out = os.system(f"""echo -n "'\033[1;35;40m{pattern}\033[0;37;0m'": && grep -n --color=always {pattern} Notes/{file}""")
+                        
 
             except FileNotFoundError: pass
         
@@ -55,6 +64,7 @@ def main():
         newMulti.check_empty()
         newMulti.remove_spaces()
         newMulti.remove_duplicates()
+        newMulti.remove_dots()
         newMulti.print_matches()
     except IndexError:
         patterns = input("Enter patterns, separated by a comma: ")
@@ -62,6 +72,7 @@ def main():
         newMulti = Multi(patterns.split(','), files.split(','))
         newMulti.remove_spaces()
         newMulti.remove_duplicates()
+        newMulti.remove_dots()
         newMulti.print_matches()
         
 

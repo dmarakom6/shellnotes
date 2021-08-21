@@ -58,11 +58,15 @@ Show the files with a matching pattern.
 .BR \-ws ", " \--without-string =\fISTRING\fR
 Display lines WITHOUT matches.
 
+.TP
+.BR \-m ", " \--multiple =\fISTRING\fR
+Display multiple matches in more than one files in the Notes folder. Use '.' for all files, not '*' (See BUGS).
+
 .SH BUGS
 
 .TP
 .BR \GrepAllFilesBug ", " \-gafBug ", " \71
-"*" doesn't work as a selector for all the files in the Notes folder when running "notegrep -m".
+"*" doesn't work as a selector for all the files in the Notes folder when running "notegrep -m". Use '.' instead
 
 .SH AUTHOR
 
