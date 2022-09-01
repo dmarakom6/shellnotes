@@ -13,3 +13,4 @@ shellnotes (-u/-v/-r/-l/-sd/-h/-au)
 clearlogs
 resetshellnotes (-f)
 noteinfo
+notegrep (-sc/-cl/-cf/-sf/-ws/-m)
