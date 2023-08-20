@@ -16,6 +16,7 @@ case $1 in -l|--logs )
 	echo "4. update errors"
 	echo "5. uninstallation errors"
 	echo "6. set-defaults errors"
+	echo "7. SnE INFO/SUCCESS/ERROR messages"
 	echo
 	echo "For more info about which one to choose, read /docs/system/loggingsystem.txt"
 	echo
@@ -37,6 +38,8 @@ case $1 in -l|--logs )
 			less ~/.shellnotes/logs/uninfailed.txt
 		elif [ $input = 6 ]; then
 			less ~/.shellnotes/logs/sdfailed.txt
+		elif [ $input = 7 ]; then
+			less ~/.shellnotes/logs/sne/*
 		else
 			echo "Invalid input."
 		fi
