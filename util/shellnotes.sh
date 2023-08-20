@@ -14,6 +14,7 @@ function shellnotes() {
 	. ~/.shellnotes/util/shellnotes/au/au.sh
 	. ~/.shellnotes/util/shellnotes/sd/sd.sh
 	. ~/.shellnotes/util/shellnotes/i/i.sh
+	. ~/.shellnotes/util/shellnotes/gh_token/gh_token.sh
 	if [[ $# > 1 ]]; then
 		echo "Too many arguments."
 	elif [[ $# = 0 ]];then

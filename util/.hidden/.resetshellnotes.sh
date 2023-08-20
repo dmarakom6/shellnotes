@@ -10,16 +10,18 @@ function resetshellnotes() {
 	proceed() {
 		echo "y\n" | clearlogs >/dev/null
 		echo "" > ~/.shellnotes/util/listnotes/output/*
-		echo "/usr/bin/gedit" > ~/.shellnotes/util/shellnotes/sd/sd-input1.txt
+		echo ".shellnotes/sne/sne.py" > ~/.shellnotes/util/shellnotes/sd/sd-input1.txt
 		echo "/bin/nano"> ~/.shellnotes/util/shellnotes/sd/sd-input2.txt
 		echo "~/Notes" > ~/.shellnotes/util/shellnotes/sd/sd-input3.txt
       	reset="
 
 #The first line is the user's default shell found during installation process.
-#Warning! If you don't have gedit(text editor) or nano installed, you may have to change the default text editor (lines 10, 25, 40).
 
 #The lines below must NOT be changed.
 export DIR="$(pwd)"
+
+.~/.shellnotes/whatsnew.sh
+
 . ~/.shellnotes/util/getv.sh
 . ~/.shellnotes/def/defaults.sh
 . ~/.shellnotes/util/ChMkDir.sh
@@ -34,6 +36,8 @@ export DIR="$(pwd)"
 . ~/.shellnotes/util/renamenote.sh
 . ~/.shellnotes/util/notewc.sh
 . ~/.shellnotes/util/notegrep.sh
+. ~/.shellnotes/util/clipnote.sh
+. ~/.shellnotes/util/rmdups.sh
 
 
 
@@ -44,6 +48,9 @@ export DIR="$(pwd)"
       	"
 
       	echo $reset > ~/.shellnotes/.shellnotes.sh
+      	# mv ~/.shellnotes/.shellnotes.sh ~/.shellnotes/shellnotes.sh
+      	rm -rf ~/.shellnotes/**/__pycache__
+      	echo "" > ~/.shellnotes/**/.env
 	}
 
 	case $1 in -f | --force )
@@ -53,7 +60,7 @@ export DIR="$(pwd)"
 	esac
 
 	echo "Be aware that this command will erase shellnotes' memory."
-	echo "This contains default editors and folder, logfiles and user data and cache."
+	echo "This contains default editors and folder, logfiles, user data and cache."
 	echo "Your Notes will not be removed."
 	echo -n "Proceed? " && read input
 	case $input in y|Yes|Y|YES|yes)

@@ -10,11 +10,12 @@ Software requirements:
 	-curl
 	-git
 	-Python 3.5 or later
-	-GNU g++ compiler for c++ v.9.3.0 or later
 	-Solid Internet Connection required for updating (at least 5mbps)
+
+	*Note* All unmet software dependencies will be installed alongside shellnotes.
 
 Hardware requirements (Minimum):
 	-Processor : Intel® Core™ i3-L13G4
 	-RAM : 700 MB
-	-HDD/SSD : 500 MB free space
+	-HDD/SSD : 400 MB free space
 	

@@ -71,6 +71,7 @@ elif [[ "$input" == "3" ]]; then
 		else
 			mv $DEFAULT_PATH/* $name
 			echo "$name" > ~/.shellnotes/util/shellnotes/sd/sd-input3.txt
+			echo "DEFAULT_PATH=$name" >> ~/.shellnotes/sne/.env
 			echo "Default notes folder updated."
 			echo "Please restart your terminal."
 		fi

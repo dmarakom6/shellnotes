@@ -6,7 +6,7 @@ Released under the "All rights reserved" category. See the RIGHTS.txt file
 in /docs/github/ for its full text.
 info
 
-VER_TO_INSTALL=3.5 #This is used when updating, it will be changed in every new update
+VER_TO_INSTALL=4.0 #This is used when updating, it will be changed in every new update
 if [ -e ~/.shellnotes/.shellnotes.sh ]; then
    echo "Shellnotes is already installed."
    echo "If you want to update, please run 'update.sh'."
@@ -20,6 +20,7 @@ else
    mv def ~/.shellnotes/
    mv logs ~/.shellnotes/
    mv ver ~/.shellnotes/
+   mv sne ~/.shellnotes/
    mv image ~/.shellnotes/
    mv shellnotes.sh ~/.shellnotes/.shellnotes.sh
    mv $0 ~/.shellnotes/
@@ -38,14 +39,25 @@ else
    sudo cp ~/.shellnotes/docs/manpages/* /usr/local/man/man1/
    sudo gzip -f /usr/local/man/man1/*.1
    sudo mandb >/dev/null
+   sudo apt-get install xclip
 
-   sudo apt install python3
-   sudo apt install python3-pip
+   sudo apt install python3 -y
+   sudo apt install python3-pip -y
    pip install pathlib
    
    sudo apt update
    sudo chmod a+x ~/.shellnotes/util/exec/*
    sudo chmod +x ~/.shellnotes/.shellnotes.sh
+
+   clear
+   echo "Installing Shellnotes Note Editor (SnE)..."
+
+   echo "DEFAULT_PATH=$HOME" > ~/.shellnotes/sne/.env
+   #Install dependencies
+   pip install -r ~/.shellnotes/sne/requirements.txt
+   sudo apt-get install espeak -y
+   
+
 
    echo "$VER_TO_INSTALL" > ~/.shellnotes/ver/.shellnotes_version
 
