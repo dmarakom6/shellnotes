@@ -1,36 +1,36 @@
-Shellnotes 3.5 Updates
-6/7/2021
+Shellnotes 4.0 Changelog
+20/8/2023
+
+Total Changes: 73
 
 Additions:
 
-- `notegrep`: new command for manipulating notes with grep's tools
-- Added parameters and improved `quickread`
-- Added the set-defaults.sh log as an option in the logfile viewer (`shellnotes -l`).
-- `shellnotes -i` or `--info`: Information about your shellnotes copy
-- Added manpages for hidden commands (`clearlogs`, `resetshellnotes`)
-- `resetshellnotes -f` or `--force`: Avoid prompt when resetting shellnotes.
+- **SnE**: The new default text editor for the `newnote` & `readnote` commands. Written in python, it is lightweight and safe.
+	-SnE (Shellnotes Notes Editor) and its requirements (requirements.txt) will be installed alongside shellnotes.
+	-You can choose from a vast amount of tools to manipulate your notes, like notegrep.
+	-It has built-in features like spell checking and text-to-speech.
+	-You can applly different themes to match it to your liking.
+	-You can paste your Notes on pastebin or on Github as Gists (you'll need a Github API Token, which you can set using `shellnotes -ght`).
+	-SnE uses the loguru module to save logfiles that contain information your sessions, which you can view with `shellnotes -l`.
+You can always change the default editor using `shellnotes -sd`.
+
+-New listnotes option: You can now view each and every one of your notes in your Notes folder via the `listnotes --view` or `listnotes -v` command. It basically runs `less` inside of your Notes folder.
+
+- `rmdups`: A new command that uses `awk` to safely remove duplicate lines in a note. Use with caution.
+
+- `clipnote`: You are now able to paste the contents of your clipboard to a new note instantly, or, by using `-r`/`--reverse` as a parameter, take the text from the note and copy it to your clipboard. This new command takes advantage of the `xclip` package.
+
+- Command autocompletion & file suggestions: `delnote`, `listnotes`, `newnote`, `notegrep`, `notewc`, `quickread`, `readnote` and `renamenote` can now suggest the user possible options (arguments) and/or list the user's notes when the `<Tab>` key is pressed after the command is typed.
 
 Fixes:
 
-- Fixed clearlogs.sh generating empty logfiles inside `/exec`
-- Fixed bug #116 `-DynamicOutputBug`: "listnotes -d output generates autoscroll, instead of starting from where the command was executed."
-- Fixed "\n" input resulting in an error
-- Fixed auto-update illegal math bug
-- Fixed not returning to previous directory bug
-- Fixed bug #72 `-WithoutStringBug`: "If there are no matches in the input, "notegrep -ws" will display the file as is."
+- Logfiles are no longer duplicated inside `util/`
 
 Updates & Changes:
 
-- Reorganized scripts under `util/`
-- Optimized the install script (`install.sh`)
-- Enhanced all manpages
-- New logging method: Logging directly from executables, in order for the process to take less time (clears logfiles with same method)
-- Updated Documentation
-- Reorganized the logfile system
-- Removed syntax files (stored in `util/.syntax/`)
-- Changed `listnotes` output: It's more traditional now
-- Renamed `noteinfo` to `notewc` as it uses the `wc` command & changed its output
-- `resetshellnotes` now resets the user's shell
+- Optimized hidden commands
+- Updated documentation (fixed grammar and spelling mistakes, removed unnecessary details, add new info for SnE)
+- Updated install.sh and uninstall.sh to support SnE & new commands.
 
 Notes:
 
@@ -42,14 +42,12 @@ Notes:
 
 (Ignore the 80's ASCII art.)
 
-Welcome to shellnotes 3.5!
+Welcome to shellnotes 4.0!
 
-This version brings many bug fixes as well as additions for shellnotes! 
-Starting with the main feature of the update, `notegrep` is a tool that can be used on a daily basis. It simply uses grep to change the way you read your notes. You can experiment this new tool as well as a variety of options (split-character, without-character, multiple patterns and files and more).
-The biggest improvement of 3.5 must be `quickread`. There are some new parameters you can play with, or you can just test its new error-handling ability.
-Let's not forget the bug fixes: It's even safer to use shellnotes without worrying about errors occuring.
-And last, shellnotes is now way faster than before. Instead of compiling loggers on the go, shellnotes uses pre-existing executables to speed up the process.
-
-Still don't know what's going on? Read the manpages! By the way, the manpages got updated as well...
+It's been a while.
+I haven't had the time to work on this project, since many personal issues and responsibilities use most of my time. After almost three years, however, we're back with another update. Shellnotes 4 introduces new tools and commands such as `clipnote`, `rmdups` and `SnE`; a new GUI text editor for your notes. It also enhances the user's experience with command autocompletion and file suggestions for most commands. Try experimenting with it!
+I feel like this project is getting bigger than it should. All the main features of shellnotes have been covered quite a long time ago, however I always try and add as many new stuff as possible. I learn a lot of new things in the process but, after all, the project ends up being overcomplicated and hard to maintain. Few people use it anyway.
+If I have enough time in the next months I will try and rewrite the main parts of shellnotes and optimize the program as much as possible, as it looks really messy and non-professional. I don't really think there's much more to add to it and I think I should move on.
+In any case, I'll try and have as much fun as possible.
 
 Have fun taking notes!
