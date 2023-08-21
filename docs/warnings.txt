@@ -1,6 +1,5 @@
-Some warnings: (text from help page)
+Some warnings
 
 WARNING: Installing/Uninstalling/Disabling/Updating is NOT possible unless ALL the source code files are IN THE SAME DIRECTORY.
-WARNING: install.sh must be run from the folder where it was downloaded WITH the other files from the repo. Otherwise, installation will fail. uninstall.sh must be run from ~/.shellnotes/ because shellnotes is already installed. If you choose to run update.sh manually, it must be done from ~/.shellnotes as well. Type 'sh ~/.shellnotes/update.sh'. Otherwise, run 'shellnotes -u' or 'shellnotes --update' to run the script instantly.
-WARNING: Automatic Installation, uninstallation and update is a feature for shellnotes <2.5. Older versions require manual installation, uninstallation and update. Disabling is also a <2.5 feature.
-WARNING: The default shell for installing/uninstalling/updated is bash. However, shellnotes will find your shell if it's different and continue installing according to it. If your shell is not supported though, the installation/uninstallation/update will FAIL.
+WARNING: Automatic Installation, uninstallation and update is a feature for shellnotes >2.5. Older versions require manual installation, uninstallation and update. Disabling is also a >2.5 feature.
+WARNING: The default shell for this program is bash. However, shellnotes will identify your shell if it's different. If your shell is not supported though, the installation will FAIL.

@@ -9,9 +9,10 @@ Files the user can run manually are located in ~/.shellnotes/ after the installa
 	-.shellnotes.sh -> Running shellnotes (main file)
 
 Other folders and their content:
-	-util: all the commands used in ~/.shellnotes/.shellnotes.sh, as well as all its subfolders.
+	-util: all the commands used in ~/.shellnotes/.shellnotes.sh (subfolders are their parameters).
 	-def: default note editors and folders used in configuration tool.
 	-logs: Logfiles for failed updates, installations etc.
-	-ver: Current shellnotes version
+	-ver: Current shellnotes version, used when updating.
+	-sne: The source code, environment and logs for the Shellnotes Note Editor.
 	-docs: Documentation
 	-image: .jpg and .png files used for README

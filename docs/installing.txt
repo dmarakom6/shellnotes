@@ -1,41 +1,42 @@
 About Installing
 ================
 
-How to install (versions 2.5 and lower)
-	-This installation is not supported by shellnotes. However, to install, place shellnotes.sh and help into his Home folder. Then, add a dot behind the names of the two files (.shellnotes.sh, .help). This will hide them from your folder. After that, open the terminal and type "chmod +x ~/.shellnotes.sh". This will give permissions to run the program. Finally, open your shell configuration file (ex. bashrc, zshrc) and put this line in the end of the file: "source ~/.shellnotes.sh".
-
 How to install (versions 3.0 and higher)
-	-This installation is supported. It's an automatic reproduction of the above steps, all included in a single script. Just open the terminal, get to the directory where the files were downloaded and type "sh install.sh" to begin the installation proccess.
+	-It's an automatic reproduction of the steps for lower versions, all included in a single script. Just open the terminal, get to the directory where the files were downloaded and type "sh install.sh" to begin the installation proccess.
 
 About Installing:
 	-Complete installation instructions for every version of shellnotes are given in the readme file (README.md). Here you will find some more advanced information about installing shellnotes.
 
 	For Other Shell users:
 		Shellnotes supports a variety of shells. The supported shells for installation are:
-		- Bash (Bourne Again Shell)
-		- Zsh
-		- Csh
-		- Ksh
-		- Fish
+		- Bash (Bourne Again Shell) (Most Compatible)
+		- Zsh (Compatible)
+		- Csh (Compatible)
+		- Ksh (Compatible)
+		- Fish (Untested)
 
 		During the installation process, the installation program (install.sh) will find the user's shell and install shellnotes according to the shell's configuration. If your shell is not supported, shellnotes will not be installed.
 		Bash is the default shell for shellnotes. Although it supports others, there might be bugs/problems while running it in a non-bash shell. We highly recommend switching to bash if you want a full experience with shellnotes.
 		If your shell is not one of the above, we recommend installing one on the list.
 
 	For Mac Users:
-		MacOS usually uses bash as its default shell, this means that the program will work properly, but the user will have to change the default path as well as the editors.
+		MacOS usually uses bash as its default shell, however this does not mean that the program will work properly. Compatibility with MacOS hasn't been tested.
 
 	For Windows Users:
-		The only possible way for the user to use shellnotes in a Windows PC, is to install Windows Terminal. Windows Terminal is a multi-tabbed command-line front-end that Microsoft has developed for Windows 10, as a replacement for Windows Console. It can run any command-line app, including all Windows terminal emulators, in a separate tab. It is preconfigured to run Command Prompt, PowerShell, WSL, SSH, and Azure Cloud Shell Connector. If the user changes the default path and text editors, the program might work.
+		The only possible way for the user to use shellnotes in a Windows PC, is to install WSL on Windows Terminal. Windows Terminal is a multi-tabbed command-line front-end that Microsoft has developed for Windows 10, as a replacement for Windows Console. It can run any command-line app, including all Windows terminal emulators, in a separate tab. It is preconfigured to run Command Prompt, PowerShell, WSL, SSH, and Azure Cloud Shell Connector. With a few tweaks, the program might work.
 
-	For other distro Users:
+	For other (linux) distro Users:
 		Installation and use is the same.
 
 	In case the user switches to a different shell after installation:
-		Repeat installation (Run sh ~/.shellnotes/install.sh).
+		Repeat installation (Run sh ~/.shellnotes/install.sh) OR do source ~/.shellnotes/.shellnotes.sh in your configuation.
 
 	Installation failed? Here's why:
 		-Your shell is not supported by shellnotes
 		-You didn't run the installation file in the right directory
-		-Your version is outdated or its installation is not supported (see SECURITY.md)
+		-Your version is outdated or installation is not supported (see SECURITY.md)
 		-You already have shellnotes installed
+
+
+How to install (versions 2.5 and lower)
+	-This installation is not supported. However, to install, place shellnotes.sh and help into his Home folder. Then, add a dot behind the names of the main file (.shellnotes.sh). This will hide them from your folder. After that, open the terminal and type "chmod +x ~/.shellnotes.sh". This will give permissions to run the program. Finally, open your shell configuration file (ex. bashrc, zshrc) and put this line in the end of the file: "source ~/.shellnotes.sh".

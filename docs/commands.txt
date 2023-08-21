@@ -1,16 +1,14 @@
-Basic commands for shellnotes:
-
-newnote
-quicknote
-readnote
-quickread
-listnotes (-n/-d/-f)
+(.)clearlogs
+clipnote
 delnote (-all)
-findnote
-findmisplacednote
-renamenote
-shellnotes (-u/-v/-r/-l/-sd/-h/-au)
-clearlogs
-resetshellnotes (-f)
-noteinfo
+listnotes (-n/-d/-f/-v)
+newnote
 notegrep (-sc/-cl/-cf/-sf/-ws/-m)
+notewc
+quicknote (-l/-r/-s)
+quickread
+readnote
+renamenote
+(.)resetshellnotes (-f)
+rmdups
+shellnotes (-u/-v/-r/-l/-sd/-h/-au)

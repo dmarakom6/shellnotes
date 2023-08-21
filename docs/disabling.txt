@@ -7,8 +7,3 @@ How to disable (versions 3.0 and higher)
 	making sure all the content of the source code is in the same directory. Then, choose the second 
 	(2) option. After restarting your terminal, shellnotes will not be recognised by your shell, 
 	until you enable it again, using option three (3).
-
-About disabling:
-	-Disabling is much safer than uninstalling. The files are kept in your system, but you do not 
-	need to reinstall when you want to use the program and you don't risk to damage your shell 
-	configuration. (see warnings in help page)

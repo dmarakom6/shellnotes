@@ -4,3 +4,4 @@ errors
 Some errors are logged into .shellnotes/logs/ which you can check with "shellnotes -l".
 These are usually errors that occur during processes, like installing, uninstalling, updating, 
 enabling or disabling, failing to set defaults etc.
+You can also (4.0+) display the logs of the Shellnotes Notes Editor using the same command.

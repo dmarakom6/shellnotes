@@ -1,0 +1,99 @@
+.\" Manpage for shellnotes-clipnote.
+.\" Contact dmarakom@gmail.com to correct errors or typos.
+
+.TH clipnote 1
+.SH NAME
+
+shellnotes-clipnote \- manipulate clipboard and notes
+
+.SH SYNOPSIS
+.PP
+.B clipnote
+[\fIOPTION\fR]
+[\fINOTENAME\fR]
+
+.SH DESCRIPTION
+
+.B clipnote
+manipulates clipboard and notes.
+
+.SH OPTIONS
+
+.TP
+.BR \-r ", " \--reverse
+Copy the content of a note into the clipboard.
+
+.SH ARGUMENTS
+
+.TP
+.BR \fINOTENAME\fR
+Name of the note to create or copy from.
+
+.SH USAGE
+
+Create a new note from the clipboard content:
+.PP
+.B clipnote
+[\fINOTENAME\fR]
+
+Copy the content of a note into the clipboard:
+.PP
+.B clipnote
+\fB\-r\fR
+\fINOTENAME\fR
+
+.SH AUTHOR
+
+Dimitris Marakomihelakis (dmarakom@gmail.com)
+
+.SH NOTES
+
+This command requires the 'xclip' utility to be installed.
+
+.SH COPYRIGHT
+
+(C) Dimitris Marakomihelakis
+
+Released under the "All rights reserved" category. See the RIGHTS.txt file
+in /docs/github/ for its full text.
+
+.SH BUGS
+
+None known.
+
+.SH SEE ALSO
+
+.BR xclip (1)
+
+.SH EXAMPLES
+
+Create a new note named "example" from clipboard content:
+.PP
+.B clipnote
+example
+
+Copy the content of the note "my_note" into the clipboard:
+.PP
+.B clipnote
+\fB\-r\fR
+my_note
+
+.SH FILES
+
+Notes are stored in the default notes folder.
+
+.SH ENVIRONMENT
+
+Default notes folder can be set using the \fBDEFAULT_PATH\fR environment variable.
+
+.SH HISTORY
+
+The \fBclipnote\fR command was introduced in version 4.0 of the shellnotes utility.
+
+.SH BUG REPORTS
+
+Please report bugs to dmarakom@gmail.com.
+
+.SH COPYRIGHT
+
+This is free software; see the source for copying conditions. There is NO warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.

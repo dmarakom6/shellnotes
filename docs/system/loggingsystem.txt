@@ -1,8 +1,8 @@
 shellnotes logging system
 =========================
 
-The shellnotes logging system consists of .cpp (C++) files, that are compiled and run
-if an error occurs when updating, installing or setting default editors and folders for your notes.
+The shellnotes logging system consists of .cpp (C++) files, that are precompiled and run
+if an error occurs while using shellnotes.
 
 Errors that might occur:
 	update.sh / bash_update.sh:
@@ -27,9 +27,15 @@ Errors that might occur:
 	uninstall.sh (enabling option 3):
 		-Shellnotes is already enabled
 		-Shellnotes is uninstalled
+	SnE (Shellnotes Notes Editor):
+		-Note name is invalid (i.e. "")
+		-Github Token is not set (when pasting to Gists, do shellnotes -ght)
+		-Failed to save a new note
 
 If any of the above errors occur in runtime, the matching .cpp file found in ~/.shellnotes/util/failed/
 write a report of the error containing the type of error and the date in the matching logfiles found in ~/.shellnotes/logs/.
+
+For SnE, since it is a python script, the loguru module is being used everytime an error occurs and is saved to ~/.shellnotes/sne/logs/.
 
 Opening the logfiles:
 	-Do NOT open the files manually using any text editor. Use "shellnotes --logs" to select a logfile and check it.
@@ -40,6 +46,7 @@ Opening the logfiles:
 		~/.shellnotes/logs/ifailed.txt - failed attempt to install shellnotes.
 		~/.shellnotes/logs/uninfailed.txt - failed attempt to uninstall shellnotes.
 		~/.shellnotes/logs/ufailed.txt - failed attempt to update shellnotes.
+		~/.shellnotes/sne/logs/ - errors/info while running SnE.
 
 To close a file after you chose to open it, press "Q". Shellnotes uses the less command to view 
 its logfiles.

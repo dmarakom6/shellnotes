@@ -1,8 +1,7 @@
 auto-update
 ===========
 
-In shellnotes 3.0 and later, there's a new auto-update feature, coming along with the installation 
-one.
+In shellnotes 3.0 and later, there's an auto-update feature.
 After the installation, every time you open your terminal, shellnotes will search for new updates automatically. This might help users that don't want to run "shellnotes -u" every time a new version
 is released.
 
