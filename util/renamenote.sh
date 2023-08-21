@@ -48,3 +48,24 @@ function renamenote() {
 
 	fi
 }
+
+
+_renamenote_completion() {
+    local cur prev
+
+    cur="${COMP_WORDS[COMP_CWORD]}"
+    prev="${COMP_WORDS[COMP_CWORD-1]}"
+
+    # Generate the list of files in the directory
+    files=("$DEFAULT_PATH"/*)
+    files_list="${files[@]##*/}"  # Extract file names
+
+    case "$prev" in
+        renamenote)
+            COMPREPLY=( $(compgen -W "${files_list}" -- "$cur") )
+            ;;
+        *)
+            ;;
+    esac
+}
+complete -F _renamenote_completion renamenote

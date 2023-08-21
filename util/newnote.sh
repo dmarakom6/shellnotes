@@ -7,11 +7,12 @@ info
 
 function newnote() {
 	DIR="$(pwd)"
-	cd $DEFAULT_PATH
-	$NOTES_EDITOR 
-	clear
-	str="Note created in $DEFAULT_PATH" 
-	underlines=$(echo "$str" | tr -c '\010' '-')
-	echo "$str\n$underlines"
+	cd $HOME
+	# echo $1
+	NOTES_EDITOR
+	# clear
+	# str="Note created in $DEFAULT_PATH" 
+	# underlines=$(echo "$str" | tr -c '\010' '-')
+	# echo "$str\n$underlines"
 	cd $DIR
 }

@@ -30,6 +30,9 @@ function listnotes() {
 		-f|--folder )
 			. ~/.shellnotes/util/listnotes/f/f.sh
 			;;
+		-v|--view )
+			. ~/.shellnotes/util/listnotes/v/v.sh
+			;;
 		*)
 			if [ -z $1 ]; then
 				if [ -z "$(ls -A $DEFAULT_PATH)" ]; then
@@ -44,3 +47,19 @@ function listnotes() {
 	return 0
 	cd $DIR
 }
+
+_listnotes_completion() {
+    local cur prev
+
+    cur="${COMP_WORDS[COMP_CWORD]}"
+    prev="${COMP_WORDS[COMP_CWORD-1]}"
+
+    case "$prev" in
+        listnotes)
+            COMPREPLY=( $(compgen -W "-d -n -f -v" -- "$cur") )
+            ;;
+        *)
+            ;;
+    esac
+}
+complete -F _listnotes_completion listnotes

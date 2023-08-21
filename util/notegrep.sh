@@ -213,3 +213,25 @@ function notegrep() {
  cd $DIR
  return 0
 }
+
+
+_notegrep_completion() {
+    local cur prev
+
+    cur="${COMP_WORDS[COMP_CWORD]}"
+    prev="${COMP_WORDS[COMP_CWORD-1]}"  # Get the previous argument
+
+    # Generate the list of files in the directory
+    files=("$DEFAULT_PATH"/*)
+    files_list="${files[@]##*/}"  # Extract file names
+
+    case "$prev" in
+        notegrep)
+            COMPREPLY=( $(compgen -W "-cf -cl -m -sc -sf -sl -ws" -- "$cur") )
+            ;;
+        *)
+            COMPREPLY=( $(compgen -W "${files_list}" -- "$cur") )
+            ;;
+    esac
+}
+complete -F _notegrep_completion notegrep
