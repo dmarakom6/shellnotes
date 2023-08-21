@@ -26,6 +26,7 @@ case $option in 1 )
 			rm -rf ~/.shellnotes/ver 2>/dev/null
 			rm -rf ~/.shellnotes/logs 2>/dev/null
 			rm -rf ~/.shellnotes/def 2>/dev/null
+			rm -rf ~/.shellnotes/sne 2>/dev/null
 			rm -rf ~/.shellnotes/image 2>/dev/null
 			cd ..
 			rmdir .shellnotes
